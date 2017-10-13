@@ -2,18 +2,12 @@
   position: absolute;
   right: 50px;
   top: 50px;
-  cursor: pointer;
-
-  &__buttonPart {
+  cursor: pointer; }
+  .nav__buttonPart {
     display: block;
     height: 5px;
     width: 50px;
     background-color: #fff;
-    margin-bottom: 10px;
-
-  }
-
-  &__menuBox {
-    display: none;
-  }
-}
+    margin-bottom: 10px; }
+  .nav__menuBox {
+    display: none; }

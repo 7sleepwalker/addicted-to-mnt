@@ -7,8 +7,32 @@ import { BrowserRouter } from 'react-router-dom'
 import Routes from './js/routes';
 
 const pageContent = {
-  heroBanner: {
+  HeroBanner: {
+    coverURL: "asdasd",
     videoURL: "sdsad"
+  },
+  Blog: [{
+        id: '0',
+        title: 'Week in alps',
+        createdAt: '15.10.2017 13:23',
+        tags: ['hiking', 'train', 'duo', 'high-moutains', 'autumn'],
+        places: [{
+          date: '10.10',
+          place: 'googlemap?'
+        }],
+        coverURL: 'www.google.pl',
+        gallery: [
+          'url',
+          'url',
+          'url',
+          'url'
+        ]
+  }],
+  About: {
+    content: 'I like traveling and this is my journal.'
+  },
+  Error404: {
+    content: 'Error404'
   }
 };
 
