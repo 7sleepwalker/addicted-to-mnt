@@ -6,9 +6,15 @@ import registerServiceWorker from './registerServiceWorker';
 import { BrowserRouter } from 'react-router-dom'
 import Routes from './js/routes';
 
+const pageContent = {
+  heroBanner: {
+    videoURL: "sdsad"
+  }
+};
+
 const App = () => (
   <BrowserRouter>
-    <Routes />
+    <Routes content={pageContent}/>
   </BrowserRouter>
 )
 
