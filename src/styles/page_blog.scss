@@ -1,6 +1,17 @@
 .blog {
+
+}
+
+.blog-post {
   position: relative;
   height: 100vh;
   width: 100%;
-  background-color: red;
+
+  &__contentBox {
+    float: right;
+    width: 50vw;
+    height: 100vh;
+    background: orange;
+
+  }
 }
