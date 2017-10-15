@@ -3,30 +3,37 @@ import '../../styles/object_nav.css';
 
 
 class Nav extends Component {
+  constructor(props)  {
+    super(props);
+    this.state = {
+      menuActive: false
+    }
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick() {
+    var obj  = {}
+    obj['menuActive'] = !this.state.menuActive
+    this.setState(obj);
+  }
+
   render() {
-
-    // const menuList = this.props.menuList.map((item, x) => {
-    //   console.log(item);
-    //   return(
-    //     <li key={x}> {item} </li>
-    //   )
-    // });
-
     return (
-      <div className='nav'>
-        <div className='nav__button'>
+      <div className={this.state.menuActive? 'nav active': 'nav'} >
+        <div className='nav__button' onClick={this.handleClick}>
           <div className='nav__buttonPart' />
           <div className='nav__buttonPart' />
           <div className='nav__buttonPart' />
         </div>
         <div className='nav__menuBox'>
           <ul className='nav__menu'>
-            <li> Home </li>
-            <li> Blog </li>
-            <li> About </li>
+            <li className='nav__menuItem'> home </li>
+            <li className='nav__menuItem'> blog </li>
+            <li className='nav__menuItem'> about </li>
           </ul>
         </div>
-
+        <div className="nav__background" />
+        <div className="nav__shadowBackground" />
       </div>
     );
   }

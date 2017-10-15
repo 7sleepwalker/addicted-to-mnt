@@ -1,19 +1,100 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins');
+
 .nav {
   position: absolute;
-  right: 50px;
-  top: 50px;
-  cursor: pointer;
+  z-index: 10000;
+  right: 0;
+  top:0;
+
+  &.active {
+    .nav__menuBox {
+        display: block;
+
+    }
+
+    .nav__buttonPart {
+      display: none;
+      transition: all .3s ease;
+      top:15px;
+
+      &:first-child {
+        transform: rotate(45deg);
+        display: block;
+      }
+
+      &:last-child {
+        transform: rotate(-45deg);
+        display: block;
+      }
+    }
+
+    .nav__background, .nav__shadowBackground {
+      width: 50vw;
+      height: 100vh;
+      background-color: rgb(189, 191, 146);
+      right: 0;
+      top: 0;
+      display: block;
+    }
+
+    .nav__shadowBackground {
+      background-color: rgba(189, 191, 146, .3);
+    }
+  }
+
+  &__button {
+    position: absolute;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    right: 50px;
+    top: 50px;
+  }
 
   &__buttonPart {
-    display: block;
+    position: absolute;
     height: 5px;
     width: 50px;
     background-color: #fff;
     margin-bottom: 10px;
 
+    &:nth-child(2n) {
+      top: 15px;
+    }
+
+    &:nth-child(3n) {
+      top: 30px
+    }
   }
 
   &__menuBox {
     display: none;
+    position: absolute;
+    top: 150px;
+    right: 50px;
+    text-align: right;
+    color: #fff;
+    font-size: 42px;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  &__menu {
+    list-style: none;
+  }
+
+  &__menuItem {
+    padding: 0px 0;
+  }
+
+  &__background {
+    display: none;
+  }
+
+  &__shadowBackground {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: -111;
   }
 }

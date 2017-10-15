@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom'
 
-  import HomePage from './Containers/HomePage';
-  import Error404 from './Containers/error404';
+import HomePage from './Containers/HomePage';
+import Error404 from './Containers/error404';
 import App from './Containers/App';
 
 class Routes extends Component {

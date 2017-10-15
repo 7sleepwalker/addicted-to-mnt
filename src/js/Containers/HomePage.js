@@ -3,6 +3,7 @@ import '../../styles/page_homepage.css';
 
 import HeroBanner from '../Components/HeroBanner';
 import Nav from '../Components/Nav';
+import Blog from './Blog';
 
 class HomePage extends Component {
   render() {
@@ -11,6 +12,9 @@ class HomePage extends Component {
         <Nav menuList={Object.keys(this.props.content)}/>
         <section>
           <HeroBanner />
+        </section>
+        <section>
+          <Blog />
         </section>
       </div>
 
