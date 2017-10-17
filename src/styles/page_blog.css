@@ -2,8 +2,17 @@
   position: relative;
   height: 100vh;
   width: 100%; }
+  .blog-post__coverBox {
+    float: left;
+    height: 100vh;
+    width: 50%; }
+    .blog-post__coverBox img {
+      position: relative;
+      height: 100%;
+      width: 100%;
+      object-fit: cover; }
   .blog-post__contentBox {
     float: right;
-    width: 50vw;
+    width: 50%;
     height: 100vh;
     background: orange; }
