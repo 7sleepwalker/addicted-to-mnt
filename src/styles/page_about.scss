@@ -1,0 +1,56 @@
+.about {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+
+  &__close {
+    position: absolute;
+    right: 35px;
+    top: 35px;
+    height: 50px;
+    width: 50px;
+    &:hover {
+      cursor: pointer;
+    }
+
+    &:before, &:after {
+      content: '';
+      position: absolute;
+      height: 50px;
+      width: 5px;
+      background-color: #000;
+      display: block;
+      transform: rotate(45deg);
+      margin-left: 25px;
+    }
+    &:after {
+      transform: rotate(-45deg);
+    }
+
+  }
+
+  &__title {
+    position: absolute;
+    left: 0;
+    right: 0;
+    display: block;
+    margin: auto;
+    text-align: center;
+    font-size: 25px;
+    top:calc(50% - 20px);
+  }
+
+  &__page-number {
+    position: absolute;
+    right: 35px;
+    bottom: 35px;
+  }
+
+  &__background {
+    position: absolute;
+    height: 100vh;
+    transform: rotate(45deg);
+    margin-left: -30%;
+    opacity: .03;
+  }
+}

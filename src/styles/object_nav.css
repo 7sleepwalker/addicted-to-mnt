@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Poppins");
+@import url("https://fonts.googleapis.com/css?family=Lato:300,400,700");
 .nav {
   position: fixed;
   z-index: 10000;
@@ -8,7 +9,7 @@
     display: block; }
   .nav.active .nav__buttonPart {
     display: none;
-    transition: all .3s ease;
+    transition: all .3s ease-in-out;
     top: 15px; }
     .nav.active .nav__buttonPart:first-child {
       transform: rotate(45deg);
@@ -24,7 +25,8 @@
     top: 0;
     display: block; }
   .nav.active .nav__shadowBackground {
-    background-color: rgba(189, 191, 146, 0.3); }
+    background-color: #bdbf92;
+    opacity: .3; }
   .nav__button {
     position: absolute;
     cursor: pointer;

@@ -1,6 +1,61 @@
+@import 'object_blog-post.scss';
+@import 'object_herobanner.scss';
+@import 'object_nav.scss';
+@import 'object_map.scss';
+
+@import 'page_blog.scss';
+@import 'page_homepage.scss';
+@import 'page_about.scss';
+@import 'page_gallery.scss';
+
+@import 'dashboard_logIn.scss';
+
 body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
   width: 100%;
+}
+
+.padding-box-large {
+  padding-top: 25px;
+}
+
+.shape {
+  position: relative;
+  &-part {
+    content: '';
+    height: 90px;
+    width: 350px;
+    background: red;
+    position: absolute;
+  }
+  &__top {
+    &-left {
+      left: 213px;
+      top: 275px;
+      display: block;
+      transform: rotate(-45deg);
+    }
+    &-right {
+      left: 395px;
+      top: 275px;
+      display: block;
+      transform: rotate(45deg);
+    }
+  }
+
+  &__bottom {
+    &-left {
+      top:584px;
+      left: 212px;
+      transform: rotate(45deg);
+    }
+    &-right {
+      top:584px;
+      left: 395px;
+      transform: rotate(-45deg);
+    }
+  }
+
 }

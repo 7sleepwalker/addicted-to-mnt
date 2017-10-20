@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Poppins');
-
+@import 'imports.scss';
 .nav {
   position: fixed;
   z-index: 10000;
@@ -9,12 +8,11 @@
   &.active {
     .nav__menuBox {
         display: block;
-
     }
 
     .nav__buttonPart {
       display: none;
-      transition: all .3s ease;
+      transition: all .3s ease-in-out;
       top:15px;
 
       &:first-child {
@@ -31,14 +29,15 @@
     .nav__background, .nav__shadowBackground {
       width: 50vw;
       height: 100vh;
-      background-color: rgb(189, 191, 146);
+      background-color: $theme-color-green;
       right: 0;
       top: 0;
       display: block;
     }
 
     .nav__shadowBackground {
-      background-color: rgba(189, 191, 146, .3);
+      background-color: $theme-color-green;
+      opacity: .3;
     }
   }
 

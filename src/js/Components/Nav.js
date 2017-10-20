@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import '../../styles/object_nav.css';
-
 
 class Nav extends Component {
   constructor(props)  {

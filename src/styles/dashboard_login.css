@@ -1,0 +1,73 @@
+.dashboard__logIn {
+  background: #eee url(http://subtlepatterns.com/patterns/sativa.png);
+  height: 100vh; }
+  .dashboard__logIn .login-container {
+    position: absolute;
+    width: 300px;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    right: 0;
+    margin: auto;
+    padding: 20px 40px 40px;
+    text-align: center;
+    background: #fff;
+    border: 1px solid #ccc; }
+  .dashboard__logIn #output {
+    position: absolute;
+    width: 300px;
+    top: -75px;
+    left: 0;
+    color: #fff; }
+  .dashboard__logIn #output.alert-success {
+    background: #19cc19; }
+  .dashboard__logIn #output.alert-danger {
+    background: #e46969; }
+  .dashboard__logIn .avatar {
+    width: 100px;
+    height: 100px;
+    margin: 10px auto 30px;
+    border-radius: 100%;
+    border: 2px solid #aaa;
+    background-size: cover; }
+  .dashboard__logIn .form-box input {
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+    height: 40px;
+    border: 1px solid #ccc;
+    background: #fafafa;
+    transition: 0.2s ease-in-out; }
+  .dashboard__logIn .form-box input:focus {
+    outline: 0;
+    background: #eee; }
+  .dashboard__logIn .form-box input[type="text"] {
+    border-radius: 5px 5px 0 0;
+    text-transform: lowercase; }
+  .dashboard__logIn .form-box input[type="password"] {
+    border-radius: 0 0 5px 5px;
+    border-top: 0; }
+  .dashboard__logIn .form-box button.login {
+    margin-top: 15px;
+    padding: 10px 20px; }
+  .dashboard__logIn .animated {
+    animation-duration: 1s;
+    animation-fill-mode: both; }
+
+@-webkit-keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px); }
+  100% {
+    opacity: 1;
+    transform: translateY(0); } }
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px); }
+  100% {
+    opacity: 1;
+    transform: translateY(0); } }
+  .dashboard__logIn .fadeInUp {
+    animation-name: fadeInUp; }

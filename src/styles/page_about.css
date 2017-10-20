@@ -1,0 +1,42 @@
+.about {
+  position: relative;
+  height: 100vh;
+  overflow: hidden; }
+  .about__close {
+    position: absolute;
+    right: 35px;
+    top: 35px;
+    height: 50px;
+    width: 50px; }
+    .about__close:hover {
+      cursor: pointer; }
+    .about__close:before, .about__close:after {
+      content: '';
+      position: absolute;
+      height: 50px;
+      width: 5px;
+      background-color: #000;
+      display: block;
+      transform: rotate(45deg);
+      margin-left: 25px; }
+    .about__close:after {
+      transform: rotate(-45deg); }
+  .about__title {
+    position: absolute;
+    left: 0;
+    right: 0;
+    display: block;
+    margin: auto;
+    text-align: center;
+    font-size: 25px;
+    top: calc(50% - 20px); }
+  .about__page-number {
+    position: absolute;
+    right: 35px;
+    bottom: 35px; }
+  .about__background {
+    position: absolute;
+    height: 100vh;
+    transform: rotate(45deg);
+    margin-left: -30%;
+    opacity: .03; }
