@@ -1,15 +1,3 @@
-@import 'object_blog-post.scss';
-@import 'object_herobanner.scss';
-@import 'object_nav.scss';
-@import 'object_map.scss';
-
-@import 'page_blog.scss';
-@import 'page_homepage.scss';
-@import 'page_about.scss';
-@import 'page_gallery.scss';
-
-@import 'dashboard_logIn.scss';
-
 body {
   margin: 0;
   padding: 0;
@@ -17,6 +5,14 @@ body {
   width: 100%;
 }
 
+a {
+  color: #fff;
+  transition: all .3 ease-in-out;
+  &:hover {
+    text-decoration: none;
+    color: #fff;
+  }
+}
 .padding-box-large {
   padding-top: 25px;
 }
@@ -59,3 +55,15 @@ body {
   }
 
 }
+
+@import 'object_blog-post.scss';
+@import 'object_herobanner.scss';
+@import 'object_nav.scss';
+@import 'object_map.scss';
+
+@import 'page_blog.scss';
+@import 'page_homepage.scss';
+@import 'page_about.scss';
+@import 'page_gallery.scss';
+
+@import 'dashboard_logIn.scss';

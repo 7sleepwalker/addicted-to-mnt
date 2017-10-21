@@ -5,6 +5,7 @@ import HomePage from './Containers/HomePage';
 import Error404 from './Containers/error404';
 import App from './Containers/App';
 import About from './Containers/About';
+import Gallery from './Containers/Gallery';
 
 import Dashboard from './_Dashboard/DashboardLogIn';
 
@@ -17,7 +18,8 @@ class Routes extends Component {
         <Route path="/App" render={(props) => <App content={this.props.content.Blog} />} />
         <Route path="/About" render={(props) => <About content={this.props.content.About} />} />
         <Route path="/Dashboard" render={(props) => <Dashboard />} />
-        <Redirect to="/" />
+        <Route path="/Blog/:id" component={Gallery}  />
+        <Route path="/Blog/Gallery/:id" component={Gallery}  />
       </Switch>
     );
   }

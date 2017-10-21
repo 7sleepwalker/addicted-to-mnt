@@ -96,5 +96,10 @@
   },
   "eslintConfig": {
     "extends": "react-app"
+  },
+  "devDependencies": {
+    "axios": "^0.16.2",
+    "react-dedux": "^0.4.0-beta.4",
+    "redux": "^3.7.2"
   }
 }

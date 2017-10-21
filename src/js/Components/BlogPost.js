@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
 
+import { Link, Route } from 'react-router-dom'
+
 import GMap from '../Components/Map';
 import Image from '../../img/cover1.png';
 
+import Gallery from '../Containers/Gallery';
 
 class HeroBanner extends Component {
   render() {
@@ -12,7 +15,7 @@ class HeroBanner extends Component {
     return (
       <div className="blog-post">
         <div className='blog-post__coverBox'>
-          <div className="coverBox__link"> view gallery </div>
+          <div className="coverBox__link"> <Link to='/Gallery-Alps'>view gallery</Link> </div>
           <div className="coverBox__mirror" />
           <img className="coverBox__image" src={Image} alt='cover' />
         </div>

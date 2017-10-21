@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom'
 
 class Nav extends Component {
   constructor(props)  {
@@ -25,9 +26,9 @@ class Nav extends Component {
         </div>
         <div className='nav__menuBox'>
           <ul className='nav__menu'>
-            <li className='nav__menuItem'> home </li>
-            <li className='nav__menuItem'> blog </li>
-            <li className='nav__menuItem'> about </li>
+            <li className='nav__menuItem'> <Link to='/'> home  </Link> </li>
+            <li className='nav__menuItem'> <Link to='/'> blog </Link> </li>
+            <li className='nav__menuItem'> <Link to='/About'> about </Link> </li>
           </ul>
         </div>
         <div className="nav__background" />

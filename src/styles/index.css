@@ -2,6 +2,49 @@
 @import url("https://fonts.googleapis.com/css?family=Lato:300,400,700");
 @import url("https://fonts.googleapis.com/css?family=Poppins");
 @import url("https://fonts.googleapis.com/css?family=Lato:300,400,700");
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  width: 100%; }
+
+a {
+  color: #fff;
+  transition: all .3 ease-in-out; }
+  a:hover {
+    text-decoration: none;
+    color: #fff; }
+
+.padding-box-large {
+  padding-top: 25px; }
+
+.shape {
+  position: relative; }
+  .shape-part {
+    content: '';
+    height: 90px;
+    width: 350px;
+    background: red;
+    position: absolute; }
+  .shape__top-left {
+    left: 213px;
+    top: 275px;
+    display: block;
+    transform: rotate(-45deg); }
+  .shape__top-right {
+    left: 395px;
+    top: 275px;
+    display: block;
+    transform: rotate(45deg); }
+  .shape__bottom-left {
+    top: 584px;
+    left: 212px;
+    transform: rotate(45deg); }
+  .shape__bottom-right {
+    top: 584px;
+    left: 395px;
+    transform: rotate(-45deg); }
+
 #logoClipPath {
   transform-origin: 50% 50%;
   transform: rotate(45deg); }
@@ -341,39 +384,3 @@
     transform: translateY(0); } }
   .dashboard__logIn .fadeInUp {
     animation-name: fadeInUp; }
-
-body {
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
-  width: 100%; }
-
-.padding-box-large {
-  padding-top: 25px; }
-
-.shape {
-  position: relative; }
-  .shape-part {
-    content: '';
-    height: 90px;
-    width: 350px;
-    background: red;
-    position: absolute; }
-  .shape__top-left {
-    left: 213px;
-    top: 275px;
-    display: block;
-    transform: rotate(-45deg); }
-  .shape__top-right {
-    left: 395px;
-    top: 275px;
-    display: block;
-    transform: rotate(45deg); }
-  .shape__bottom-left {
-    top: 584px;
-    left: 212px;
-    transform: rotate(45deg); }
-  .shape__bottom-right {
-    top: 584px;
-    left: 395px;
-    transform: rotate(-45deg); }
