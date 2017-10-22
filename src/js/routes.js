@@ -13,12 +13,12 @@ class Routes extends Component {
   render() {
     return (
       <Switch>
-        <Route path="/" exact render={(props) => <HomePage content={this.props.content} />}  />
-        <Route path="/404" render={(props) => <Error404 content={this.props.content.Error404} />} />
-        <Route path="/App" render={(props) => <App content={this.props.content.Blog} />} />
-        <Route path="/About" render={(props) => <About content={this.props.content.About} />} />
-        <Route path="/Dashboard" render={(props) => <Dashboard />} />
-        <Route path="/Blog/:id" component={Gallery}  />
+        <Route path="/" exact render={(props) => <HomePage store={this.props.store} content={this.props.content} />}  />
+        <Route path="/404" render={(props) => <Error404 store={this.props.store} content={this.props.content.Error404} />} />
+        <Route path="/App" render={(props) => <App store={this.props.store} content={this.props.content.Blog} />} />
+        <Route path="/About" render={(props) => <About store={this.props.store} content={this.props.content.About} />} />
+        <Route path="/Dashboard" render={(props) => <Dashboard store={this.props.store} />} />
+        <Route path="/Blog/:id" render={(props) => <Gallery content={this.props} store={this.props.store} match={props.match}/> }  />
         <Route path="/Blog/Gallery/:id" component={Gallery}  />
       </Switch>
     );
