@@ -1,22 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { createStore } from 'redux';
-import reducers from './js/Reducers';
-
-import './styles/index.css';
+import { Provider } from 'react-redux';
 import registerServiceWorker from './registerServiceWorker';
-
-import { BrowserRouter } from 'react-router-dom'
 import Routes from './js/routes';
-
-let store = createStore(reducers);
-
-
+import store from './js/store';
+import './styles/index.css';
 
 const App = () => (
-  <BrowserRouter>
-    <Routes store={store} />
-  </BrowserRouter>
+  <Provider store={store}>
+    <Routes />
+  </Provider>
 )
 
 function render () {

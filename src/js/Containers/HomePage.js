@@ -8,7 +8,7 @@ class HomePage extends Component {
   render() {
     return (
       <div className="addicted__homepage">
-        <Nav menuList={Object.keys(this.props.content)}/>
+        <Nav menuList={ this.props.content ? Object.keys(this.props.content) : null}/>
         <section>
           <HeroBanner />
         </section>

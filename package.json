@@ -24,6 +24,7 @@
     "extract-text-webpack-plugin": "3.0.0",
     "file-loader": "0.11.2",
     "fs-extra": "3.0.1",
+    "g": "^2.0.1",
     "html-webpack-plugin": "2.29.0",
     "jest": "20.0.4",
     "node-sass-chokidar": "^0.0.3",
@@ -101,6 +102,8 @@
     "axios": "^0.16.2",
     "firebase": "^4.6.0",
     "react-dedux": "^0.4.0-beta.4",
-    "redux": "^3.7.2"
+    "redux": "^3.7.2",
+    "redux-logger": "^3.0.6",
+    "redux-promise-middleware": "^4.4.1"
   }
 }
