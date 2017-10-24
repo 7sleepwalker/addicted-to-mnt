@@ -1,32 +1,25 @@
 const initialState = {
-  posts: {
-    id: null,
-    title: null,
-    createdAT: null,
-    gallery: null,
-    places: null,
-    tags: null
-  },
+  gallery: null,
   fetching: false,
   fetched: false,
   error: null,
 }
 
-
 export default function reducer (state=initialState, action) {
   switch (action.type) {
-    case "FETCH_POSTS": {
+    case "FETCH_POST_BY_ID": {
       return {...state, fetching: true}
     }
-    case "FETCH_POSTS_REJECTED": {
+    case "FETCH_POST_BY_ID_REJECTED": {
       return {...state, fetching: false, error: action.payload}
     }
-    case "FETCH_POSTS_FULFILLED": {
+    case "FETCH_POST_BY_ID_FULFILLED": {
+      console.log("PAYLOAD: " + action.payload);
       return {
         ...state,
         fetching: false,
         fetched: true,
-        posts: action.payload
+        gallery: action.payload
       }
     }
     default: {

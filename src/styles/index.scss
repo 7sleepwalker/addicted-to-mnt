@@ -56,6 +56,49 @@ a {
 
 }
 
+.addictiv {
+  &__close {
+    position: fixed;
+    right: 35px;
+    top: 35px;
+    height: 50px;
+    width: 50px;
+    &:hover {
+      cursor: pointer;
+    }
+
+    &:before, &:after {
+      content: '';
+      position: absolute;
+      height: 50px;
+      width: 5px;
+      background-color: #000;
+      display: block;
+      transform: rotate(45deg);
+      margin-left: 25px;
+    }
+    &:after {
+      transform: rotate(-45deg);
+    }
+  }
+
+  &__page-number {
+    position: absolute;
+    right: 35px;
+    bottom: 35px;
+  }
+
+  &__background {
+    position: fixed;
+    height: 100vh;
+    transform: rotate(45deg);
+    margin-left: -30%;
+    opacity: .03;
+  }
+}
+
+
+
 @import 'object_blog-post.scss';
 @import 'object_herobanner.scss';
 @import 'object_nav.scss';

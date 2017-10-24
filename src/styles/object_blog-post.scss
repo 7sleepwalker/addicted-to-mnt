@@ -119,6 +119,11 @@
     position: absolute;
     bottom: 35px;
     right: 35px;
+    letter-spacing: 5px;
+
+    span:not(:first-of-type) {
+      font-size: 25px;
+    }
   }
 }
 .stage {

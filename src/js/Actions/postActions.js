@@ -14,16 +14,11 @@ function postError(err) {
     payload: err
   }
 }
-// function postRequest() {
-//   return {
-//     type: actionTypes.AddRequest
-//   }
-// }
 
 
-export function getPostByID() {
+export function getPosts() {
   return dispatch => {
-    return database.ref('/').once('value', snap => {
+    return database.ref('/homePage/posts').once('value', snap => {
       const response = snap.val();
       dispatch(postSuccess(response))
     })
@@ -31,24 +26,5 @@ export function getPostByID() {
       console.log(error);
       dispatch(postError());
     });
-  }
-}
-
-
-export const voteReact = () => {
-  return {
-    type: 'VOTE_REACT'
-  }
-}
-
-export const voteAngular = () => {
-  return {
-    type: 'VOTE_ANGULAR'
-  }
-}
-
-export const voteVuejs = () => {
-  return {
-    type: 'VOTE_VUEJS'
   }
 }

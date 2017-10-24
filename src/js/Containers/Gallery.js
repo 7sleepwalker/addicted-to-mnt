@@ -1,44 +1,39 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { getPostByID, voteAngular, voteReact, voteVuejs } from '../Actions/postActions';
+import { getPostGalleryByID } from '../Actions/galleryActions';
+import LogoBG from '../../img/logo.svg';
+import { Link } from 'react-router-dom';
+
+import GalleryImage from '../Components/GalleryImage';
 
 class Gallery extends Component {
   componentWillMount() {
-    this.props.dispatch(getPostByID());
+    this.props.dispatch(getPostGalleryByID(this.props.match.params.id));
   }
 
-  handleVoteAngular = () => {
-    this.props.dispatch(voteAngular());
-  }
-
-  handleVoteReact = () => {
-    this.props.dispatch(voteReact());
-    console.log(this.store.getState());
-  }
-
-  handleVoteVuejs = () => {
-    this.props.dispatch(voteVuejs());
-    console.log(this.props);
-  }
-
-  handlePostRequest = () => {
-     this.props.dispatch(getPostByID());
-  }
 
   render() {
+
+
+    let gallery = this.props.gallery.gallery;
+    console.log("SIJ" + gallery);
+    let galleryRender;
+    if ( gallery ) {
+      galleryRender = gallery.map((item, n) => {
+        return <GalleryImage key={n} content={item} />
+      });
+    }
+
     return (
       <div className='gallery'>
-        <p>Page id: {this.props.match.params.id}</p>
-        <div>{JSON.stringify(this.props.posts.posts)}</div>
-        <div>
-        <button onClick={this.handleVoteReact}> React </button>
-        <button onClick={this.handleVoteAngular}> Angular </button>
-        <button onClick={this.handleVoteVuejs}> Vue </button>
-        </div>
-        <div>
-          <button onClick={this.handlePostRequest}> Get post? </button>
-        </div>
+        <div>{JSON.stringify(this.props.gallery.gallery)}</div>
+        <Link to='/'><div className='addictiv__close'> </div></Link>
+
+        {galleryRender}
+
+        <div className='addictiv__page-number'> gallery </div>
+        <img className="addictiv__background" src={LogoBG} alt='logo'/>
       </div>
     );
   }
@@ -46,7 +41,7 @@ class Gallery extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    posts: state.post
+    gallery: state.gallery
   };
 }
 

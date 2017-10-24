@@ -84,7 +84,10 @@
   .blog-post__page-number {
     position: absolute;
     bottom: 35px;
-    right: 35px; }
+    right: 35px;
+    letter-spacing: 5px; }
+    .blog-post__page-number span:not(:first-of-type) {
+      font-size: 25px; }
 
 .stage__bullet {
   margin-top: 3px;

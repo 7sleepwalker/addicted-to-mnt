@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Image from '../../img/logo.svg';
-
 import { Link } from 'react-router-dom'
 
 class About extends Component {

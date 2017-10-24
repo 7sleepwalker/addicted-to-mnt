@@ -1,12 +1,10 @@
 import { combineReducers } from 'redux';
 import PostReducer from './postReducer';
-import Vote from './vote';
-
-
+import GalleryReducer from './galleryReducer';
 
 const reducers = combineReducers({
-  post: PostReducer,
-  Vote
+  posts: PostReducer,
+  gallery: GalleryReducer
 });
 
 
