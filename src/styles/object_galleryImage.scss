@@ -1,0 +1,44 @@
+.gallery-image {
+  position: relative;
+
+  &__title {
+    position: absolute;
+  }
+
+  &__place {
+    position: absolute;
+  }
+
+  &__img {
+    max-width: 50vw;
+    max-height: 50vh;
+  }
+
+}
+
+.gallery-image--featured {
+  display: block;
+  margin: 120px 0;
+
+  .gallery-image {
+    &__title {
+      left: 50px;
+      top: -70px;
+      font-size: 70px;
+    }
+
+    &__place {
+      right: 50px;
+      bottom: -30px;
+    }
+
+    &__img {
+      width: 100%;
+      height: calc(100vh - 240px);
+      background-position: center;
+      background-size: cover;
+      max-width: none;
+      max-height: none;
+    }
+  }
+}

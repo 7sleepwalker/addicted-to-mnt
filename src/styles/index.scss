@@ -63,6 +63,7 @@ a {
     top: 35px;
     height: 50px;
     width: 50px;
+    z-index: 1000;
     &:hover {
       cursor: pointer;
     }
@@ -94,6 +95,7 @@ a {
     transform: rotate(45deg);
     margin-left: -30%;
     opacity: .03;
+    z-index: -100;
   }
 }
 
@@ -103,6 +105,7 @@ a {
 @import 'object_herobanner.scss';
 @import 'object_nav.scss';
 @import 'object_map.scss';
+@import 'object_galleryImage.scss';
 
 @import 'page_blog.scss';
 @import 'page_homepage.scss';

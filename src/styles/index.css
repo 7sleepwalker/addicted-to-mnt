@@ -50,7 +50,8 @@ a {
   right: 35px;
   top: 35px;
   height: 50px;
-  width: 50px; }
+  width: 50px;
+  z-index: 1000; }
   .addictiv__close:hover {
     cursor: pointer; }
   .addictiv__close:before, .addictiv__close:after {
@@ -75,7 +76,8 @@ a {
   height: 100vh;
   transform: rotate(45deg);
   margin-left: -30%;
-  opacity: .03; }
+  opacity: .03;
+  z-index: -100; }
 
 #logoClipPath {
   transform-origin: 50% 50%;
@@ -84,7 +86,9 @@ a {
 .blog-post {
   position: relative;
   height: 100vh;
-  width: 100%; }
+  width: 100%;
+  margin: 5px 0;
+  overflow: hidden; }
   .blog-post__coverBox {
     position: relative;
     float: left;
@@ -300,6 +304,34 @@ a {
   width: 100%;
   height: 300px; }
 
+.gallery-image {
+  position: relative; }
+  .gallery-image__title {
+    position: absolute; }
+  .gallery-image__place {
+    position: absolute; }
+  .gallery-image__img {
+    max-width: 50vw;
+    max-height: 50vh; }
+
+.gallery-image--featured {
+  display: block;
+  margin: 120px 0; }
+  .gallery-image--featured .gallery-image__title {
+    left: 50px;
+    top: -70px;
+    font-size: 70px; }
+  .gallery-image--featured .gallery-image__place {
+    right: 50px;
+    bottom: -30px; }
+  .gallery-image--featured .gallery-image__img {
+    width: 100%;
+    height: calc(100vh - 240px);
+    background-position: center;
+    background-size: cover;
+    max-width: none;
+    max-height: none; }
+
 .blog {
   overflow: hidden; }
 
@@ -316,6 +348,11 @@ a {
     text-align: center;
     font-size: 25px;
     top: calc(50% - 20px); }
+
+.gallery {
+  position: relative;
+  width: 100%;
+  overflow: hidden; }
 
 .dashboard__logIn {
   background: #eee url(http://subtlepatterns.com/patterns/sativa.png);

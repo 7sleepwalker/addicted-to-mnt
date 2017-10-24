@@ -1,0 +1,27 @@
+.gallery-image {
+  position: relative; }
+  .gallery-image__title {
+    position: absolute; }
+  .gallery-image__place {
+    position: absolute; }
+  .gallery-image__img {
+    max-width: 50vw;
+    max-height: 50vh; }
+
+.gallery-image--featured {
+  display: block;
+  margin: 120px 0; }
+  .gallery-image--featured .gallery-image__title {
+    left: 50px;
+    top: -70px;
+    font-size: 70px; }
+  .gallery-image--featured .gallery-image__place {
+    right: 50px;
+    bottom: -30px; }
+  .gallery-image--featured .gallery-image__img {
+    width: 100%;
+    height: calc(100vh - 240px);
+    background-position: center;
+    background-size: cover;
+    max-width: none;
+    max-height: none; }
