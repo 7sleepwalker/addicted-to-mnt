@@ -20,6 +20,9 @@ class Gallery extends Component {
       galleryRender = gallery.map((item, n) => {
         if (n === 0)
           return <GalleryImage key={n} content={item} featured={true} />
+        else if (n%2) {
+          return <GalleryImage key={n} content={item} right={true} />
+        }
         return <GalleryImage key={n} content={item} />
       });
     }

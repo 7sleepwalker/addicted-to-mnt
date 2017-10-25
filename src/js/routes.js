@@ -19,7 +19,7 @@ class Routes extends Component {
           <Route path="/App" render={(props) => <App store={this.props.store} content={this.props.content.Blog} />} />
           <Route path="/About" render={(props) => <About />} />
           <Route path="/Dashboard" render={(props) => <Dashboard store={this.props.store} />} />
-          <Route path="/Gallery/:id" render={(props) => <Gallery content={this.props} store={this.props.store} match={props.match}/> }   />
+          <Route path="/BlogGallery/:id" render={(props) => <Gallery content={this.props} store={this.props.store} match={props.match}/> }   />
         </Switch>
       </BrowserRouter>
     );

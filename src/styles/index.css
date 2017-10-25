@@ -77,7 +77,10 @@ a {
   transform: rotate(45deg);
   margin-left: -30%;
   opacity: .03;
-  z-index: -100; }
+  z-index: -100;
+  display: block;
+  top: 0;
+  left: 0; }
 
 #logoClipPath {
   transform-origin: 50% 50%;
@@ -87,8 +90,12 @@ a {
   position: relative;
   height: 100vh;
   width: 100%;
-  margin: 5px 0;
-  overflow: hidden; }
+  margin: 100px 0; }
+  .blog-post__separator {
+    position: absolute;
+    width: 15vw;
+    transform: translate(-50%, -80%);
+    left: 50%; }
   .blog-post__coverBox {
     position: relative;
     float: left;
@@ -305,11 +312,18 @@ a {
   height: 300px; }
 
 .gallery-image {
-  position: relative; }
+  position: relative;
+  display: block;
+  text-align: center;
+  margin: 40px 0; }
   .gallery-image__title {
     position: absolute; }
   .gallery-image__place {
     position: absolute; }
+  .gallery-image__imgBox {
+    position: relative;
+    margin: auto;
+    display: inline-block; }
   .gallery-image__img {
     max-width: 50vw;
     max-height: 50vh; }
@@ -324,13 +338,40 @@ a {
   .gallery-image--featured .gallery-image__place {
     right: 50px;
     bottom: -30px; }
+  .gallery-image--featured .gallery-image__imgBox {
+    display: block; }
   .gallery-image--featured .gallery-image__img {
     width: 100%;
     height: calc(100vh - 240px);
     background-position: center;
     background-size: cover;
     max-width: none;
-    max-height: none; }
+    max-height: none;
+    display: block; }
+
+.gallery-image--right {
+  transform: translateX(15%); }
+  .gallery-image--right .gallery-image__title {
+    right: -11px;
+    transform-origin: 100%;
+    transform: rotate(90deg) translateX(100%); }
+  .gallery-image--right .gallery-image__place {
+    right: -11px;
+    transform-origin: 100%;
+    transform: rotate(90deg) translateX(100%);
+    bottom: 0; }
+
+.gallery-image--left {
+  transform: translateX(-15%); }
+  .gallery-image--left .gallery-image__title {
+    left: -11px;
+    transform-origin: 0;
+    transform: rotate(-90deg) translateX(-100%); }
+  .gallery-image--left .gallery-image__place {
+    left: -11px;
+    transform-origin: 0;
+    transform: rotate(90deg) translateX(-100%);
+    bottom: 0; }
 
 .blog {
   overflow: hidden; }

@@ -1,5 +1,8 @@
 .gallery-image {
   position: relative;
+  display: block;
+  text-align: center;
+  margin: 40px 0;
 
   &__title {
     position: absolute;
@@ -9,6 +12,11 @@
     position: absolute;
   }
 
+  &__imgBox {
+    position: relative;
+    margin: auto;
+    display: inline-block;
+  }
   &__img {
     max-width: 50vw;
     max-height: 50vh;
@@ -32,6 +40,9 @@
       bottom: -30px;
     }
 
+    &__imgBox {
+      display: block;
+    }
     &__img {
       width: 100%;
       height: calc(100vh - 240px);
@@ -39,6 +50,44 @@
       background-size: cover;
       max-width: none;
       max-height: none;
+      display: block;
     }
+  }
+}
+
+.gallery-image--right {
+  transform: translateX(15%);
+  .gallery-image {
+    &__title {
+      right: -11px;
+      transform-origin: 100% ;
+      transform: rotate(90deg) translateX(100%);
+    }
+
+    &__place {
+      right: -11px;
+      transform-origin: 100% ;
+      transform: rotate(90deg) translateX(100%);
+      bottom: 0;
+    }
+  }
+}
+
+.gallery-image--left {
+  transform: translateX(-15%);
+  .gallery-image {
+    &__title {
+      left: -11px;
+      transform-origin: 0 ;
+      transform: rotate(-90deg) translateX(-100%);
+    }
+
+    &__place {
+      left: -11px;
+      transform-origin: 0 ;
+      transform: rotate(90deg) translateX(-100%);
+      bottom: 0;
+    }
+
   }
 }

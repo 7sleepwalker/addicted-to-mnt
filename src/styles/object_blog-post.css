@@ -8,8 +8,12 @@
   position: relative;
   height: 100vh;
   width: 100%;
-  margin: 5px 0;
-  overflow: hidden; }
+  margin: 100px 0; }
+  .blog-post__separator {
+    position: absolute;
+    width: 15vw;
+    transform: translate(-50%, -80%);
+    left: 50%; }
   .blog-post__coverBox {
     position: relative;
     float: left;

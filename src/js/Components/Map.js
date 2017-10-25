@@ -8,7 +8,7 @@ import mapStyle from "../../styles/map.json";
 export default class GMap extends React.Component {
 
   componentDidMount() {
-    let map = new window.google.maps.Map(document.getElementById('map'), {  // eslint-disable-line no-unused-vars
+    let map = new window.google.maps.Map(document.getElementById(this.props.mapID), {  // eslint-disable-line no-unused-vars
       center: {lat: this.props.initialCenter.lat, lng: this.props.initialCenter.lng},
       zoom: this.props.zoom,
       mapTypeId: 'roadmap',
@@ -18,8 +18,9 @@ export default class GMap extends React.Component {
 
 
   render() {
+    console.log(this.props);
     return (
-      <div className="google-map" id="map" ref='map'>
+      <div className="google-map" id={this.props.mapID} ref='map'>
         Loading map...
       </div>
     )
@@ -41,5 +42,6 @@ GMap.defaultProps = {
   centerAroundCurrentLocation: false,
   style: {},
   containerStyle: {},
-  visible: true
+  visible: true,
+  mapID: "map-0"
 }

@@ -1,17 +1,15 @@
 import React, { Component } from 'react';
 
-import { Link, Route } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 import GMap from '../Components/Map';
 import Image from '../../img/cover1.png';
 
-import Gallery from '../Containers/Gallery';
+import MoutainSeparator from '../../img/moutain-separator.png';
 
-class HeroBanner extends Component {
+class BlogPost extends Component {
   render() {
   let content = this.props.content;
-
-
   let createdAt = {
     day: content.createdAT.split(" ")[0],
     time: content.createdAT.split(" ")[1]
@@ -34,15 +32,16 @@ class HeroBanner extends Component {
   });
 
     return (
-      <div className="blog-post">
+      <div className="blog-post" id={`BlogPost-${content.id}`}>
+        <img className="blog-post__separator" src={MoutainSeparator} alt="separator" />
         <div className='blog-post__coverBox'>
-          <div className="coverBox__link"> <Link to={`/Gallery/${content.id}`}>view gallery</Link> </div>
+          <div className="coverBox__link"> <Link to={`/BlogGallery/${content.id}`}>view gallery</Link> </div>
           <div className="coverBox__mirror" />
           <img className="coverBox__image" src={Image} alt='cover' />
         </div>
         <div className="blog-post__contentBox">
           <div className="blog-post__mapBox">
-            <GMap  />
+            <GMap mapID={`map-${content.id}`} />
           </div>
           <div className="blog-post__content">
             <h2 className="blog-post__title"> {content.title} </h2>
@@ -65,4 +64,4 @@ class HeroBanner extends Component {
   }
 }
 
-export default HeroBanner;
+export default BlogPost ;
