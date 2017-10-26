@@ -33,7 +33,7 @@ class BlogPost extends Component {
 
     return (
       <div className="blog-post" id={`BlogPost-${content.id}`}>
-        <img className="blog-post__separator" src={MoutainSeparator} alt="separator" />
+        {/*<img className="blog-post__separator" src={MoutainSeparator} alt="separator" />*/}
         <div className='blog-post__coverBox'>
           <div className="coverBox__link"> <Link to={`/BlogGallery/${content.id}`}>view gallery</Link> </div>
           <div className="coverBox__mirror" />

@@ -16,14 +16,17 @@ class Gallery extends Component {
 
     let gallery = this.props.gallery.gallery;
     let galleryRender;
+    let day=0;
     if ( gallery ) {
       galleryRender = gallery.map((item, n) => {
+        let featured=false, right=false, day=null;
         if (n === 0)
-          return <GalleryImage key={n} content={item} featured={true} />
-        else if (n%2) {
-          return <GalleryImage key={n} content={item} right={true} />
-        }
-        return <GalleryImage key={n} content={item} />
+          featured = true;
+        else if (n%2)
+          right = true;
+        if (item.day)
+          day = item.day;
+        return <GalleryImage key={n} content={item} featured={featured} right={right} day={day}/>
       });
     }
 
