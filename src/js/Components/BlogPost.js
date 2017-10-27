@@ -41,7 +41,7 @@ class BlogPost extends Component {
         </div>
         <div className="blog-post__contentBox">
           <div className="blog-post__mapBox">
-            <GMap mapID={`map-${content.id}`} />
+            <GMap mapID={`map-${content.id}`} places={content.places} />
           </div>
           <div className="blog-post__content">
             <h2 className="blog-post__title"> {content.title} </h2>

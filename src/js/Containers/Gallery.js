@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { getPostGalleryByID } from '../Actions/galleryActions';
 import LogoBG from '../../img/logo.svg';

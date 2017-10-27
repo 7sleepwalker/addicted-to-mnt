@@ -1,4 +1,5 @@
 import firebase from '../firebase';
+import { push } from 'react-router-redux';
 
 function logInSuccess(response) {
   return {

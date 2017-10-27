@@ -2,13 +2,13 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import registerServiceWorker from './registerServiceWorker';
-import Routes from './js/routes';
+import {Routes} from './js/routes';
 import store from './js/store';
 import './styles/index.css';
 
 const App = () => (
   <Provider store={store}>
-    <Routes />
+    <Routes store={store} />
   </Provider>
 )
 

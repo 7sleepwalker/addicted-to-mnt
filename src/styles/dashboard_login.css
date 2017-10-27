@@ -1,3 +1,17 @@
+.logIn__error {
+  position: absolute;
+  left: -5px;
+  top: -10px;
+  right: -5px;
+  margin: auto;
+  background-color: #d60000;
+  color: #fff;
+  padding: 5px;
+  display: none;
+  transform: translateY(-100%); }
+  .logIn__error--active {
+    display: block; }
+
 .dashboard__logIn {
   background: #eee url(http://subtlepatterns.com/patterns/sativa.png);
   height: 100vh; }
@@ -47,7 +61,7 @@
   .dashboard__logIn .form-box input[type="password"] {
     border-radius: 0 0 5px 5px;
     border-top: 0; }
-  .dashboard__logIn .form-box button.login {
+  .dashboard__logIn .form-box .login {
     margin-top: 15px;
     padding: 10px 20px; }
   .dashboard__logIn .animated {

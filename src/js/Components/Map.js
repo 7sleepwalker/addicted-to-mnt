@@ -7,18 +7,45 @@ import mapStyle from "../../styles/map.json";
 
 export default class GMap extends React.Component {
 
+
   componentDidMount() {
-    let map = new window.google.maps.Map(document.getElementById(this.props.mapID), {  // eslint-disable-line no-unused-vars
-      center: {lat: this.props.initialCenter.lat, lng: this.props.initialCenter.lng},
+    const map = new window.google.maps.Map(document.getElementById(this.props.mapID), {  // eslint-disable-line no-unused-vars
+      center: {lat: parseInt(this.props.places[0].lat, 10), lng: parseInt(this.props.places[0].lng, 10)},
       zoom: this.props.zoom,
       mapTypeId: 'roadmap',
       styles: mapStyle
     });
+    if (this.props.places.length > 1) {
+
+
+
+      let dirService = new window.google.maps.DirectionsService();
+      let dirRenderer = new window.google.maps.DirectionsRenderer({suppressMarkers: false});
+      dirRenderer.setMap(map);
+      let request = {
+        origin: "48.1252,11.5407",
+        destination: "48.13376,11.5535",
+        waypoints: [{location:"48.12449,11.5536"}, {location:"48.12515,11.5569"}],
+        travelMode: window.google.maps.TravelMode.DRIVING
+      };
+      dirService.route(request, function(result, status) {
+        if (status === window.google.maps.DirectionsStatus.OK) {
+          dirRenderer.setDirections(result);
+        }
+      });
+    } else if (this.props.places.length === 1){
+      let marker = new window.google.maps.Marker({
+          position: {lat: parseInt(this.props.places[0].lat, 10), lng: parseInt(this.props.places[0].lng, 10)},
+          map: map,
+          title: 'Hello World!'
+        });
+    }
+
+
   }
 
 
   render() {
-    console.log(this.props);
     return (
       <div className="google-map" id={this.props.mapID} ref='map'>
         Loading map...

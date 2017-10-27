@@ -4,6 +4,8 @@
 @import url("https://fonts.googleapis.com/css?family=Lato:300,400,700");
 @import url("https://fonts.googleapis.com/css?family=Poppins");
 @import url("https://fonts.googleapis.com/css?family=Lato:300,400,700");
+@import url("https://fonts.googleapis.com/css?family=Poppins");
+@import url("https://fonts.googleapis.com/css?family=Lato:300,400,700");
 body {
   margin: 0;
   padding: 0;
@@ -426,6 +428,20 @@ a {
   width: 100%;
   overflow: hidden; }
 
+.logIn__error {
+  position: absolute;
+  left: -5px;
+  top: -10px;
+  right: -5px;
+  margin: auto;
+  background-color: #d60000;
+  color: #fff;
+  padding: 5px;
+  display: none;
+  transform: translateY(-100%); }
+  .logIn__error--active {
+    display: block; }
+
 .dashboard__logIn {
   background: #eee url(http://subtlepatterns.com/patterns/sativa.png);
   height: 100vh; }
@@ -475,7 +491,7 @@ a {
   .dashboard__logIn .form-box input[type="password"] {
     border-radius: 0 0 5px 5px;
     border-top: 0; }
-  .dashboard__logIn .form-box button.login {
+  .dashboard__logIn .form-box .login {
     margin-top: 15px;
     padding: 10px 20px; }
   .dashboard__logIn .animated {
@@ -499,3 +515,28 @@ a {
     transform: translateY(0); } }
   .dashboard__logIn .fadeInUp {
     animation-name: fadeInUp; }
+
+.dashboard__panel {
+  height: 100vh;
+  background-color: #ddd; }
+
+.dashboard__sideBar {
+  height: 100vh;
+  width: 300px;
+  background-color: #444;
+  float: left;
+  color: #fff;
+  box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.33); }
+  .dashboard__sideBar .sideBar__title {
+    margin: 25px 0;
+    text-align: center;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-size: 20px;
+    font-family: 'Poppins';
+    font-weight: 300; }
+  .dashboard__sideBar .sideBar__separator {
+    margin-left: 25px;
+    margin-right: 25px;
+    margin-top: 0;
+    border-bottom: solid 1px rgba(5, 153, 197, 0.35); }

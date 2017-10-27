@@ -1,5 +1,7 @@
-import React, { Component } from 'react';
-import { Switch, Route, BrowserRouter } from 'react-router-dom'
+import React from 'react';
+// import propTypes from "prop-types";
+
+import { Switch, Route, BrowserRouter } from 'react-router-dom';
 
 import HomePage from './Containers/HomePage';
 import Error404 from './Containers/error404';
@@ -8,22 +10,42 @@ import About from './Containers/About';
 import Gallery from './Containers/Gallery';
 
 import Dashboard from './_Dashboard/DashboardLogIn';
+import DashboardPanel from './_Dashboard/DashboardPanel';
 
-class Routes extends Component {
-  render() {
-    return (
-      <BrowserRouter>
-        <Switch>
-          <Route path="/" exact render={(props) => <HomePage store={this.props.store} content={this.props.content} />}  />
-          <Route path="/404" render={(props) => <Error404 store={this.props.store} content={this.props.content.Error404} />} />
-          <Route path="/App" render={(props) => <App store={this.props.store} content={this.props.content.Blog} />} />
-          <Route path="/About" render={(props) => <About />} />
-          <Route path="/Dashboard" render={(props) => <Dashboard store={this.props.store} />} />
-          <Route path="/BlogGallery/:id" render={(props) => <Gallery content={this.props} store={this.props.store} match={props.match}/> }   />
-        </Switch>
-      </BrowserRouter>
-    );
-  }
+export const Routes  = (store) => {
+  const authRequired = (state) => {
+    const user = store.store.getState().dashboard.user;
+    if (!user) {
+      return true;
+    } else {
+      state.history.push('/404');
+    }
+
+    // user ? (
+    //   return <Redirect to={state.match.path} /> ;
+    // ) : (
+    //   return <Redirect to="/404" />;
+    // );
+
+  };
+
+  return (
+    <BrowserRouter>
+      <Switch>
+      <Route path="/Dashboard" exact component={Dashboard} />
+      <Route path="/Dashboard/Panel" render={(props) => {authRequired(props); return <DashboardPanel />;}} />
+
+        <Route path="/" exact render={(props) => <HomePage />}  />
+        <Route path="/404" render={(props) => <Error404 />} />
+        <Route path="/App" render={(props) => <App />} />
+        <Route path="/About" render={(props) => <About />} />
+        <Route path="/BlogGallery/:id" render={(props) => <Gallery match={props.match}/> }   />
+      </Switch>
+    </BrowserRouter>
+  );
 }
 
-export default Routes;
+//
+// Routes.contextTypes = {
+//   router: propTypes.object
+// };
