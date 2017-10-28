@@ -5,10 +5,25 @@ import { Link } from 'react-router-dom'
 import GMap from '../Components/Map';
 import Image from '../../img/cover1.png';
 
-import MoutainSeparator from '../../img/moutain-separator.png';
+// import MoutainSeparator from '../../img/moutain-separator.png';
 
 class BlogPost extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      distance: 0
+    }
+
+    this.getDistance = this.getDistance.bind(this);
+  }
+
+  getDistance(dis) {
+    this.setState({distance: dis});
+  }
+
+
   render() {
+    console.log("RENDER BLOG POST")
   let content = this.props.content;
   let createdAt = {
     day: content.createdAT.split(" ")[0],
@@ -19,6 +34,7 @@ class BlogPost extends Component {
       <li key={n}> {item} </li>
     )
   });
+  console.log(this.props);
   let stages = content.places.map((item, n) => {
     return (
       <div key={n} className="blog-post__stage">
@@ -41,7 +57,7 @@ class BlogPost extends Component {
         </div>
         <div className="blog-post__contentBox">
           <div className="blog-post__mapBox">
-            <GMap mapID={`map-${content.id}`} places={content.places} />
+            <GMap mapID={`map-${content.id}`} places={content.places} getDistance={this.getDistance}/>
           </div>
           <div className="blog-post__content">
             <h2 className="blog-post__title"> {content.title} </h2>

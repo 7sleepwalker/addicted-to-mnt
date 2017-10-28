@@ -35,11 +35,11 @@ export const Routes  = (store) => {
       <Route path="/Dashboard" exact component={Dashboard} />
       <Route path="/Dashboard/Panel" render={(props) => {authRequired(props); return <DashboardPanel />;}} />
 
-        <Route path="/" exact render={(props) => <HomePage />}  />
-        <Route path="/404" render={(props) => <Error404 />} />
-        <Route path="/App" render={(props) => <App />} />
-        <Route path="/About" render={(props) => <About />} />
-        <Route path="/BlogGallery/:id" render={(props) => <Gallery match={props.match}/> }   />
+      <Route path="/" exact render={(props) => <HomePage />}  />
+      <Route path="/404" render={(props) => <Error404 />} />
+      <Route path="/App" render={(props) => <App />} />
+      <Route path="/About" render={(props) => <About />} />
+      <Route path="/BlogGallery/:id" render={(props) => <Gallery match={props.match}/> }   />
       </Switch>
     </BrowserRouter>
   );

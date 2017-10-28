@@ -9,28 +9,48 @@ export default class GMap extends React.Component {
 
 
   componentDidMount() {
+    const props = this.props;
     const map = new window.google.maps.Map(document.getElementById(this.props.mapID), {  // eslint-disable-line no-unused-vars
       center: {lat: parseInt(this.props.places[0].lat, 10), lng: parseInt(this.props.places[0].lng, 10)},
       zoom: this.props.zoom,
       mapTypeId: 'roadmap',
       styles: mapStyle
     });
+
     if (this.props.places.length > 1) {
+      let origin = this.props.places[0].lat + ',' + this.props.places[0].lng;
+      let destination = this.props.places[this.props.places.length - 1].lat + ',' + this.props.places[this.props.places.length - 1].lng;
 
+      let tmpWaypoint = this.props.places.map(function(e){return e;});
+      tmpWaypoint.splice((this.props.places.length-1), 1);
+      tmpWaypoint.splice(0,1);
+      let waypoints;
 
+      if (tmpWaypoint.length > 0) {
+        waypoints = tmpWaypoint.map((item) => {
+          return {location: item.lat + ',' + item.lng};
+        });
+      }
+      console.log(this.props.places);
 
       let dirService = new window.google.maps.DirectionsService();
       let dirRenderer = new window.google.maps.DirectionsRenderer({suppressMarkers: false});
       dirRenderer.setMap(map);
       let request = {
-        origin: "48.1252,11.5407",
-        destination: "48.13376,11.5535",
-        waypoints: [{location:"48.12449,11.5536"}, {location:"48.12515,11.5569"}],
-        travelMode: window.google.maps.TravelMode.DRIVING
+        origin: origin,
+        destination: destination,
+        waypoints: waypoints,
+        travelMode: "DRIVING"
       };
       dirService.route(request, function(result, status) {
         if (status === window.google.maps.DirectionsStatus.OK) {
           dirRenderer.setDirections(result);
+          let route = result.routes[0];
+          let distance = 0;
+          for (var i = 0; i < route.legs.length; i++) {
+            distance += route.legs[i].distance.value;
+          }
+          props.getDistance(distance/1000);
         }
       });
     } else if (this.props.places.length === 1){

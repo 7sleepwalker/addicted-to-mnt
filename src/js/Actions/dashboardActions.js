@@ -14,6 +14,19 @@ function logInError(err) {
   }
 }
 
+function getNavSuccess(response) {
+  return {
+    type: "GET_NAV_FULFILLED",
+    payload: response
+  }
+}
+function getNavError(err) {
+  return {
+    type: "GET_NAV_REJECTED",
+    payload: err
+  }
+}
+
 export function logIn(email, password) {
   return dispatch => {
     firebase.auth().signInWithEmailAndPassword(email, password)
@@ -29,6 +42,19 @@ export function logIn(email, password) {
         dispatch(logInError(errorMessage));
       }
       console.log(err);
+    });
+  }
+}
+
+
+export function getNav() {
+  return dispatch => {
+    firebase.database().ref('/navMenu').once('value', snap => {
+      const response = snap.val();
+      dispatch(getNavSuccess(response));
+    }).catch((error) => {
+      dispatch(getNavError(error));
+      console.log(error);
     });
   }
 }
