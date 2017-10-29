@@ -14,13 +14,13 @@ function logInError(err) {
   }
 }
 
-function getNavSuccess(response) {
+function getStructureSuccess(response) {
   return {
     type: "GET_NAV_FULFILLED",
     payload: response
   }
 }
-function getNavError(err) {
+function getStructureError(err) {
   return {
     type: "GET_NAV_REJECTED",
     payload: err
@@ -47,13 +47,13 @@ export function logIn(email, password) {
 }
 
 
-export function getNav() {
+export function getStructure() {
   return dispatch => {
-    firebase.database().ref('/navMenu').once('value', snap => {
+    firebase.database().ref('/pageStructure').once('value', snap => {
       const response = snap.val();
-      dispatch(getNavSuccess(response));
+      dispatch(getStructureSuccess(response));
     }).catch((error) => {
-      dispatch(getNavError(error));
+      dispatch(getStructureError(error));
       console.log(error);
     });
   }

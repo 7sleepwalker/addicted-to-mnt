@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
-import { Route } from 'react-router-dom';
+import { Route, Switch, withRouter  } from 'react-router-dom';
 import propTypes from "prop-types";
 import { connect } from 'react-redux';
 
-import { getNav } from '../Actions/dashboardActions';
+import { getStructure } from '../Actions/dashboardActions';
 
 import DashboardSidebar from './DashboardSidebar';
 import DashboardHome from './DashboardHome';
+import DashboardContent from './DashboardContent';
+
 
 
 // import propTypes from "prop-types";
@@ -16,25 +18,28 @@ import DashboardHome from './DashboardHome';
 class DashboardPanel extends Component {
 
   componentWillMount() {
-    this.props.dispatch(getNav());
+    this.props.dispatch(getStructure());
   }
 
   render() {
 
+    let globalProps = this.props;
     let routes;
-    if (this.props.nav) {
-      routes = this.props.nav.map((item, n) => {
-        return <Route key={n} path={`/dashboard/panel/${item}`} exact component={DashboardHome} />;
+    let navKeys = [];
+    if (this.props.nav !== undefined) {
+      navKeys = Object.keys(this.props.nav);
+      routes =navKeys.map((item, n) => {
+        return <Route key={n} path={`/dashboard/panel/${item}`} render={(props) => <DashboardContent match={props.match} childStructure={globalProps.nav[item]} /> } />;
       });
     }
 
     return (
       <section className="dashboard__panel">
-        <Route component={DashboardSidebar} />
-        <Route path="/dashboard/panel" exact component={DashboardHome} />
-        {routes}
-        {/*render={(props) => <Gallery match={props.match}/>*/}
-        asd
+      <Route render={(props) => <DashboardSidebar match={props.match} nav={navKeys} /> } />
+        <Route exact path="/dashboard/panel" component={DashboardHome} />
+        <Switch>
+          {routes}
+        </Switch>
       </section>
     );
   }
@@ -50,4 +55,4 @@ DashboardPanel.contextTypes = {
   router: propTypes.object
 };
 
-export default connect(mapStateToProps)(DashboardPanel);
+export default withRouter(connect(mapStateToProps)(DashboardPanel));
