@@ -15,17 +15,14 @@ class DashboardContent extends Component {
     console.log("#### BEFORE IF ####");
     console.log(this.props);
 
-    if (this.props.childStructure !== undefined && this.props.childStructure !== 0) {
+    if (this.props.pathStructure !== undefined && this.props.pathStructure !== 0) {
       console.log("#### IF ####");
       console.log(this.props);
-      navKeys = Object.keys(this.props.childStructure);
-      routes = navKeys.map((item, n) => {
-        console.log(`${globalProps.match.url}/${item}`);
-        return <Route key={n} path={`${globalProps.match.url}/${item}`}  render={(props) => <DashboardContent match={props.match} childStructure={globalProps.childStructure[item]} /> } />;
-      });
-      cards = navKeys.map((item, n) => {
-        return <Card key={n} title={item} match={globalProps.match}/>;
-      });
+
+
+      // cards = navKeys.map((item, n) => {
+      //   return <Card key={n} title={item} match={globalProps.match}/>;
+      // });
     } else {
       // Renderuj cardy dla zmiany contentu
 
@@ -38,12 +35,8 @@ class DashboardContent extends Component {
       <section className="dashboard__content">
         Content WTF
         {cards}
-
-          {console.log("routes")}
-          {console.log(routes)}
-          {routes}
           asd
-      
+
       </section>
     );
   }
