@@ -3,13 +3,14 @@ import { withRouter } from 'react-router-dom';
 // import propTypes from "prop-types";
 import { connect } from 'react-redux';
 import Card from "./Components/Card";
+import { getDataByStructure } from "../Actions/dashboardActions";
 
 
 class DashboardContent extends Component {
 
   componentWillMount() {
     if (typeof(this.props.childNodes) !== "object") {
-      this.props.match.url.replace("/dashboard/panel", "pageStructure");
+      this.props.dispatch(getDataByStructure(this.props.match.url.replace("/dashboard/panel", "")));
     }
 
   }
@@ -27,7 +28,11 @@ class DashboardContent extends Component {
       });
 
     } else if (this.props.childNodes === 1){
-      cards = "#### LIST CARDS ####";
+      let post = this.props.posts;
+      cards.push(<Card key={-1} title="Add new post"  addCard />);
+      for (let i in post) {
+        cards.push(<Card key={i} title={post[i].title} match={globalProps.match} content={post[i]} editCard/>)
+      }
 
     } else if (this.props.childNodes === 0){
       cards = "#### CONTENT CARDS ####";
@@ -43,7 +48,7 @@ class DashboardContent extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    nav: state.dashboard.nav
+    posts: state.dashboard.data
   };
 }
 

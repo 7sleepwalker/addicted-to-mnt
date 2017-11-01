@@ -27,6 +27,20 @@ function getStructureError(err) {
   }
 }
 
+function getDataByStructureSuccess(response) {
+  return {
+    type: "GET_DATA_BY_STRUCTURE_FULFILLED",
+    payload: response
+  }
+}
+function getDataByStructureError(err) {
+  return {
+    type: "GET_DATA_BY_STRUCTURE_REJECTED",
+    payload: err
+  }
+}
+
+
 export function logIn(email, password) {
   return dispatch => {
     firebase.auth().signInWithEmailAndPassword(email, password)
@@ -54,6 +68,20 @@ export function getStructure() {
       dispatch(getStructureSuccess(response));
     }).catch((error) => {
       dispatch(getStructureError(error));
+      console.log(error);
+    });
+  }
+}
+
+export function getDataByStructure(url) {
+  return dispatch => {
+      console.log(url)
+    firebase.database().ref(`${url}`).once('value', snap => {
+      const response = snap.val();
+      console.log(response);
+      dispatch(getDataByStructureSuccess(response));
+    }).catch((error) => {
+      dispatch(getDataByStructureError(error));
       console.log(error);
     });
   }
