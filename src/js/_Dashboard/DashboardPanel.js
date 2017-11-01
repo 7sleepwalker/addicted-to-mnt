@@ -17,15 +17,13 @@ class DashboardPanel extends Component {
   }
 
   render() {
-
     function process(path) {
       navKeys.push(path);
     }
 
     function traverse(path = '', o, func) {
-    	let pathN = path;
       for (var i in o) {
-    		func.apply(this,[pathN + '/' + i]);
+    		func.apply(this,[path + '/' + i]);
         if (o[i] !== null && typeof(o[i]) === "object") {
     			path +=  '/' + i;
         	traverse(path, o[i], func);
@@ -36,16 +34,28 @@ class DashboardPanel extends Component {
     let globalProps = this.props;
     let routes;
     let navKeys = [];
+    let sidebarNav = [];
     traverse('', this.props.nav, process);
     if (navKeys.length > 0) {
+      sidebarNav = Object.keys(globalProps.nav);
       routes = navKeys.map((item, n) => {
-        return <Route key={n} path={`/dashboard/panel${item}`} render={(props) => <DashboardContent match={props.match} pathStructure={item} /> } />;
+        let nodeName = item.replace('/', '');
+        if (typeof(globalProps.nav[nodeName]) === "object")
+          nodeName = Object.keys(globalProps.nav[nodeName]);
+        else {
+          let array = nodeName.split('/');
+          nodeName = globalProps.nav;
+          for(let i in array) {
+            nodeName = nodeName[array[i]];
+          }
+        }
+        return <Route key={n} path={`/dashboard/panel${item}`} exact render={(props) => <DashboardContent match={props.match} childNodes={nodeName} /> } />;
       });
     }
 
     return (
       <section className="dashboard__panel">
-      <Route render={(props) => <DashboardSidebar match={props.match} nav={globalProps.nav} /> } />
+      <Route render={(props) => <DashboardSidebar match={props.match} nav={sidebarNav} /> } />
         <Route exact path="/dashboard/panel" component={DashboardHome} />
         <Switch>
           {routes}

@@ -1,0 +1,61 @@
+.dashboard__card {
+	position: relative;
+	float:left;
+	background-color: #eee;
+	width: 300px;
+	height: 100px;
+	padding: 20px;
+	margin: 20px;
+	box-shadow: 0 0 10px 0px rgba(0,0,0,.3);
+	transition: all .3s ease-in-out;
+	&:hover {
+		box-shadow: 0 0 10px 0px rgba(0,0,0,.6);
+		cursor: pointer;
+	}
+
+	&:hover .card__hover {
+		display: block;
+	}
+
+	a {
+		color: #000;
+		display: inline-block;
+	}
+
+	.card {
+		&__title {
+
+		}
+
+		&__content {
+			position:relative;
+			top: 50%;
+			transform: translateY(-50%);
+			text-align: center;
+		}
+
+		&__hover {
+			position: absolute;
+			height: 100%;
+			width: 100%;
+			background-color: rgba(255,255,255,0.9);
+			z-index: 1000;
+			top:0;
+			left:0;
+			text-align:center;
+			display: none;
+
+			a {
+				position: relative;
+				top: 50%;
+				transform: translateY(-50%);
+			}
+		}
+
+		&__icon {
+			text-align: center;
+			font-size: 25px;
+			padding: 5px 35px;
+		}
+	}
+}

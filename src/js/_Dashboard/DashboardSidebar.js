@@ -2,6 +2,14 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
 
+const Wrapper = (props) => (
+  <div>
+    before
+    {props.children}
+    after
+  </div>
+)
+
 class DashboardSidebar extends Component {
 
   render() {
@@ -9,35 +17,11 @@ class DashboardSidebar extends Component {
     let props = this.props;
     let navList = [];
 
-    console.log("SIDEBAR");
-    console.log(this.props.nav);
-
-    function process(path) {
-      navList.push(path);
-      console.log(path);
+    if (this.props.nav) {
+      navList = this.props.nav.map((item, n) => {
+        return <li key={n}> <Link to={`${props.match.url}/${item}`}> {item} </Link> </li>
+      });
     }
-
-    function traverse(path = '', o, func) {
-      let pathN = path;
-      for (var i in o) {
-        // print structure step by step
-        func.apply(this,[pathN + '/' + i]);
-        if (o[i] !== null && typeof(o[i]) === "object") {
-          traverse(path, o[i], func);
-        } else {
-          // print only ending point of structure
-
-        }
-      }
-    }
-
-    traverse('', this.props.nav, process);
-
-    // if (this.props.nav) {
-    //   navList = this.props.nav.map((item, n) => {
-    //     return <li key={n}> <Link to={`${props.match.url}/${item}`}> {item} </Link> </li>
-    //   });
-    // }
 
     return (
       <aside className="dashboard__sideBar">

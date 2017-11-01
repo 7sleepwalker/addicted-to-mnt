@@ -1,42 +1,41 @@
 import React, { Component } from 'react';
-import { Route, Switch, withRouter } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 // import propTypes from "prop-types";
 import { connect } from 'react-redux';
 import Card from "./Components/Card";
 
 
 class DashboardContent extends Component {
+
+  componentWillMount() {
+    if (typeof(this.props.childNodes) !== "object") {
+      this.props.match.url.replace("/dashboard/panel", "pageStructure");
+    }
+
+  }
+
   render() {
 
     let globalProps = this.props;
-    let routes;
-    let navKeys = [];
+    let navKeys = this.props.childNodes;
     let cards = [];
-    console.log("#### BEFORE IF ####");
-    console.log(this.props);
+    console.log((this.props));
 
-    if (this.props.pathStructure !== undefined && this.props.pathStructure !== 0) {
-      console.log("#### IF ####");
-      console.log(this.props);
+    if (typeof(this.props.childNodes) === "object") {
+      cards = navKeys.map((item, n) => {
+        return <Card key={n} title={item} match={globalProps.match}/>;
+      });
 
+    } else if (this.props.childNodes === 1){
+      cards = "#### LIST CARDS ####";
 
-      // cards = navKeys.map((item, n) => {
-      //   return <Card key={n} title={item} match={globalProps.match}/>;
-      // });
-    } else {
-      // Renderuj cardy dla zmiany contentu
-
-      console.log("#### ELSE ####");
-      console.log(this.props);
-
+    } else if (this.props.childNodes === 0){
+      cards = "#### CONTENT CARDS ####";
     }
 
     return (
       <section className="dashboard__content">
-        Content WTF
         {cards}
-          asd
-
       </section>
     );
   }
