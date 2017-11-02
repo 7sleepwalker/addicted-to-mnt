@@ -1,7 +1,7 @@
 const initialState = {
   posts: {
-    id: null,
-    title: null,
+    id: 0,
+    title: "Missing posts",
     createdAT: null,
     gallery: null,
     places: null,

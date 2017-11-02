@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import PropTypes from "prop-types";
 
 import BlogPost from '../Components/BlogPost';
 import { getPosts } from '../Actions/postActions';
@@ -14,6 +15,7 @@ class Blog extends Component {
     let posts = this.props.posts.posts;
     let postRender;
 
+    console.log(this.props);
     if (posts.length > 0) {
       postRender = posts.map((item, n) => {
         return <BlogPost key={n} content={item} postNumber={n} postsAmount={posts.length}/>
@@ -33,9 +35,13 @@ const mapStateToProps = (store) => {
   };
 }
 
-// Gallery.propTypes = {
-//   completed: PropTypes.bool.isRequired,
-//   content: PropTypes.string.isRequired
-// }
+Blog.props = {
+  posts: PropTypes.shape({
+      error: PropTypes.string,
+      fetched: PropTypes.bool,
+      fetching: PropTypes.bool,
+      posts: PropTypes.object.isRequired
+    })
+}
 
 export default connect(mapStateToProps)(Blog);

@@ -65,9 +65,9 @@ export function getStructure() {
   return dispatch => {
     firebase.database().ref('/pageStructure').once('value', snap => {
       const response = snap.val();
-      dispatch(getStructureSuccess(response));
+      return dispatch(getStructureSuccess(response));
     }).catch((error) => {
-      dispatch(getStructureError(error));
+      return dispatch(getStructureError(error));
       console.log(error);
     });
   }
@@ -75,13 +75,11 @@ export function getStructure() {
 
 export function getDataByStructure(url) {
   return dispatch => {
-      console.log(url)
     firebase.database().ref(`${url}`).once('value', snap => {
       const response = snap.val();
-      console.log(response);
-      dispatch(getDataByStructureSuccess(response));
+      return dispatch(getDataByStructureSuccess(response));
     }).catch((error) => {
-      dispatch(getDataByStructureError(error));
+      return dispatch(getDataByStructureError(error));
       console.log(error);
     });
   }

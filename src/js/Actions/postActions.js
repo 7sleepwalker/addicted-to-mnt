@@ -18,7 +18,7 @@ function postError(err) {
 
 export function getPosts() {
   return dispatch => {
-    firebase.database().ref('/homePage/posts').once('value', snap => {
+    firebase.database().ref('/homepage/posts').once('value', snap => {
       const response = snap.val();
       dispatch(postSuccess(response));
     }).catch((error) => {

@@ -67,7 +67,7 @@ class DashboardPanel extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    nav: state.dashboard.nav
+    nav: state.sidebar.nav
   };
 }
 
