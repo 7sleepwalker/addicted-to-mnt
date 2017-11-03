@@ -23,12 +23,8 @@ class DashboardContent extends Component {
   }
 
   _handleSubmit(url, data) {
-
-
     url = url.replace("/dashboard/panel", "");
-    console.log(url);
-    console.log(data);
-    // this.props.dispatch(updateData(`${url}/`, data));
+    this.props.dispatch(updateData(`${url}/`, data));
   }
 
 

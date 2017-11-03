@@ -8,15 +8,30 @@ class Input extends Component {
     }
 
     this._handleInput = this._handleInput.bind(this);
+    this._save = this._save.bind(this);
   }
 
   _handleInput(e) {
     this.setState({inputValue: e.target.value});
   }
 
+  _save() {
+    let inputValue = this.refs[this.props.name];
+    let postObject = {};
+    inputValue = inputValue.value;
+    postObject[this.props.name] = inputValue;
+    this.props.changer(this.props.match , postObject);
+  }
+
   render() {
     return (
-      <input className="contentEditor__input" type="text" onChange={this._handleInput} value={this.state.inputValue} placeholder="Enter Value ..." />
+      <div>
+        <label className="contentEditor__label">
+          <div>{this.props.name}:</div>
+          <input ref={this.props.name} className="contentEditor__input" defaultValue={this.props.data} />
+        </label>
+        <button onClick={this._save} className="btn btn-success"> Save </button>
+      </div>
     );
   }
 }

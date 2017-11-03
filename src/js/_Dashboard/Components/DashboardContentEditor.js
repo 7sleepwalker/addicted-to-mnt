@@ -3,11 +3,13 @@ import { Link } from 'react-router-dom';
 import { default as Input } from './DashboardInput';
 
 class DashboardContentEditor extends Component {
+  constructor(props) {
+    super(props);
+    this._handleSubmit = this._handleSubmit.bind(this);
+  }
 
-  _handleSubmit(e) {
-    e.preventDefault();
-    this.props.submit(this.props.match.url);
-    console.log(this.refs);
+  _handleSubmit(url, data) {
+    this.props.submit(url, data);
   }
 
   render() {
@@ -18,11 +20,7 @@ class DashboardContentEditor extends Component {
     for (let i in data) {
       inputs.push(
         <div key={i}>
-          <label className="contentEditor__label">
-            <div>{i}:</div>
-            <Input ref={i} value={data[i]} />
-            {/*  <input className="contentEditor__input" ref={i} type='text' name={i} value={data[i]} placeholder='Type text...' />  */}
-          </label>
+          <Input ref={i} name={i} data={data[i]} match={this.props.match.url} changer={this._handleSubmit} />
         </div>
         );
     }
@@ -32,10 +30,9 @@ class DashboardContentEditor extends Component {
       <div className="dashboard__contentEditor">
         <h2> Content editor </h2>
         <h4> page: {pageTitle} </h4>
-        <form onSubmit={(e) => this._handleSubmit(e)} className="contentEditor__form">
+        <div className="contentEditor__form">
           {inputs}
-          <input type="submit" className="btn btn-success" value="Submit" />
-        </form>
+        </div>
       </div>
     );
   }
