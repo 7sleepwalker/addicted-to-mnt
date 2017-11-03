@@ -582,3 +582,22 @@ a {
     text-align: center;
     font-size: 25px;
     padding: 5px 35px; }
+
+.dashboard__content {
+  float: left;
+  width: calc(100% - 300px); }
+
+.dashboard__contentEditor {
+  padding: 15px; }
+
+.contentEditor__label {
+  display: block;
+  text-transform: capitalize; }
+
+.contentEditor__input {
+  width: 100%;
+  padding: 0 5px;
+  margin: 5px 0; }
+
+.contentEditor__form {
+  margin: 30px 0; }

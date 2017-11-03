@@ -39,6 +39,18 @@ function getDataByStructureError(err) {
     payload: err
   }
 }
+function updateDataSuccess() {
+  return {
+    type: "UPDATE_DATA_SUCCESS",
+    payload: "You have updated contend with success!"
+  }
+}
+function updateDataError(err) {
+  return {
+    type: "UPDATE_DATA_FAILED",
+    payload: err
+  }
+}
 
 
 export function logIn(email, password) {
@@ -82,5 +94,26 @@ export function getDataByStructure(url) {
       return dispatch(getDataByStructureError(error));
       console.log(error);
     });
+  }
+}
+
+export function postData(url, data) {
+  return dispatch => {
+    firebase.database().ref(`${url}`).set({
+
+    }).catch((error) => {
+
+    })
+  }
+}
+
+export function updateData(url, data) {
+  return dispatch => {
+    firebase.database().ref().child(`${url}`).update(data).then(() => {
+      return dispatch(updateDataSuccess());
+    })
+    .catch((error) => {
+      return dispatch(updateDataError(error));
+    })
   }
 }

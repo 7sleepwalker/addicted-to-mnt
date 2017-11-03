@@ -4,7 +4,7 @@ import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import Card from "./Components/Card";
 import {default as Editor} from "./Components/DashboardContentEditor"
-import { getDataByStructure } from "../Actions/dashboardActions";
+import { getDataByStructure, updateData } from "../Actions/dashboardActions";
 
 
 class DashboardContent extends Component {
@@ -20,6 +20,15 @@ class DashboardContent extends Component {
       let dispatchData = getDataByStructure(this.props.match.url.replace("/dashboard/panel", ""));
       this.props.dispatch(dispatchData);
     }
+  }
+
+  _handleSubmit(url, data) {
+
+
+    url = url.replace("/dashboard/panel", "");
+    console.log(url);
+    console.log(data);
+    // this.props.dispatch(updateData(`${url}/`, data));
   }
 
 
@@ -44,14 +53,13 @@ class DashboardContent extends Component {
       }
 
     } else if (this.props.childNodes === 0){
-      cards = "#### CONTENT CARDS ####";
-      cards = <Editor content={this.props.content} />;
+      cards = <Editor content={this.props.content} submit={this._handleSubmit.bind(this)} match={globalProps.match} />;
     }
 
     return (
-      <section className="dashboard__content">
+      <div className="dashboard__content">
         {cards}
-      </section>
+      </div>
     );
   }
 }

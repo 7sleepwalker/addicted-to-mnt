@@ -32,6 +32,17 @@ export default function reducer (state=initialState, action) {
     case "GET_DATA_BY_STRUCTURE_REJECTED": {
       return {...state, fetching: false, error: action.payload}
     }
+    case "UPDATE_DATA_SUCCESS": {
+      return {
+        ...state,
+        fetching: false,
+        fetched: true,
+        respond: action.payload
+      }
+    }
+    case "UPDATE_DATA_FAILED": {
+      return {...state, fetching: false, error: action.payload}
+    }
 
     default: {
       return state
