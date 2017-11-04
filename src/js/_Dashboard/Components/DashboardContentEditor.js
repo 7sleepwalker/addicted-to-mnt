@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import { default as Input } from './DashboardInput';
+import { default as EditBox } from './DashboardEditBox';
 
 class DashboardContentEditor extends Component {
   constructor(props) {
@@ -13,16 +13,19 @@ class DashboardContentEditor extends Component {
   }
 
   render() {
+
+    console.log("RENDER EDITOR");
     console.log(this.props);
     const pageTitle = this.props.match.url.split('/')[this.props.match.url.split('/').length -1];
     const data = this.props.content.data;
+    const structure = this.props.structure;
     let inputs = [];
-    for (let i in data) {
-      inputs.push(
-        <div key={i}>
-          <Input ref={i} name={i} data={data[i]} match={this.props.match.url} changer={this._handleSubmit} />
-        </div>
-        );
+    for (let i in structure) {
+      if (i !== "structure") {
+        inputs.push(
+          <EditBox key={i} data={data[i]} ref={i} name={i} data={data[i]} match={this.props.match.url} changer={this._handleSubmit} />
+          );
+      }
     }
 
 

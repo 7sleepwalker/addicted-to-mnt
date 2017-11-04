@@ -14,6 +14,7 @@ class DashboardSidebar extends Component {
 
   render() {
 
+    console.log("RENDER SIDEBAR");
     let props = this.props;
     let navList = [];
 

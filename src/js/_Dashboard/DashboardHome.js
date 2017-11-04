@@ -8,6 +8,7 @@ import { Route } from 'react-router-dom';
 class DashboardHome extends Component {
 
   render() {
+    console.log("RENDER HOME");
     return (
       <section className="dashboard__home">
         Welcome in dashboard

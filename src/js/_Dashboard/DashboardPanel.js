@@ -17,6 +17,13 @@ class DashboardPanel extends Component {
   }
 
   render() {
+
+    console.log("TEST TO RENDER PANEL");
+    console.log(this.props.nav);
+    if (!this.props.nav)
+      return (<div className="addictiv_isLoading"> Content is loading </div>);
+
+    console.log("RENDER PANEL");
     function process(path) {
       navKeys.push(path);
     }
@@ -24,7 +31,8 @@ class DashboardPanel extends Component {
     function traverse(path = '', o, func) {
       for (var i in o) {
     		func.apply(this,[path + '/' + i]);
-        if (o[i] !== null && typeof(o[i]) === "object") {
+        let object = o[i];
+        if (object !== null && typeof(object) === "object" && !object.structure) {
     			path +=  '/' + i;
         	traverse(path, o[i], func);
         }
@@ -41,7 +49,7 @@ class DashboardPanel extends Component {
       routes = navKeys.map((item, n) => {
         let nodeName = item.replace('/', '');
         if (typeof(globalProps.nav[nodeName]) === "object")
-          nodeName = Object.keys(globalProps.nav[nodeName]);
+          nodeName = globalProps.nav[nodeName];
         else {
           let array = nodeName.split('/');
           nodeName = globalProps.nav;
