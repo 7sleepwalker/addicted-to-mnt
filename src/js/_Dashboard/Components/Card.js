@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 
 class Card extends Component {
   render() {
+    console.log(this.props);
 		let cardRender;
 		let cardBackground;
 		if (this.props.addCard) {
@@ -15,7 +16,7 @@ class Card extends Component {
 		 	cardRender = <div className="card__title"><a>	{this.props.title} </a></div> ;
 			cardBackground = (
 				<div className="card__hover">
-						<a><span className="card__icon glyphicon glyphicon-edit" aria-hidden="true"></span><div> Edit </div></a>
+						<Link to={`${this.props.match.path}/${this.props.content.id}`}><span className="card__icon glyphicon glyphicon-edit" aria-hidden="true"></span><div> Edit </div></Link>
 						<a><span className="card__icon glyphicon glyphicon-remove-circle" aria-hidden="true"></span><div> Remove </div></a>
 				</div>
 			);

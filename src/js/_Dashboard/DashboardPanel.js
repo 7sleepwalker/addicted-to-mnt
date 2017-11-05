@@ -17,9 +17,6 @@ class DashboardPanel extends Component {
   }
 
   render() {
-
-    console.log("TEST TO RENDER PANEL");
-    console.log(this.props.nav);
     if (!this.props.nav)
       return (<div className="addictiv_isLoading"> Content is loading </div>);
 
@@ -40,7 +37,8 @@ class DashboardPanel extends Component {
     }
 
     let globalProps = this.props;
-    let routes;
+    let routes = [];
+    let idRoutes = [];
     let navKeys = [];
     let sidebarNav = [];
     traverse('', this.props.nav, process);
@@ -57,8 +55,15 @@ class DashboardPanel extends Component {
             nodeName = nodeName[array[i]];
           }
         }
+        if (nodeName.structure === "list") {
+          idRoutes.push(<Route key={n} path={`/dashboard/panel${item}/:id`} exact render={(props) => <DashboardContent match={props.match} childNodes={nodeName} /> } />);
+        }
         return <Route key={n} path={`/dashboard/panel${item}`} exact render={(props) => <DashboardContent match={props.match} childNodes={nodeName} /> } />;
       });
+    }
+
+    for (let i in idRoutes){
+      routes.push(idRoutes[i]);
     }
 
     return (
@@ -66,6 +71,7 @@ class DashboardPanel extends Component {
       <Route render={(props) => <DashboardSidebar match={props.match} nav={sidebarNav} /> } />
         <Route exact path="/dashboard/panel" component={DashboardHome} />
         <Switch>
+          {console.log(routes)}
           {routes}
         </Switch>
       </section>

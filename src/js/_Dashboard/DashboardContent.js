@@ -15,7 +15,7 @@ class DashboardContent extends Component {
     };
   }
 
-  componentWillMount() {
+  componentDidMount() {
     let dispatchData = getDataByStructure(this.props.match.url.replace("/dashboard/panel", ""));
     this.props.dispatch(dispatchData);
   }
@@ -25,9 +25,7 @@ class DashboardContent extends Component {
     this.props.dispatch(updateData(`${url}/`, data));
   }
 
-
   render() {
-
     if (!this.props.content.data)
       return (<div className="addictiv_isLoading"> Content is loading </div>);
 
@@ -35,18 +33,23 @@ class DashboardContent extends Component {
     let globalProps = this.props;
     let navKeys = Object.keys(this.props.childNodes);
     let cards = [];
+    let isEditing = this.props.match.path.split('/')[this.props.match.path.split('/').length - 1] === ":id";
 
     if (this.props.childNodes.structure === undefined) {
       cards = navKeys.map((item, n) => {
         return <Card key={n} title={item} match={globalProps.match}/>;
       });
 
-    } else if (this.props.childNodes.structure === "list"){
+    } else if (this.props.childNodes.structure === "list" && !isEditing){
       let post = this.props.content.data;
       cards.push(<Card key={-1} title="Add new post"  addCard />);
       for (let i in post) {
         cards.push(<Card key={i} title={post[i].title} match={globalProps.match} content={post[i]} editCard/>)
       }
+
+    } else if (this.props.childNodes.structure === "list" && isEditing) {
+      cards = <Editor content={this.props.content} structure={this.props.childNodes} submit={this._handleSubmit.bind(this)} match={globalProps.match} />;
+
 
     } else if (this.props.childNodes.structure === "editor"){
       cards = <Editor content={this.props.content} structure={this.props.childNodes} submit={this._handleSubmit.bind(this)} match={globalProps.match} />;

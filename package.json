@@ -104,6 +104,7 @@
     "react-dedux": "^0.4.0-beta.4",
     "react-router-redux": "^4.0.8",
     "redux": "^3.7.2",
+    "redux-batched-updates": "^0.1.0",
     "redux-logger": "^3.0.6",
     "redux-promise-middleware": "^4.4.1"
   }

@@ -13,7 +13,6 @@ class DashboardContentEditor extends Component {
   }
 
   render() {
-
     console.log("RENDER EDITOR");
     console.log(this.props);
     const pageTitle = this.props.match.url.split('/')[this.props.match.url.split('/').length -1];
@@ -22,8 +21,10 @@ class DashboardContentEditor extends Component {
     let inputs = [];
     for (let i in structure) {
       if (i !== "structure") {
+        console.log(data[i]);
+        console.log(structure[i]);
         inputs.push(
-          <EditBox key={i} data={data[i]} ref={i} name={i} data={data[i]} match={this.props.match.url} changer={this._handleSubmit} />
+          <EditBox key={i} structure={structure[i]} data={data[i]} ref={i} name={i} match={this.props.match.url} changer={this._handleSubmit} />
           );
       }
     }
