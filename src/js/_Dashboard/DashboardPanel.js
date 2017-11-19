@@ -71,7 +71,6 @@ class DashboardPanel extends Component {
       <Route render={(props) => <DashboardSidebar match={props.match} nav={sidebarNav} /> } />
         <Route exact path="/dashboard/panel" component={DashboardHome} />
         <Switch>
-          {console.log(routes)}
           {routes}
         </Switch>
       </section>
