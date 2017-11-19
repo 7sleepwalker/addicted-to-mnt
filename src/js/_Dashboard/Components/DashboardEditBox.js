@@ -1,56 +1,104 @@
 import React, { Component } from 'react';
-import { default as Input } from './DashboardInput';
+
+import TextInput from "./Inputs/DashboardTextInput";
+import DateInput from "./Inputs/DashboardDateInput";
+import MapInput from "./Inputs/DashboardMapInput";
 
 class DashboardEditBox extends Component {
+  constructor(props) {
+      super(props);
 
-  render() {
-    console.log("RENDER EDITBOX");
-    let data = this.props;
-    let labels = [];
+      this.state = {
+        edit: false,
+        content: this.props.data,
+        updated: false,
+  			submited: false
+      }
+  		this.data = [];
+      this._edit = this._edit.bind(this);
+      this._save = this._save.bind(this);
+      this._cancel = this._cancel.bind(this);
+  		this._handleFormData = this._handleFormData.bind(this);
+    }
 
+    componentWillReceiveProps(newProps) {
+      if (!this.state.updated){
+        this.setState({content: newProps.data});
+      }
+    }
 
+    _edit() {
+      this.setState({edit: true});
+  		this.setState({submited: false})
+    }
 
-    return (
-      <div> {JSON.stringify(this.props.data)}  <h1 /><h1/ ></div>
-    );
+    _save() {
+  		// gather all inputs and parse into object than send to databse to update
+  		this.setState({submited: true});
+  		this.data = [];
+    }
 
-    // if(this.state.edit) {
-    //   let renderInput = "Input not supported";
-    //
-    //   if (this.props.structure.type === "short-text") {
-    //     renderInput = <input ref={this.props.name} className="contentEditor__input" defaultValue={this.state.content} />
-    //   }
-    //
-    //   return (
-    //     <div className="dashboard__editBox dashboard__editBox--active">
-    //       <label className="contentEditor__label"> <h5>{this.props.structure.description}</h5>
-    //         {renderInput}
-    //       </label>
-    //       <button onClick={this._save} className="btn btn-success"> Save </button>
-    //       <button onClick={this._cancel} className="btn btn-danger"> Close </button>
-    //     </div>
-    //   );
-    //
-    // } else {
-    //   if (typeof(data) === "string") {
-    //     labels = <div><h5> {this.props.structure.description} </h5> <div className="dashboard__editBox__label"> {this.props.data} </div> </div>;
-    //   }
-    //   else {
-    //     labels.push(<h5 key="-1"> {this.props.structure.description} </h5>);
-    //     for (let i in data) {
-    //       labels.push(<div key={i} className="dashboard__editBox__label"> {JSON.stringify(data[i])} </div>);
-    //     }
-    //   }
-    //
-    //   return (
-    //     <div className="dashboard__editBox">
-    //       {labels}
-    //       {/* <h5> {this.props.structure.description} </h5> <div className="dashboard__editBox__label"> {this.state.content} </div> */}
-    //       <button onClick={this._edit} className="btn btn-info"> Edit </button>
-    //     </div>
-    //   );
-    // }
+    _cancel() {
+      this.setState({edit: false});
+    }
+
+  	_handleFormData(id, label, data) {
+  		// path example : 1
+  		// data example : { title: "Moutains" }
+  		// expected result : this.data = [ 1: { title: "Moutains" } ]
+  		// expected next result : this.data = [ 1: { title: "Moutains", date: "11.10" } ]
+  		let tmpData = this.data[id];
+  		tmpData[label] = data;
+  	}
+
+    render() {
+
+      console.log("RENDER EDITBOX");
+  		let inputs = [];
+  		let content = this.state.content;
+  		let structure = this.props.structure;
+
+  		if(this.state.edit) {
+  			for ( let i in content) {
+  				inputs.push(
+  					<li key={i}>
+  						<DateInput id={`dataPicker-${i}`} group={i} submit={this.state.submited} description={structure.date.description} date={content[i].date} submitData={this._handleFormData} />
+  						<TextInput id={`textInput-${i}`} group={i} submit={this.state.submited} value={content[i].title} description={structure.title.description} submitData={this._handleFormData}/>
+  						<MapInput id={`mapPicker-${i}`} group={i} description={structure.place.description} submit={this.state.submited} lat={content[i].lat} lng={content[i].lng} submitData={this._handleFormData}/>
+  					</li>
+  				);
+  			}
+  			return (
+  				<div className="dashboard__editBox dashboard__editBox--active dashboard__galleryInput">
+  					<label className="contentEditor__label"> <h5>{this.props.structure.description}</h5>
+  						{inputs}
+  					</label>
+  					<button onClick={this._save} className="btn btn-success"> Save </button>
+  					<button onClick={this._cancel} className="btn btn-danger"> Close </button>
+  				</div>
+      );
+  		} else {
+        if (typeof(content) !== "string") {
+          for ( let i in content) {
+            console.log(i);
+    				inputs.push(<li key={i}> {content[i].date} {content[i].title} </li>);
+    			}
+        }
+        else {
+          inputs.push(<li key="-1"> {content} </li>);
+        }
+
+  			return (
+  				<div className="dashboard__editBox dashboard__galleryInput">
+  					<h5> {this.props.structure.description} </h5>
+  					<ul>
+  						{inputs}
+  					</ul>
+  					<button onClick={this._edit} className="btn btn-info"> Edit </button>
+  				</div>
+      );
+  		}
+    }
   }
-}
 
 export default DashboardEditBox;

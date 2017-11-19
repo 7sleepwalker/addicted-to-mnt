@@ -19,13 +19,35 @@ class DashboardContentEditor extends Component {
     const data = this.props.content.data;
     const structure = this.props.structure;
     let inputs = [];
+
     for (let i in structure) {
       if (i !== "structure") {
-        console.log(data[i]);
-        console.log(structure[i]);
-        inputs.push(
-          <EditBox key={i} structure={structure[i]} data={data[i]} ref={i} name={i} match={this.props.match.url} changer={this._handleSubmit} />
-          );
+
+
+        // Render component for each child in structure.
+        switch(structure[i].type) {
+          case "date":
+            inputs.push(<EditBox key={i} structure={structure[i]} data={data[i]} ref={i} name={i} match={this.props.match.url} changer={this._handleSubmit} /> );
+            break;
+          case "map-place":
+            inputs.push(<EditBox key={i} structure={structure[i]} data={data[i]} ref={i} name={i} match={this.props.match.url} changer={this._handleSubmit} /> );
+            break;
+          case "short-text":
+            inputs.push(<EditBox key={i} structure={structure[i]} data={data[i]} ref={i} name={i} match={this.props.match.url} changer={this._handleSubmit} /> );
+            break;
+          case "google-marker":
+            inputs.push(<EditBox key={i} structure={structure[i]} data={data[i]} ref={i} name={i} match={this.props.match.url} changer={this._handleSubmit} /> );
+            break;
+          case "gallery":
+            inputs.push(<EditBox key={i} structure={structure[i]} data={data[i]} ref={i} name={i} match={this.props.match.url} changer={this._handleSubmit} /> );
+            break;
+          case "list":
+            inputs.push(<EditBox key={i} structure={structure[i]} data={data[i]} ref={i} name={i} match={this.props.match.url} changer={this._handleSubmit} /> );
+            break;
+          default:
+            return "Missing component";
+        }
+
       }
     }
 
