@@ -1,8 +1,13 @@
 import React, { Component } from 'react';
 
+import TextInput from "./Inputs/DashboardTextInput";
+import DateInput from "./Inputs/DashboardDateInput";
+import MapInput from "./Inputs/DashboardMapInput";
+
 class DashboardEditBox extends Component {
   constructor(props) {
       super(props);
+<<<<<<< HEAD
 
       this.state = {
         edit: false,
