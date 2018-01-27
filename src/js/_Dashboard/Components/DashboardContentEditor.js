@@ -40,7 +40,6 @@ class DashboardContentEditor extends Component {
 
     for (let i in structure) {
       if (i !== "structure") {
-<<<<<<< HEAD
         // Render component for each child in structure.
         switch(structure[i].type) {
           case "date":
@@ -63,23 +62,6 @@ class DashboardContentEditor extends Component {
                 <TextInput id={`input-${i}`} group={i} submit={this.state.submited} value={data[i]} description={structure[i].description} submitData={this._handleFormData}/>
               </EditBox>
             );
-=======
-
-
-        // Render component for each child in structure.
-        switch(structure[i].type) {
-          case "date":
-            inputs.push(<EditBox key={i} structure={structure[i]} data={data[i]} ref={i} name={i} match={this.props.match.url} changer={this._handleSubmit} /> );
-            break;
-          case "map-place":
-            inputs.push(<EditBox key={i} structure={structure[i]} data={data[i]} ref={i} name={i} match={this.props.match.url} changer={this._handleSubmit} /> );
-            break;
-          case "short-text":
-            inputs.push(<EditBox key={i} structure={structure[i]} data={data[i]} ref={i} name={i} match={this.props.match.url} changer={this._handleSubmit} /> );
-            break;
-          case "google-marker":
-            inputs.push(<EditBox key={i} structure={structure[i]} data={data[i]} ref={i} name={i} match={this.props.match.url} changer={this._handleSubmit} /> );
->>>>>>> f21d6abc0ec1fce5eca4743baf5aec43f7f9c93a
             break;
           case "gallery":
             inputs.push(<EditBox key={i} structure={structure[i]} data={data[i]} ref={i} name={i} match={this.props.match.url} changer={this._handleSubmit} /> );
@@ -90,10 +72,6 @@ class DashboardContentEditor extends Component {
           default:
             return "Missing component";
         }
-<<<<<<< HEAD
-=======
-
->>>>>>> f21d6abc0ec1fce5eca4743baf5aec43f7f9c93a
       }
     }
 

@@ -7,7 +7,6 @@ import MapInput from "./Inputs/DashboardMapInput";
 class DashboardEditBox extends Component {
   constructor(props) {
       super(props);
-<<<<<<< HEAD
 
       this.state = {
         edit: false,

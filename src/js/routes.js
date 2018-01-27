@@ -8,6 +8,7 @@ import Error404 from './Containers/error404';
 import App from './Containers/App';
 import About from './Containers/About';
 import Gallery from './Containers/Gallery';
+import TripPlaner from './Containers/TripPlaner';
 
 import Dashboard from './_Dashboard/DashboardLogIn';
 import DashboardPanel from './_Dashboard/DashboardPanel';
@@ -39,6 +40,7 @@ export const Routes  = (store) => {
       <Route path="/404" render={(props) => <Error404 />} />
       <Route path="/App" render={(props) => <App />} />
       <Route path="/About" render={(props) => <About />} />
+      <Route path="/tripPlaner" render={(props) => <TripPlaner />} />
       <Route path="/BlogGallery/:id" render={(props) => <Gallery match={props.match}/> }   />
       </Switch>
     </BrowserRouter>
