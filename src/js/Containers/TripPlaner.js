@@ -19,11 +19,10 @@ class TripPlanner extends Component {
     if (plan === null)
       return null
 
-    console.log(plan);
-
+    console.log(this.props.places);
     return (
       <div className="tripPlaner">
-        <GMap mapID={`map-0`} places={plan.places}>
+        <GMap mapID={`map-0`} places={plan.places} tripplaner>
           <Input inputID="pac-input" placeholder='Search for places...' />
         </GMap>
       </div>

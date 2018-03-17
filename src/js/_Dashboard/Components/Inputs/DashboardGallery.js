@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
+import debounce from 'lodash/debounce';
 
 import TextInput from "./DashboardTextInput";
-import DateInput from "./DashboardDateInput";
 import MapInput from "./DashboardMapInput";
 
-class DashboardMapStages extends Component {
+class DashboardGallery extends Component {
   constructor(props) {
 		super(props);
     this.content = this.props.content.map((item) => (
@@ -39,9 +39,9 @@ class DashboardMapStages extends Component {
 				inputs.push(
 					<div className="map-stages__box" key={i}>
             <div className="map-stages__closer"> <i className="fa fa-times-circle" /> </div>
-						<DateInput id={`dataPicker-${i}`} group={i} node={'date'} description={structure.date.description} date={content[i].date} submit={submit} submitData={this._getTextInputData} />
-						<TextInput id={`textInput-${i}`} group={i} node={'title'} description={structure.title.description} value={content[i].title} submit={submit} submitData={this._getTextInputData} />
-						<MapInput id={`mapPicker-${i}`} group={i} node={'gcords'} description={structure.gcords.description}  gcords={content[i].gcords} submit={submit} submitData={this._getMapInputData} />
+            <TextInput id={`urlInput-${i}`} group={i} node={'imgURL'} description={structure.imgURL.description} value={content[i].imgURL} submit={submit} submitData={this._getTextInputData} />
+						<TextInput id={`titleInput-${i}`} group={i} node={'title'} description={structure.title.description} value={content[i].title} submit={submit} submitData={this._getTextInputData} />
+						<MapInput id={`mapPicker-${i}`} group={i} node={'gcords'} description={structure.gcords.description} gcords={content[i].gcords} submit={submit} submitData={this._getMapInputData} />
 					</div>
 				);
 			}
@@ -56,4 +56,4 @@ class DashboardMapStages extends Component {
   	}
 }
 
-export default DashboardMapStages;
+export default DashboardGallery;

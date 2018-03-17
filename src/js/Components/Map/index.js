@@ -1,102 +1,73 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import mapStyle from "../../../styles/map.json";
+import { createMap, addMarker, iconBase } from "./helpers/googleHandlers";
 
-const iconBase = 'http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=%E2%80%A2|';
+const markers = [];
 
 export default class GMap extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      deleteMode: true,
+      currentMarkerID: ''
     };
+
+    this.handleRemove = this.handleRemove.bind(this);
+    this.handleDisable = this.handleDisable.bind(this);
   }
   componentDidMount() {
     const props = this.props;
     const state = this.state;
+    const This = this;
+    const map = createMap(this.props.mapID, this.props.places, this.props.zoom);
 
-    const input = document.getElementById('pac-input');
-    const markers = [];
-    const map = new window.google.maps.Map(document.getElementById(this.props.mapID), { // eslint-disable-line no-unused-vars
-      center: {
-        lat: parseInt(this.props.places[0].lat, 10),
-        lng: parseInt(this.props.places[0].lng, 10)
-      },
-      zoom: this.props.zoom,
-      mapTypeId: 'roadmap',
-      styles: mapStyle
-    });
-    const infowindow = new window.google.maps.InfoWindow();
-    const service = new window.google.maps.places.PlacesService(map);
-    const searchBox = new window.google.maps.places.SearchBox(input);
-    const bounds = new window.google.maps.LatLngBounds();
-    map.controls[window.google.maps.ControlPosition.TOP_LEFT].push(input);
+    if (this.props.tripplaner) {
+      const input = document.getElementById('pac-input');
+      const infowindow = new window.google.maps.InfoWindow();
+      const service = new window.google.maps.places.PlacesService(map);
+      const searchBox = new window.google.maps.places.SearchBox(input);
+      const bounds = new window.google.maps.LatLngBounds();
 
-    map.addListener('bounds_changed', function() {
-      searchBox.setBounds(map.getBounds());
-    });
-
-    searchBox.addListener('places_changed', function() {
-      const places = searchBox.getPlaces();
-      if (places.length === 0) {
-        return;
-      }
-
-      // For each place, get the icon, name and location.
-      places.forEach(function(place) {
-        if (!place.geometry) {
-          console.log("Returned place contains no geometry");
+      map.controls[window.google.maps.ControlPosition.TOP_LEFT].push(input);
+      map.addListener('bounds_changed', function() {
+        searchBox.setBounds(map.getBounds());
+      });
+      searchBox.addListener('places_changed', function() {
+        const places = searchBox.getPlaces();
+        if (places.length === 0) {
           return;
         }
-        var icon = {
-          url: iconBase + '' + props.color,
-          size: new window.google.maps.Size(30, 50),
-          origin: new window.google.maps.Point(0, 0),
-          anchor: new window.google.maps.Point(10, 50),
-          scaledSize: new window.google.maps.Size(25, 40)
-        };
-
-        // Create a marker for each place.
-        let newMarker = new window.google.maps.Marker({
-          map: map,
-          icon: icon,
-          title: place.name,
-          position: place.geometry.location,
-          animation: window.google.maps.Animation.DROP
-        });
-
-
-        newMarker.addListener('click', function(e) {
-          if (state.deleteMode) {
-            this.setMap(null);
-          } else {
+        // For each place, get the icon, name and location.
+        places.forEach(function(place) {
+          if (!place.geometry) {
+            console.log("Returned place contains no geometry");
+            return;
+          }
+          // Create a marker for each place.
+          let newMarker = addMarker(map, place, props.color, "click");
+          newMarker.addListener('click', function(e) {
             infowindow.setContent('<div><div class="google-popup__delete fa fa-trash"> </div><strong>' + place.name + '</strong><br>' +
               place.formatted_address + '</div>');
             infowindow.open(map, this);
+            This.setState({ currentMarkerID: place.place_id });
+          });
+          markers[place.place_id] = newMarker;
+
+          if (place.geometry.viewport) {
+            // Only geocodes have viewport.
+            bounds.union(place.geometry.viewport);
+          } else {
+            bounds.extend(place.geometry.location);
           }
-
         });
-        markers[place.place_id] = newMarker;
-
-        if (place.geometry.viewport) {
-          // Only geocodes have viewport.
-          bounds.union(place.geometry.viewport);
-        } else {
-          bounds.extend(place.geometry.location);
-        }
+        map.fitBounds(bounds);
       });
-      map.fitBounds(bounds);
-
-    });
-
-
+    }
 
     if (this.props.places.length > 1) {
       let origin = this.props.places[0].lat + ',' + this.props.places[0].lng;
       let destination = this.props.places[this.props.places.length - 1].lat + ',' + this.props.places[this.props.places.length - 1].lng;
-
       let tmpWaypoint = this.props.places.map(function(e) {
         return e;
       });
@@ -111,16 +82,15 @@ export default class GMap extends React.Component {
           };
         });
       }
-
       let dirService = new window.google.maps.DirectionsService();
       let dirRenderer = new window.google.maps.DirectionsRenderer({
         suppressMarkers: false
       });
       dirRenderer.setMap(map);
       let request = {
-        origin: origin,
-        destination: destination,
-        waypoints: waypoints,
+        origin,
+        destination,
+        waypoints,
         travelMode: "WALKING"
       };
       dirService.route(request, function(result, status) {
@@ -139,12 +109,17 @@ export default class GMap extends React.Component {
         lat: parseInt(this.props.places[0].lat, 10),
         lng: parseInt(this.props.places[0].lng, 10),
       }
-      let singleMarker = new window.google.maps.Marker({
-        position: position,
-        map: map,
-        title: 'Hello World!'
-      });
+      addMarker(map, position, props.color);
     }
+  }
+
+  handleDisable() {
+    markers[this.state.currentMarkerID].setIcon(iconBase + "ccc");
+  }
+
+  handleRemove() {
+    markers[this.state.currentMarkerID].setMap(null);
+    markers.splice(this.state.currentMarkerID, 1);
   }
 
   render() {
@@ -152,6 +127,10 @@ export default class GMap extends React.Component {
       <div className = "google-map" >
         <div style = {{ width: '100%', height: '100%' }} id = { this.props.mapID } ref = 'map' />
         { this.props.children ? this.props.children : null }
+        { this.props.tripplaner && <div className="google-map__placeOptions">
+            <button className="btn btn-secondary" onClick={this.handleDisable}> <span className="fa fa-trash-o"> </span> Disable place </button>
+            <button className="btn btn-danger" onClick={this.handleRemove}> <span className="fa fa-trash-o"> </span> Remove place </button>
+          </div> }
       </div>
     )
   }
@@ -165,7 +144,7 @@ GMap.propTypes = {
   color: PropTypes.string,
 }
 GMap.defaultProps = {
-  zoom: 14,
+  zoom: 8,
   initialCenter: {
     lat: 37.774929,
     lng: -122.419416

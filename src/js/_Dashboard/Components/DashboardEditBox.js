@@ -10,9 +10,9 @@ class DashboardEditBox extends Component {
 
       this.state = {
         edit: false,
-        content: this.props.data,
         updated: false,
-        submited: this.props.submited
+        submited: this.props.submited,
+        content: this.props.data
       }
   		this.data = [];
       this._edit = this._edit.bind(this);
@@ -29,8 +29,6 @@ class DashboardEditBox extends Component {
 
     _renderChildren() {
       return React.Children.map(this.props.children, child => {
-        // TODO: Change the name prop to this.props.name
-        //console.log(child.props.submit);
         return child
       })
     }
@@ -41,19 +39,16 @@ class DashboardEditBox extends Component {
     }
 
     _save() {
-  		// gather all inputs and parse into object than send to databse to update
-  		this.setState({submited: true});
-  		this.data = [];
+  		// this.setState({submited: true, edit: false});
+      this.props.changer(true);
     }
 
     _cancel() {
       this.setState({edit: false});
+      this.props.changer(false);
     }
 
     render() {
-
-      console.log("RENDER EDITBOX");
-
   		if(this.state.edit) {
   			return (
   				<div className="dashboard__editBox dashboard__editBox--active">

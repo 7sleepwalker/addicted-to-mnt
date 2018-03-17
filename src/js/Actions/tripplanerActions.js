@@ -1,5 +1,3 @@
-// import { ADD_POST, SET_VISIBILITY_FILTER } from './actionTypes';
-
 import firebase from '../firebase';
 
 function postSuccess(response) {

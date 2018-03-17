@@ -1,19 +1,34 @@
 import React, { Component } from 'react';
 
-class DashboardMapInput extends Component {
-  render() {
-  		if (this.props.submit) {
-  			let lat = this.refs[this.props.id].value.split(', ')[0];
-  			let lng = this.refs[this.props.id].value.split(', ')[1];
-  			this.props.submitData(this.props.group, "lat", lat);
-  			this.props.submitData(this.props.group, "lng", lng);
-  			return null;
-  		}
+class DashboardTextInput extends Component {
 
-  		return (
-  			<div> <span className="contentEditor__inputDescription">{this.props.description}</span> <input ref={this.props.id} className="contentEditor__input contentEditor__input--mapPicker" defaultValue={`${this.props.lat}, ${this.props.lng}`} /> </div>
-  		);
-  	}
+	constructor(props) {
+		super(props);
+		this.state = {
+			content: {
+				content:`${this.props.gcords.lat} ${this.props.gcords.lng}`
+			}
+		}
+	}
+
+	render() {
+		const { id, description, gcords, submit, node, group } = this.props;
+
+		if (submit)
+			this.props.submitData({ lat: this.state.content.content.split(' ')[0], lng: this.state.content.content.split(' ')[1] }, group, node)
+
+		return (
+			<div>
+				<span className="contentEditor__inputDescription"> {description} </span>
+				<input
+					name={id}
+					className="contentEditor__input contentEditor__input--textInput"
+					value={this.state.content.content}
+					onChange={ e => this.setState({ content: { content: e.target.value }}) }
+				/>
+			</div>
+		);
+	}
 }
 
-export default DashboardMapInput;
+export default DashboardTextInput;
