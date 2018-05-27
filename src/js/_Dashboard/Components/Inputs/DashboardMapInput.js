@@ -1,34 +1,35 @@
 import React, { Component } from 'react';
 
-class DashboardTextInput extends Component {
-
-	constructor(props) {
-		super(props);
-		this.state = {
-			content: {
-				content:`${this.props.gcords.lat} ${this.props.gcords.lng}`
-			}
-		}
-	}
-
+class DashboardMapInput extends Component {
 	render() {
-		const { id, description, gcords, submit, node, group } = this.props;
+		const { id, description, gcords, type } = this.props;
 
-		if (submit)
-			this.props.submitData({ lat: this.state.content.content.split(' ')[0], lng: this.state.content.content.split(' ')[1] }, group, node)
+		const value = Object.keys(gcords).map(item => (
+			gcords[item]
+		));
 
 		return (
 			<div>
 				<span className="contentEditor__inputDescription"> {description} </span>
 				<input
-					name={id}
-					className="contentEditor__input contentEditor__input--textInput"
-					value={this.state.content.content}
-					onChange={ e => this.setState({ content: { content: e.target.value }}) }
+					name={`mapInput-${id}`}
+					className="contentEditor__input contentEditor__input--mapInput"
+					value={value}
+					onChange={ e => {
+							let getValue = {};
+							Object.keys(gcords).forEach((item, index) => {
+								console.log({[item]: e.target.value.split(',')[index]});
+								getValue = {
+									...getValue,
+									[item]: e.target.value.split(',')[index]
+								}
+							});
+							this.props.inputHandler({...getValue}, id, type);
+					}}
 				/>
 			</div>
 		);
 	}
 }
 
-export default DashboardTextInput;
+export default DashboardMapInput;

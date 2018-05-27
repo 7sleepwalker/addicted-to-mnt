@@ -640,22 +640,22 @@ a {
   margin: 15px 0;
   background-color: #fff; }
 
-.map-stages {
+.card-list {
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
   flex-wrap: wrap; }
-  .map-stages__box {
+  .card-list__box {
     position: relative;
     flex: 1 0 auto;
     max-width: calc(33% - 30px);
     margin: 15px;
     padding: 15px;
     box-shadow: 0 0 20px rgba(55, 55, 55, 0.3); }
-  .map-stages:last-child:after {
+  .card-list:last-child:after {
     content: '';
     flex: auto; }
-  .map-stages__closer {
+  .card-list__closer {
     position: absolute;
     right: -6px;
     top: -10px;

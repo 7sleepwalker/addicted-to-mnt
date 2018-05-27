@@ -109,7 +109,7 @@ export function postData(url, data) {
 
 export function updateData(url, data) {
   return dispatch => {
-    firebase.database().ref().child(`${url}`).update(data).then(() => {
+    firebase.database().ref().child(`${url}`).set(data).then(() => {
       return dispatch(updateDataSuccess());
     })
     .catch((error) => {

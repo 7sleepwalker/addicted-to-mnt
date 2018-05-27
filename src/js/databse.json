@@ -1,0 +1,204 @@
+{
+  "about" : {
+    "content" : "I like traveling and this is journal."
+  },
+  "homepage" : {
+    "herobanner" : {
+      "videourl" : "www.youtube.com/id=zw"
+    },
+    "posts" : [ {
+      "createdAT" : "2017-10-23 23:35:40",
+      "gallery" : [ {
+        "gcords" : {
+          "lat" : "37",
+          "lng" : "130"
+        },
+        "imgURL" : "https://static.pexels.com/photos/415958/pexels-photo-415958.jpeg",
+        "title" : "Nice photo"
+      }, {
+        "day" : 1,
+        "gcords" : {
+          "lat" : "39",
+          "lng" : "135"
+        },
+        "imgURL" : "https://images.pexels.com/photos/238622/pexels-photo-238622.jpeg?w=940&h=650",
+        "title" : "Other photo"
+      }, {
+        "day" : 2,
+        "gcords" : {
+          "lat" : "39",
+          "lng" : "135"
+        },
+        "imgURL" : "https://images.pexels.com/photos/427676/pexels-photo-427676.jpeg?w=940&h=650",
+        "title" : "Moutains in snow"
+      }, {
+        "day" : 3,
+        "gcords" : {
+          "lat" : "39",
+          "lng" : "135"
+        },
+        "imgURL" : "https://images.pexels.com/photos/143577/pexels-photo-143577.jpeg?w=940&h=650",
+        "title" : "Green Moutains"
+      }, {
+        "gcords" : {
+          "lat" : "39",
+          "lng" : "135"
+        },
+        "imgURL" : "https://images.pexels.com/photos/289317/pexels-photo-289317.jpeg?w=940&h=650",
+        "title" : "Lake"
+      }, {
+        "gcords" : {
+          "lat" : "39",
+          "lng" : "135"
+        },
+        "imgURL" : "https://images.pexels.com/photos/161098/menton-old-town-harbour-entrance-lighthouse-161098.jpeg?w=940&h=650",
+        "title" : "City"
+      } ],
+      "id" : 0,
+      "places" : [ {
+        "date" : "10.10",
+        "gcords" : {
+          "lat" : "37.774929",
+          "lng" : "-122.419416"
+        },
+        "title" : "Neuschwanstein Castle"
+      }, {
+        "date" : "11.10",
+        "gcords" : {
+          "lat" : "39.774929",
+          "lng" : "-120.419416"
+        },
+        "title" : "Moutains"
+      }, {
+        "date" : "12.10",
+        "gcords" : {
+          "lat" : "40.774929",
+          "lng" : "-115.419416"
+        },
+        "title" : "Hills"
+      }, {
+        "date" : "13.10",
+        "gcords" : {
+          "lat" : "50.774929",
+          "lng" : "-115.419416"
+        },
+        "title" : "Fonish"
+      } ],
+      "tags" : [ "hiking", "train", "duo", "high-moutains", "autumn" ],
+      "title" : "Week in alps"
+    }, {
+      "createdAT" : "2017-10-24 23:35:40",
+      "gallery" : [ {
+        "gcords" : {
+          "lat" : "37",
+          "lng" : "130"
+        },
+        "imgURL" : "https://static.pexels.com/photos/415958/pexels-photo-415958.jpeg",
+        "title" : "Nice photo"
+      }, {
+        "gcords" : {
+          "lat" : "39",
+          "lng" : "135"
+        },
+        "imgURL" : "https://images.pexels.com/photos/238622/pexels-photo-238622.jpeg?w=940&h=650",
+        "title" : "Other photo"
+      } ],
+      "id" : 1,
+      "places" : [ {
+        "date" : "10.10",
+        "gcords" : {
+          "lat" : "37.774929",
+          "lng" : "-122.419416"
+        },
+        "title" : "Neuschwanstein Castle"
+      } ],
+      "tags" : [ "hiking", "train", "duo", "high-moutains", "autumn" ],
+      "title" : "Listopadowe tatry"
+    } ]
+  },
+  "pageStructure" : {
+    "about" : {
+      "content" : {
+        "description" : "About me text:",
+        "type" : "short-text"
+      },
+      "structure" : "editor"
+    },
+    "homepage" : {
+      "herobanner" : {
+        "structure" : "editor",
+        "videourl" : {
+          "description" : "Link to background video.",
+          "type" : "short-text"
+        }
+      },
+      "posts" : {
+        "createdAT" : {
+          "description" : "Date of post creation. [Format: dd-mm-rrrr hh-mm-ss].",
+          "type" : "date"
+        },
+        "gallery" : {
+          "description" : "Gallery module.",
+          "gcords" : {
+            "description" : "Coordinates from googlemap.",
+            "type" : "google-marker"
+          },
+          "imgURL" : {
+            "description" : "Link to image.",
+            "type" : "short-text"
+          },
+          "multiple" : 1,
+          "title" : {
+            "description" : "Title for image.",
+            "type" : "short-text"
+          },
+          "type" : "gallery"
+        },
+        "places" : {
+          "date" : {
+            "description" : "Date of gcords visit.",
+            "type" : "date"
+          },
+          "description" : "Places by steps.",
+          "gcords" : {
+            "description" : "Coordinates from googlemap.",
+            "type" : "google-marker"
+          },
+          "multiple" : 1,
+          "title" : {
+            "description" : "Title for gcords.",
+            "type" : "short-text"
+          },
+          "type" : "map-place"
+        },
+        "structure" : "list",
+        "tags" : {
+          "description" : "Hashtag to describe trip.",
+          "type" : "tag"
+        },
+        "title" : {
+          "description" : "Enter title of trip",
+          "type" : "short-text"
+        }
+      }
+    }
+  },
+  "tripPlans" : {
+    "japan" : {
+      "endDate" : "15.04.2018",
+      "id" : 0,
+      "name" : "Japan",
+      "places" : [ {
+        "color" : "0DE5DB",
+        "createdBy" : "Addictiv",
+        "gcords" : {
+          "lat" : "35.67",
+          "lng" : "139.60"
+        },
+        "id" : 0,
+        "name" : "Tokyo"
+      } ],
+      "startDate" : "30.04.2018"
+    }
+  }
+}

@@ -1,31 +1,16 @@
 import React, { Component } from 'react';
 
 class DashboardTextInput extends Component {
-	constructor(props) {
-		super(props);
-		this.state = {
-			content: {
-				content: this.props.value
-			}
-		}
-	}
-
 	render() {
-		const { id, description, value, submit, node, group } = this.props;
-
-		if (submit && node === undefined)
-			this.props.submitData({[group]: this.state.content.content});
-		else if (submit)
-			this.props.submitData(this.state.content.content, group, node)
-
+		const { id, description, value, type } = this.props;
 		return (
 			<div>
 				<span className="contentEditor__inputDescription"> {description} </span>
 				<input
-					name={id}
+					name={`textInput-${id}`}
 					className="contentEditor__input contentEditor__input--textInput"
-					value={this.state.content.content}
-					onChange={ e => this.setState({ content: { content: e.target.value }}) }
+					value={value}
+					onChange={ e => this.props.inputHandler(e.target.value, id, type)}
 				/>
 			</div>
 		);

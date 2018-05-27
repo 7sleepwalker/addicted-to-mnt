@@ -1,30 +1,11 @@
 import React, { Component } from 'react';
 
-import TextInput from "./Inputs/DashboardTextInput";
-import DateInput from "./Inputs/DashboardDateInput";
-import MapInput from "./Inputs/DashboardMapInput";
-
 class DashboardEditBox extends Component {
   constructor(props) {
       super(props);
-
-      this.state = {
-        edit: false,
-        updated: false,
-        submited: this.props.submited,
-        content: this.props.data
-      }
-  		this.data = [];
-      this._edit = this._edit.bind(this);
       this._save = this._save.bind(this);
-      this._cancel = this._cancel.bind(this);
+      this._edit = this._edit.bind(this);
       this._renderChildren = this._renderChildren.bind(this)
-    }
-
-    componentWillReceiveProps(newProps) {
-      if (!this.state.updated){
-        this.setState({content: newProps.data});
-      }
     }
 
     _renderChildren() {
@@ -34,39 +15,41 @@ class DashboardEditBox extends Component {
     }
 
     _edit() {
-      this.setState({edit: true});
-  		this.setState({submited: false})
+      this.props.changer(false, this.props.id);
     }
 
-    _save() {
-  		// this.setState({submited: true, edit: false});
-      this.props.changer(true);
-    }
-
-    _cancel() {
-      this.setState({edit: false});
-      this.props.changer(false);
+    _save(save) {
+      this.props.changer(save, -1);
     }
 
     render() {
-  		if(this.state.edit) {
+  		if(this.props.expanded) {
   			return (
   				<div className="dashboard__editBox dashboard__editBox--active">
-  					<label className="contentEditor__label"> <h5>{this.props.structure.description}</h5>
+  					<label className="contentEditor__label">
   						{this._renderChildren()}
   					</label>
-  					<button onClick={this._save} className="btn btn-success"> Save </button>
-  					<button onClick={this._cancel} className="btn btn-danger"> Close </button>
+  					<button onClick={() => this._save(true)} className="btn btn-success"> Save </button>
+  					<button onClick={() => this._save(false)} className="btn btn-danger"> Close </button>
   				</div>
-      );
-  		} else {
+        );
+      } else if (this.props.submited) {
   			return (
   				<div className="dashboard__editBox">
   					<h5> {this.props.structure.description} </h5>
+            <div> Data saved! </div>
   					<button onClick={this._edit} className="btn btn-info"> Edit </button>
   				</div>
-      );
+        );
   		}
+      else {
+        return (
+          <div className="dashboard__editBox">
+  					<h5> {this.props.structure.description} </h5>
+  					<button onClick={this._edit} className="btn btn-info"> Edit </button>
+  				</div>
+        )
+      }
     }
   }
 

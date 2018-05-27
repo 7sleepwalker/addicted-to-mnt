@@ -13,6 +13,7 @@ class DashboardContent extends Component {
     this.state = {
         isFetched: true
     };
+    this._handleSubmit = this._handleSubmit.bind(this);
   }
 
   componentDidMount() {
@@ -48,11 +49,11 @@ class DashboardContent extends Component {
       }
 
     } else if (this.props.childNodes.structure === "list" && isEditing) {
-      cards = <Editor content={this.props.content} structure={this.props.childNodes} submit={this._handleSubmit.bind(this)} match={globalProps.match} />;
+      cards = <Editor content={this.props.content} structure={this.props.childNodes} submit={this._handleSubmit} match={globalProps.match} />;
 
 
     } else if (this.props.childNodes.structure === "editor"){
-      cards = <Editor content={this.props.content} structure={this.props.childNodes} submit={this._handleSubmit.bind(this)} match={globalProps.match} />;
+      cards = <Editor content={this.props.content} structure={this.props.childNodes} submit={this._handleSubmit} match={globalProps.match} />;
     }
 
     return (
