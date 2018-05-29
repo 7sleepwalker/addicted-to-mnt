@@ -9,9 +9,7 @@ class DashboardMapStages extends Component {
 		super(props);
     this.placeID = 0;
     this.state = {
-      places: this.props.content.map((item) => (
-        {...item, id: this.placeID++ }
-      )),
+      places: {}
     };
 
     this._getInputData = this._getInputData.bind(this);
@@ -48,27 +46,37 @@ class DashboardMapStages extends Component {
       places: tmparray
     })
   }
+  
+  componentDidMount() {
+    this.setState({places: this.props.content.map((item) => (
+            {...item, id: this.placeID++ }
+        ))
+    });
+  }
+
+  componentDidUpdate() {
+    if (this.props.submit) {
+      this.props.submitData(Object.assign({}, this.state.places), 'places');
+    }
+  }
 
   render() {
     const { structure, submit } = this.props;
     let places = [];
 
-    this.state.places.forEach((data, i) => {
-      places.push(
-          <div className="card-list__box map-stages__box" key={data.id}>
-            <div className="card-list__closer" onClick={() => { this._removeItem(i) }}> <i className="fa fa-times-circle" /> </div>
-      			<DateInput id={data.id} type={'date'} description={structure.date.description} date={data.date} inputHandler={this._getInputData} />
-      			<TextInput id={data.id} type={'title'} description={structure.title.description} value={data.title} inputHandler={this._getInputData} />
-      			<MapInput id={data.id} type={'gcords'} description={structure.gcords.description}  gcords={data.gcords} inputHandler={this._getInputData} />
-      		</div>
-        );
-    });
-
-    if (submit) {
-      this.props.submitData(Object.assign({}, this.state.places), 'places');
-      return <div> Saving... </div>;
-		}
-
+    if (this.state.places.length > 0) {
+        this.state.places.forEach((data, i) => {
+            places.push(
+                <div className="card-list__box map-stages__box" key={data.id}>
+                    <div className="card-list__closer" onClick={() => { this._removeItem(i) }}> <i className="fa fa-times-circle" /> </div>
+                    <DateInput id={data.id} type={'date'} description={structure.date.description} date={data.date} inputHandler={this._getInputData} />
+                    <TextInput id={data.id} type={'title'} description={structure.title.description} value={data.title} inputHandler={this._getInputData} />
+                    <MapInput id={data.id} type={'gcords'} description={structure.gcords.description}  gcords={data.gcords} inputHandler={this._getInputData} />
+                </div>
+            );
+        });
+    }
+    
     return (
         <div className="map-stages card-list">
           {places}

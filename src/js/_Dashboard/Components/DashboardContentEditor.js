@@ -11,20 +11,20 @@ class DashboardContentEditor extends Component {
     super(props);
     this.state = {
       activeEditBoxID: null,
-      submited: false
+      submitted: false
     };
     this.data = [];
     this._handleSubmit = this._handleSubmit.bind(this);
     this._handleInputData = this._handleInputData.bind(this);
-    this._toggleSubbmit = this._toggleSubbmit.bind(this);
+    this._toggleSubmit = this._toggleSubmit.bind(this);
   }
 
   _handleSubmit(data) {
-    this.setState({ submited: true });
+    this.setState({ submitted: true });
   }
 
-  _toggleSubbmit(submit, activeEditBox){
-    if (submit) this.setState({ submited: submit });
+  _toggleSubmit(submit, activeEditBox){
+    if (submit) this.setState({ submitted: submit });
     else if (typeof activeEditBox === 'number') this.setState({activeEditBoxID: activeEditBox});
   }
 
@@ -32,7 +32,7 @@ class DashboardContentEditor extends Component {
     let url = this.props.match.url.replace("/dashboard/panel", "");
     if (path) url += '/' + path;
     this.props.submit(url, data);
-    this.setState({submited: false});
+    this.setState({submitted: false, activeEditBoxID: -1});
   }
 
   render() {
@@ -61,27 +61,27 @@ class DashboardContentEditor extends Component {
         switch(structure[i].type) {
           case "date":
             inputs.push(
-              <EditBox key={i} id={editBoxID} expanded={expanded} structure={structure[i]} data={data[i]} match={this.props.match.url} changer={this._toggleSubbmit} >
+              <EditBox key={i} id={editBoxID} expanded={expanded} structure={structure[i]} data={data[i]} match={this.props.match.url} changer={this._toggleSubmit} >
                 <SingleInputManager
                   description={structure[i].description}
                   date={data[i]}
                   node={i}
                   submitData={this._handleInputData}
                   structure={structure[i]}
-                  submit={this.state.submited}
+                  submit={this.state.submitted}
                 />
               </EditBox>
             );
             break;
           case "map-place":
             inputs.push(
-              <EditBox key={i} id={editBoxID} expanded={expanded} structure={structure[i]} data={data[i]} match={this.props.match.url} changer={this._toggleSubbmit} >
+              <EditBox key={i} id={editBoxID} expanded={expanded} structure={structure[i]} data={data[i]} match={this.props.match.url} changer={this._toggleSubmit} >
                 <MapStages
                   id={`input-${i}`}
                   group={i}
                   structure={structure[i]}
                   content={data[i]}
-                  submit={this.state.submited}
+                  submit={this.state.submitted}
                   submitData={this._handleInputData}
                 />
               </EditBox>
@@ -89,13 +89,13 @@ class DashboardContentEditor extends Component {
             break;
           case "short-text":
             inputs.push(
-              <EditBox key={i} id={editBoxID} expanded={expanded} structure={structure[i]} data={data[i]} match={this.props.match.url} changer={this._toggleSubbmit} >
+              <EditBox key={i} id={editBoxID} expanded={expanded} structure={structure[i]} data={data[i]} match={this.props.match.url} changer={this._toggleSubmit} >
                 <SingleInputManager
                   description={structure[i].description}
                   date={data[i]}
                   node={i}
                   submitData={this._handleInputData}
-                  submit={this.state.submited}
+                  submit={this.state.submitted}
                   structure={structure[i]}
                 />
               </EditBox>
@@ -103,13 +103,13 @@ class DashboardContentEditor extends Component {
             break;
           case "gallery":
             inputs.push(
-              <EditBox key={i} id={editBoxID} expanded={expanded} structure={structure[i]} data={data[i]} match={this.props.match.url} changer={this._toggleSubbmit} >
+              <EditBox key={i} id={editBoxID} expanded={expanded} structure={structure[i]} data={data[i]} match={this.props.match.url} changer={this._toggleSubmit} >
                 <Gallery
                   id={`input-${i}`}
                   group={i}
                   structure={structure[i]}
                   content={data[i]}
-                  submit={this.state.submited}
+                  submit={this.state.submitted}
                   submitData={this._handleInputData}
                 />
               </EditBox>
@@ -117,11 +117,11 @@ class DashboardContentEditor extends Component {
             break;
           case "tag":
             inputs.push(
-              <EditBox key={i} id={editBoxID} expanded={expanded} structure={structure[i]} data={data[i]} match={this.props.match.url} changer={this._toggleSubbmit} >
+              <EditBox key={i} id={editBoxID} expanded={expanded} structure={structure[i]} data={data[i]} match={this.props.match.url} changer={this._toggleSubmit} >
                 <ListInput
                   id={`input-${i}`}
                   group={i}
-                  submit={this.state.submited}
+                  submit={this.state.submitted}
                   value={data[i]}
                   description={structure[i].description}
                   submitData={this._handleInputData}
@@ -130,7 +130,7 @@ class DashboardContentEditor extends Component {
             );
             break;
           case "list":
-            inputs.push(<EditBox key={i} id={editBoxID} expanded={expanded} structure={structure[i]} data={data[i]} match={this.props.match.url} changer={this._toggleSubbmit} /> );
+            inputs.push(<EditBox key={i} id={editBoxID} expanded={expanded} structure={structure[i]} data={data[i]} match={this.props.match.url} changer={this._toggleSubmit} /> );
             break;
           default:
         }
