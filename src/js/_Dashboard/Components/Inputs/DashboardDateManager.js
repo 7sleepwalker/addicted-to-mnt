@@ -22,15 +22,15 @@ class DashboardSingleInputManager extends Component {
       }
     });
   }
+  
+  componentDidUpdate() {
+    if (this.props.submit) {
+        this.props.submitData(this.state.inputs);
+    }
+  }
 
   render() {
-    const { structure, submit, node } = this.props;
-
-    if (submit) {
-      this.props.submitData(this.state.inputs);
-      return <div> Saving... </div>;
-		}
-
+    const { structure, node } = this.props;
     if (structure.type === "date") {
       return (
         <div className="single-input-manager__box">

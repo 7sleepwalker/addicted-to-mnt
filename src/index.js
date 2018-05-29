@@ -10,7 +10,7 @@ const App = () => (
   <Provider store={store}>
     <Routes store={store} />
   </Provider>
-)
+);
 
 function render () {
   ReactDOM.render(<App />, document.getElementById('root'));
