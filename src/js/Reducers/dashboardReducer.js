@@ -3,7 +3,7 @@ const initialState = {
   fetching: false,
   fetched: false,
   error: null,
-}
+};
 
 export default function reducer (state=initialState, action) {
   switch (action.type) {
@@ -33,11 +33,15 @@ export default function reducer (state=initialState, action) {
       return {...state, fetching: false, error: action.payload}
     }
     case "UPDATE_DATA_SUCCESS": {
+      console.log('payload:', Object.values(action.payload));
+      console.log('state:', state.data.content);
       return {
-        ...state,
         fetching: false,
         fetched: true,
-        respond: action.payload
+        data: {
+          ...state.data,
+          places: Object.values(action.payload),  
+        }  
       }
     }
     case "UPDATE_DATA_FAILED": {
