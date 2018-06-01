@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 
 import { default as EditBox } from './DashboardEditBox';
-import SingleInputManager from "./Inputs/DashboardDateManager";
-import MapStages from "./Inputs/DashboardMapStages";
-import Gallery from "./Inputs/DashboardGallery";
-import ListInput from "./Inputs/DashboardListInput";
+import SingleInputManager from './Inputs/DashboardDateManager';
+import MapStages from './Inputs/DashboardMapStages';
+import Gallery from './Inputs/DashboardGallery';
+import ListInput from './Inputs/DashboardListInput';
 
 class DashboardContentEditor extends Component {
   constructor(props) {
@@ -29,7 +29,7 @@ class DashboardContentEditor extends Component {
   }
 
   _handleInputData(data, path) {
-    let url = this.props.match.url.replace("/dashboard/panel", "");
+    let url = this.props.match.url.replace('/dashboard/panel', '');
     if (path) url += '/' + path;
     this.props.submit(url, data);
     this.setState({submitted: false, activeEditBoxID: -1});
@@ -52,14 +52,14 @@ class DashboardContentEditor extends Component {
     }
 
     for (let i in structure) {
-      if (i !== "structure") {
+      if (i !== 'structure') {
         let expanded = false;
         if (this.state.activeEditBoxID === editBoxID)
           expanded = true;
 
         // Render component for each child in structure. Check type of component and render specific definded for it
         switch(structure[i].type) {
-          case "date":
+          case 'date':
             inputs.push(
               <EditBox key={i} id={editBoxID} expanded={expanded} structure={structure[i]} data={data[i]} match={this.props.match.url} changer={this._toggleSubmit} >
                 <SingleInputManager
@@ -73,7 +73,7 @@ class DashboardContentEditor extends Component {
               </EditBox>
             );
             break;
-          case "map-place":
+          case 'map-place':
             inputs.push(
               <EditBox key={i} id={editBoxID} expanded={expanded} structure={structure[i]} data={data[i]} match={this.props.match.url} changer={this._toggleSubmit} >
                 <MapStages
@@ -87,7 +87,7 @@ class DashboardContentEditor extends Component {
               </EditBox>
             );
             break;
-          case "short-text":
+          case 'short-text':
             inputs.push(
               <EditBox key={i} id={editBoxID} expanded={expanded} structure={structure[i]} data={data[i]} match={this.props.match.url} changer={this._toggleSubmit} >
                 <SingleInputManager
@@ -101,7 +101,7 @@ class DashboardContentEditor extends Component {
               </EditBox>
             );
             break;
-          case "gallery":
+          case 'gallery':
             inputs.push(
               <EditBox key={i} id={editBoxID} expanded={expanded} structure={structure[i]} data={data[i]} match={this.props.match.url} changer={this._toggleSubmit} >
                 <Gallery
@@ -115,7 +115,7 @@ class DashboardContentEditor extends Component {
               </EditBox>
              );
             break;
-          case "tag":
+          case 'tag':
             inputs.push(
               <EditBox key={i} id={editBoxID} expanded={expanded} structure={structure[i]} data={data[i]} match={this.props.match.url} changer={this._toggleSubmit} >
                 <ListInput
@@ -129,7 +129,7 @@ class DashboardContentEditor extends Component {
               </EditBox>
             );
             break;
-          case "list":
+          case 'list':
             inputs.push(<EditBox key={i} id={editBoxID} expanded={expanded} structure={structure[i]} data={data[i]} match={this.props.match.url} changer={this._toggleSubmit} /> );
             break;
           default:
@@ -139,10 +139,10 @@ class DashboardContentEditor extends Component {
     }
 
     return (
-      <div className="dashboard__contentEditor">
+      <div className='dashboard__contentEditor'>
         <h2> Content editor </h2>
         <h4> page: {pageTitle} </h4>
-        <div className="contentEditor__form">
+        <div className='contentEditor__form'>
           {inputs}
         </div>
       </div>

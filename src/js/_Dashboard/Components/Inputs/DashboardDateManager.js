@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import DateInput from "./DashboardDateInput";
-import TextInput from "./DashboardTextInput";
+import DateInput from './DashboardDateInput';
+import TextInput from './DashboardTextInput';
 
 class DashboardSingleInputManager extends Component {
   constructor(props) {
@@ -31,7 +31,7 @@ class DashboardSingleInputManager extends Component {
 
   render() {
     const { structure, node } = this.props;
-    if (structure.type === "date") {
+    if (structure.type === 'date') {
       return (
         <div className="single-input-manager__box">
           <DateInput id={this.inputID} type={node} description={structure.description} date={this.state.inputs[node]} inputHandler={this._getInputData} />
