@@ -5,6 +5,17 @@ const initialState = {
   error: null,
 };
 
+function setToValue(obj, value, path) {
+    let i;
+    path = path.split('/');
+    for (i = 0; i < path.length - 1; i++)
+        obj = obj[path[i]];
+
+    obj[path[i]] = value;
+}
+
+// setToValue(data, Object.values(action.payload), url);
+
 export default function reducer (state=initialState, action) {
   switch (action.type) {
     case "LOG_IN": {
@@ -33,14 +44,16 @@ export default function reducer (state=initialState, action) {
       return {...state, fetching: false, error: action.payload}
     }
     case "UPDATE_DATA_SUCCESS": {
-      console.log('payload:', Object.values(action.payload));
-      console.log('state:', state.data.content);
+      console.log('path:', action.path);
+      console.log('state:', Object.values(action.payload));
+      console.log('state:', action.data);
+      console.log('action.payload', action.payload);
       return {
         fetching: false,
         fetched: true,
         data: {
           ...state.data,
-          places: Object.values(action.payload),  
+          places: action.data,  
         }  
       }
     }

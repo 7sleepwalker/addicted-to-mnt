@@ -39,10 +39,11 @@ function getDataByStructureError(err) {
     payload: err
   }
 }
-function updateDataSuccess(data) {
+function updateDataSuccess(url, data) {
   return {
     type: "UPDATE_DATA_SUCCESS",
-    payload: data
+    payload: data, 
+    path: url,
   }
 }
 function updateDataError(err) {
@@ -110,7 +111,7 @@ export function postData(url, data) {
 export function updateData(url, data) {
   return dispatch => {
     firebase.database().ref().child(`${url}`).update(data).then(() => {
-      return dispatch(updateDataSuccess(data));
+      return dispatch(updateDataSuccess(url, data));
     })
     .catch((error) => {
       return dispatch(updateDataError(error));

@@ -31,7 +31,7 @@ class DashboardContentEditor extends Component {
   _handleInputData(data, path) {
     let url = this.props.match.url.replace('/dashboard/panel', '');
     if (path) url += '/' + path;
-    this.props.submit(url, data);
+      this.props.submit(url, data);
     this.setState({submitted: false, activeEditBoxID: -1});
   }
 
