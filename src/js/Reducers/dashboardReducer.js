@@ -10,7 +10,6 @@ function setToValue(obj, value, path) {
     path = path.split('/');
     for (i = 0; i < path.length - 1; i++)
         obj = obj[path[i]];
-
     obj[path[i]] = value;
 }
 
@@ -46,14 +45,14 @@ export default function reducer (state=initialState, action) {
     case "UPDATE_DATA_SUCCESS": {
       console.log('path:', action.path);
       console.log('state:', Object.values(action.payload));
-      console.log('state:', action.data);
+      console.log('state:', state);
       console.log('action.payload', action.payload);
+      console.log('function', state.data, action.payload, action.path);
       return {
         fetching: false,
         fetched: true,
         data: {
-          ...state.data,
-          places: action.data,  
+          ...state.data
         }  
       }
     }
