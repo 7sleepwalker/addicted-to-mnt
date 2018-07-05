@@ -1,7 +1,5 @@
 const initialState = {
   user: null,
-  fetching: false,
-  fetched: false,
   error: null,
 };
 
@@ -17,47 +15,46 @@ function setToValue(obj, value, path) {
 
 export default function reducer (state=initialState, action) {
   switch (action.type) {
-    case "LOG_IN": {
+    case 'LOG_IN': {
       return {...state, fetching: true}
     }
-    case "LOG_IN_REJECTED": {
-      return {...state, fetching: false, error: action.payload}
+    case 'LOG_IN_REJECTED': {
+      return {
+        ...state, 
+          error: action.payload
+      }
     }
-    case "LOG_IN_FULFILLED": {
+    case 'LOG_IN_FULFILLED': {
       return {
         ...state,
-        fetching: false,
-        fetched: true,
         user: action.payload
       }
     }
-    case "GET_DATA_BY_STRUCTURE_FULFILLED": {
+    case 'GET_DATA_BY_STRUCTURE_FULFILLED': {
       return {
         ...state,
-        fetching: false,
-        fetched: true,
         data: action.payload
       }
     }
-    case "GET_DATA_BY_STRUCTURE_REJECTED": {
-      return {...state, fetching: false, error: action.payload}
-    }
-    case "UPDATE_DATA_SUCCESS": {
-      console.log('path:', action.path);
-      console.log('state:', Object.values(action.payload));
-      console.log('state:', state);
-      console.log('action.payload', action.payload);
-      console.log('function', state.data, action.payload, action.path);
+    case 'GET_DATA_BY_STRUCTURE_REJECTED': {
       return {
-        fetching: false,
-        fetched: true,
+        ...state, 
+        error: action.payload
+      }
+    }
+    case 'UPDATE_DATA_SUCCESS': {
+      return {
+        ...state,
         data: {
-          ...state.data
+          ...state.data,
+            
         }  
       }
     }
-    case "UPDATE_DATA_FAILED": {
-      return {...state, fetching: false, error: action.payload}
+    case 'UPDATE_DATA_FAILED': {
+      return {...state, 
+      error: action.payload
+      }
     }
 
     default: {
