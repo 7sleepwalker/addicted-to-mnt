@@ -7,9 +7,7 @@ class DashboardSingleInputManager extends Component {
 		super(props);
     this.inputID = 0;
     this.state = {
-      inputs: {
-        [this.props.node]: this.props.date
-      }
+      inputs: this.props.date
     };
 
     this._getInputData = this._getInputData.bind(this);
@@ -17,15 +15,14 @@ class DashboardSingleInputManager extends Component {
 
   _getInputData(data, id, type) {
     this.setState({
-      inputs: {
-        [type]: data
-      }
+      inputs: data
     });
   }
   
   componentDidUpdate() {
+    console.log(this.state.inputs);
     if (this.props.submit) {
-        this.props.submitData(this.state.inputs);
+        this.props.submitData(this.state.inputs, this.props.node);
     }
   }
 
@@ -34,14 +31,14 @@ class DashboardSingleInputManager extends Component {
     if (structure.type === 'date') {
       return (
         <div className="single-input-manager__box">
-          <DateInput id={this.inputID} type={node} description={structure.description} date={this.state.inputs[node]} inputHandler={this._getInputData} />
+          <DateInput id={this.inputID} type={node} description={structure.description} date={this.state.inputs} inputHandler={this._getInputData} />
         </div>
       );
     }
     else {
       return (
         <div className="single-input-manager__box">
-          <TextInput id={this.inputID} type={node} description={structure.description} value={this.state.inputs[node]} inputHandler={this._getInputData} />
+          <TextInput id={this.inputID} type={node} description={structure.description} value={this.state.inputs} inputHandler={this._getInputData} />
         </div>
       );
     }

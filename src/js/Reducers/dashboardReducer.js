@@ -47,7 +47,6 @@ export default function reducer (state=initialState, action) {
         ...state,
         data: {
           ...state.data,
-            
         }  
       }
     }

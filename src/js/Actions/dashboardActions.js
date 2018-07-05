@@ -110,11 +110,13 @@ export function postData(url, data) {
 
 export function updateData(url, data) {
   return dispatch => {
-    firebase.database().ref().child(`${url}`).update(data).then(() => {
-      return dispatch(updateDataSuccess(url, data));
-    })
-    .catch((error) => {
-      return dispatch(updateDataError(error));
-    })
+    console.log('url:', url);
+    console.log('data', data);
+    // firebase.database().ref().child(`${url}`).update(data).then(() => {
+    //   return dispatch(updateDataSuccess(url, data));
+    // })
+    // .catch((error) => {
+    //   return dispatch(updateDataError(error));
+    // })
   }
 }
