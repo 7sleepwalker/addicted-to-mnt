@@ -8,15 +8,18 @@ class Card extends Component {
 		if (this.props.addCard) {
 			cardRender = (
 				<a>
-					<span className="card__icon glyphicon glyphicon-plus" aria-hidden="true"></span>
+					<i className="card__icon fas fa-plus" aria-hidden="true"></i>
 					<div> {this.props.title} </div>
 				</a>	);
 		} else if (this.props.editCard) {
-		 	cardRender = <div className="card__title"><a>	{this.props.title} </a></div> ;
+		 	cardRender = <div className="card__title"><a>	{this.props.title} </a></div>;
 			cardBackground = (
 				<div className="card__hover">
-						<Link to={`${this.props.match.path}/${this.props.content.id}`}><span className="card__icon glyphicon glyphicon-edit" aria-hidden="true"></span><div> Edit </div></Link>
-						<a><span className="card__icon glyphicon glyphicon-remove-circle" aria-hidden="true"></span><div> Remove </div></a>
+						<Link to={`${this.props.match.path}/${this.props.content.id}`}>
+              <i className="card__icon fas fa-edit" aria-hidden="true"></i>
+              <div> Edit </div>
+            </Link>
+						<a><i className="card__icon fas fa-trash-alt" aria-hidden="true"></i><div> Remove </div></a>
 				</div>
 			);
 		} else {

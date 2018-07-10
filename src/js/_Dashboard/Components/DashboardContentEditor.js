@@ -4,7 +4,6 @@ import { default as EditBox } from './DashboardEditBox';
 import SingleInputManager from './Inputs/DashboardDateManager';
 import MapStages from './Inputs/DashboardMapStages';
 import Gallery from './Inputs/DashboardGallery';
-import ListInput from './Inputs/DashboardListInput';
 
 class DashboardContentEditor extends Component {
   constructor(props) {
@@ -117,13 +116,13 @@ class DashboardContentEditor extends Component {
           case 'tag':
             inputs.push(
               <EditBox key={i} id={editBoxID} expanded={expanded} structure={structure[i]} data={data[i]} match={this.props.match.url} changer={this._toggleSubmit} >
-                <ListInput
-                  id={`input-${i}`}
-                  group={i}
-                  submit={this.state.submitted}
-                  value={data[i]}
+                <SingleInputManager
                   description={structure[i].description}
+                  date={data[i]}
+                  node={i}
                   submitData={this._handleInputData}
+                  submit={this.state.submitted}
+                  structure={structure[i]}
                 />
               </EditBox>
             );

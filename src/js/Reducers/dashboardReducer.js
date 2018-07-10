@@ -3,16 +3,6 @@ const initialState = {
   error: null,
 };
 
-function setToValue(obj, value, path) {
-    let i;
-    path = path.split('/');
-    for (i = 0; i < path.length - 1; i++)
-        obj = obj[path[i]];
-    obj[path[i]] = value;
-}
-
-// setToValue(data, Object.values(action.payload), url);
-
 export default function reducer (state=initialState, action) {
   switch (action.type) {
     case 'LOG_IN': {
@@ -43,10 +33,8 @@ export default function reducer (state=initialState, action) {
       }
     }
     case 'UPDATE_DATA_SUCCESS': {
-      console.log('action', action);
       const node = action.node;
       const payload = typeof action.payload[0] === 'object' ? Object.values(action.payload) : action.payload;
-      console.log('type', typeof action.payload[0] === 'object');
         return {
         ...state,
         data: {

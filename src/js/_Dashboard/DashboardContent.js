@@ -43,9 +43,9 @@ class DashboardContent extends Component {
 
     } else if (this.props.childNodes.structure === 'list' && !isEditing){
       let post = this.props.content.data;
-      cards.push(<Card key={-1} title='Add new post'  addCard />);
+      cards.push(<Card key={-1} title='Add new post' addCard />);
       for (let i in post) {
-        cards.push(<Card key={i} title={post[i].title} match={globalProps.match} content={post[i]} editCard/>)
+        cards.push(<Card key={i} title={post[i].title} match={globalProps.match} content={post[i]} editCard />)
       }
 
     } else if (this.props.childNodes.structure === 'list' && isEditing) {
