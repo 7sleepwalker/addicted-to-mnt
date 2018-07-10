@@ -43,10 +43,15 @@ export default function reducer (state=initialState, action) {
       }
     }
     case 'UPDATE_DATA_SUCCESS': {
-      return {
+      console.log('action', action);
+      const node = action.node;
+      const payload = typeof action.payload[0] === 'object' ? Object.values(action.payload) : action.payload;
+      console.log('type', typeof action.payload[0] === 'object');
+        return {
         ...state,
         data: {
           ...state.data,
+          [node]: payload 
         }  
       }
     }

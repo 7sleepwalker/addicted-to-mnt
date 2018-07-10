@@ -28,10 +28,9 @@ class DashboardContentEditor extends Component {
     else if (typeof activeEditBox === 'number') this.setState({activeEditBoxID: activeEditBox});
   }
 
-  _handleInputData(data, path) {
-    let url = this.props.match.url.replace('/dashboard/panel', '');
-    if (path) url += '/' + path;
-      this.props.submit(url, data);
+  _handleInputData(data, node) {
+    let url = this.props.match.url.replace('/dashboard/panel/', '');
+    this.props.submit(url, node, data);
     this.setState({submitted: false, activeEditBoxID: -1});
   }
 

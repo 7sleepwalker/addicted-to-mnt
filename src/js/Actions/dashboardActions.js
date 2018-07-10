@@ -39,11 +39,12 @@ function getDataByStructureError(err) {
     payload: err
   }
 }
-function updateDataSuccess(url, data) {
+function updateDataSuccess(url, node, data) {
   return {
     type: "UPDATE_DATA_SUCCESS",
     payload: data, 
     path: url,
+    node: node,  
   }
 }
 function updateDataError(err) {
@@ -108,15 +109,13 @@ export function postData(url, data) {
   }
 }
 
-export function updateData(url, data) {
+export function updateData(url, node,  data) {
   return dispatch => {
-    console.log('url:', url);
-    console.log('data', data);
-    // firebase.database().ref().child(`${url}`).update(data).then(() => {
-    //   return dispatch(updateDataSuccess(url, data));
-    // })
-    // .catch((error) => {
-    //   return dispatch(updateDataError(error));
-    // })
+    firebase.database().ref().child(`${url}`).update({[node]: data}).then(() => {
+      return dispatch(updateDataSuccess(url, node, data));
+    })
+    .catch((error) => {
+      return dispatch(updateDataError(error));
+    })
   }
 }
