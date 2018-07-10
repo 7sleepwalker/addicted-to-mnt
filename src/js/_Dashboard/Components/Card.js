@@ -7,7 +7,7 @@ class Card extends Component {
 		let cardBackground;
 		if (this.props.addCard) {
 			cardRender = (
-				<a>
+				<a onClick={() => this.props.createPost()} >
 					<i className="card__icon fas fa-plus" aria-hidden="true"></i>
 					<div> {this.props.title} </div>
 				</a>	);

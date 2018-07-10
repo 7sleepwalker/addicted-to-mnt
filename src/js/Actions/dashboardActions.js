@@ -3,45 +3,57 @@ import { push } from 'react-router-redux';
 
 function logInSuccess(response) {
   return {
-    type: "LOG_IN_FULFILLED",
+    type: 'LOG_IN_FULFILLED',
     payload: response
   }
 }
 function logInError(err) {
   return {
-    type: "LOG_IN_REJECTED",
+    type: 'LOG_IN_REJECTED',
     payload: err
   }
 }
 
 function getStructureSuccess(response) {
   return {
-    type: "GET_NAV_FULFILLED",
+    type: 'GET_NAV_FULFILLED',
     payload: response
   }
 }
 function getStructureError(err) {
   return {
-    type: "GET_NAV_REJECTED",
+    type: 'GET_NAV_REJECTED',
     payload: err
   }
 }
 
 function getDataByStructureSuccess(response) {
   return {
-    type: "GET_DATA_BY_STRUCTURE_FULFILLED",
+    type: 'GET_DATA_BY_STRUCTURE_FULFILLED',
     payload: response
   }
 }
 function getDataByStructureError(err) {
   return {
-    type: "GET_DATA_BY_STRUCTURE_REJECTED",
+    type: 'GET_DATA_BY_STRUCTURE_REJECTED',
+    payload: err
+  }
+}
+function addPostSuccess(data) {
+  return {
+    type: 'CREATE_POST_SUCCESS',
+    payload: data
+  }
+}
+function addPostError(err) {
+  return {
+    type: 'CREATE_POST_FAILED',
     payload: err
   }
 }
 function updateDataSuccess(url, node, data) {
   return {
-    type: "UPDATE_DATA_SUCCESS",
+    type: 'UPDATE_DATA_SUCCESS',
     payload: data, 
     path: url,
     node: node,  
@@ -49,7 +61,7 @@ function updateDataSuccess(url, node, data) {
 }
 function updateDataError(err) {
   return {
-    type: "UPDATE_DATA_FAILED",
+    type: 'UPDATE_DATA_FAILED',
     payload: err
   }
 }
@@ -65,7 +77,7 @@ export function logIn(email, password) {
       let errorCode = err.code;
       let errorMessage = err.message;
       if (errorCode === 'auth/wrong-password') {
-        dispatch(logInError("Wrong password."));
+        dispatch(logInError('Wrong password.'));
       } else {
         dispatch(logInError(errorMessage));
       }
@@ -99,14 +111,15 @@ export function getDataByStructure(url) {
   }
 }
 
-export function postData(url, data) {
-  return dispatch => {
-    firebase.database().ref(`${url}`).set({
-
-    }).catch((error) => {
-
-    })
-  }
+export function addPost(data) {
+  console.log(data);
+  // return dispatch => {
+  //   firebase.database().ref().child('homepage/posts/').update(data).then(() => {
+  //
+  //   }).catch((error) => {
+  //
+  //   })
+  // }
 }
 
 export function updateData(url, node,  data) {
