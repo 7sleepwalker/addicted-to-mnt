@@ -4,7 +4,7 @@ import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import Card from './Components/Card';
 import {default as Editor} from './Components/DashboardContentEditor'
-import { getDataByStructure, updateData } from '../Actions/dashboardActions';
+import { getDataByStructure, updateData, getCurrentID, addPost } from '../Actions/dashboardActions';
 
 
 class DashboardContent extends Component {
@@ -18,8 +18,10 @@ class DashboardContent extends Component {
   }
 
   componentDidMount() {
-    let dispatchData = getDataByStructure(this.props.match.url.replace('/dashboard/panel', ''));
+    const dispatchData = getDataByStructure(this.props.match.url.replace('/dashboard/panel', ''));
     this.props.dispatch(dispatchData);
+    const dispatchID = getCurrentID();
+    this.props.dispatch(dispatchID);
   }
 
   _handleSubmit(url, node, data) {
@@ -28,25 +30,22 @@ class DashboardContent extends Component {
   }
 
   _handleAddPost(postStructure) {
-    // function goDeeper(obj) {
-    //   for (let key in obj) {
-    //     if (obj.hasOwnProperty(key) && typeof obj[key] === 'object' && Object.keys(obj[key]).length > 2) {
-    //       goDeeper(obj[key]);
-    //     }
-    //     else {
-    //       console.log('##########');
-    //       console.log('obj:', obj);
-    //       console.log('key:', key);
-    //       console.log('element:', obj[key]);
-    //     }
-    //   }
-    // }
-    //
-    // for (let key in postStructure) {
-    //   if (postStructure.hasOwnProperty(key) && key !== 'structure') {
-    //     goDeeper(postStructure[key]);
-    //   }
-    // }
+    let newPost = postStructure;
+    function goDeeper(obj) {
+      for (let key in obj) {
+        if (obj.hasOwnProperty(key) && typeof obj[key] === 'object' && typeof obj[key].default === 'undefined') {
+          goDeeper(obj[key]);
+        }
+        else if(typeof obj[key] === 'object') {
+          obj[key] = obj[key].default;
+        } else {
+          delete obj[key];
+        }
+      }
+    }
+    goDeeper(newPost);
+    addPost(this.props.currentID.postID);
+    
   }
 
   render() {
@@ -89,7 +88,8 @@ class DashboardContent extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    content: state.dashboard
+    content: state.dashboard,
+    currentID: state.dashboard.currentID
   };
 }
 

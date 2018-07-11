@@ -39,6 +39,18 @@ function getDataByStructureError(err) {
     payload: err
   }
 }
+function getCurrentIDSuccess(response) {
+  return {
+    type: 'GET_CURRENT_ID_FULFILLED',
+    payload: response
+  }
+}
+function getCurrentIDError(err) {
+  return {
+    type: 'GET_CURRENT_ID_REJECTED',
+    payload: err
+  }
+}
 function addPostSuccess(data) {
   return {
     type: 'CREATE_POST_SUCCESS',
@@ -106,6 +118,18 @@ export function getDataByStructure(url) {
       return dispatch(getDataByStructureSuccess(response));
     }).catch((error) => {
       return dispatch(getDataByStructureError(error));
+      console.log(error);
+    });
+  }
+}
+
+export function getCurrentID() {
+  return dispatch => {
+    firebase.database().ref('/id').once('value', snap => {
+      const response = snap.val();
+      return dispatch(getCurrentIDSuccess(response));
+    }).catch((error) => {
+      return dispatch(getCurrentIDError(error));
       console.log(error);
     });
   }
