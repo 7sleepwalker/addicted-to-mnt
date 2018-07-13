@@ -1,4 +1,4 @@
 .dashboard__panel {
-  height: 100vh;
-  background-color: #ddd;
+  min-height: 100vh;
+  background-color: $dashboard-panel-background-color;
 }

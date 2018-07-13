@@ -1,4 +1,4 @@
 .dashboard__content {
-  float: left;
-  width: calc(100% - 300px);
+  width: calc(100% - #{$standard-sidebar-width});
+  margin-left: $standard-sidebar-width;
 }
