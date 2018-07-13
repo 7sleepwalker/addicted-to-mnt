@@ -135,8 +135,17 @@ export function getCurrentID() {
   }
 }
 
-export function addPost(data) {
-  console.log(data);
+export function addPost(currentPostID, emptyPost) {
+  console.log(';;;',emptyPost);
+    console.log('add new post start');
+    firebase.database().ref().child('homepage/posts/').update({[currentPostID + 1]: emptyPost}).then(() => {
+      console.log('add new post successs');
+    })
+      .catch((error) => {
+      })
+
+
+
   // return dispatch => {
   //   firebase.database().ref().child('homepage/posts/').update(data).then(() => {
   //

@@ -48,10 +48,12 @@ class DashboardMapStages extends Component {
   }
   
   componentDidMount() {
-    this.setState({ places: this.props.content.map((item) => (
-            { ...item, id: this.placeID++ }
+    if (this.props.content !== 'empty') {
+      this.setState({ places: this.props.content.map((item) => (
+          { ...item, id: this.placeID++ }
         ))
-    });
+      });
+    }
   }
 
   componentDidUpdate() {

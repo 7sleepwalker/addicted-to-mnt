@@ -44,7 +44,8 @@ class DashboardContent extends Component {
       }
     }
     goDeeper(newPost);
-    addPost(this.props.currentID.postID);
+    newPost = { ...newPost, id: this.props.currentID.postID + 1 };
+    addPost(this.props.currentID.postID, newPost);
     
   }
 

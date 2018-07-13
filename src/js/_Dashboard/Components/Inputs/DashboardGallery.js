@@ -48,10 +48,13 @@ class DashboardGallery extends Component {
   }
 
     componentDidMount() {
-      this.setState({ images: this.props.content.map((item) => (
-          { ...item, id: this.imageID++ }
-        ))
-      });
+      if (this.props.content !== 'empty' && this.props.content && this.props.content.day) {
+        this.setState({
+          images: this.props.content.map((item) => (
+            {...item, id: this.imageID++}
+          ))
+        });
+      }
     }
 
     componentDidUpdate() {

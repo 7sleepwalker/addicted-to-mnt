@@ -44,6 +44,18 @@ export default function reducer (state=initialState, action) {
         error: action.payload
       }
     }
+    case 'CREATE_POST_SUCCESS': {
+      return {
+        ...state,
+        data: action.payload
+      }
+    }
+    case 'CREATE_POST_FAILED': {
+      return {
+        ...state,
+        error: action.payload
+      }
+    }
     case 'UPDATE_DATA_SUCCESS': {
       const node = action.node;
       const payload = typeof action.payload[0] === 'object' ? Object.values(action.payload) : action.payload;
