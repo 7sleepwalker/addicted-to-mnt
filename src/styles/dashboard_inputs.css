@@ -9,7 +9,11 @@
     max-width: calc(33% - 30px);
     margin: 15px;
     padding: 15px;
-    box-shadow: 0 0 20px rgba(55, 55, 55, 0.3); }
+    box-shadow: 0 0 10px rgba(55, 55, 55, 0.2);
+    border: solid 1px rgba(55, 55, 55, 0.6);
+    transition: all .25s ease-in; }
+    .card-list__box:hover {
+      box-shadow: 0 0 15px rgba(55, 55, 55, 0.5); }
   .card-list:last-child:after {
     content: '';
     flex: auto; }

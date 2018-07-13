@@ -552,12 +552,13 @@ a {
     animation-name: fadeInUp; }
 
 .dashboard__panel {
-  height: 100vh;
+  min-height: 100vh;
   background-color: #ddd; }
 
 .dashboard__sideBar {
   height: 100vh;
   width: 300px;
+  position: fixed;
   background-color: #444;
   float: left;
   color: #fff;
@@ -620,8 +621,8 @@ a {
     marign: auto; }
 
 .dashboard__content {
-  float: left;
-  width: calc(100% - 300px); }
+  width: calc(100% - 300px);
+  margin-left: 300px; }
 
 .dashboard__contentEditor {
   padding: 15px; }
@@ -654,7 +655,11 @@ a {
     max-width: calc(33% - 30px);
     margin: 15px;
     padding: 15px;
-    box-shadow: 0 0 20px rgba(55, 55, 55, 0.3); }
+    box-shadow: 0 0 10px rgba(55, 55, 55, 0.2);
+    border: solid 1px rgba(55, 55, 55, 0.6);
+    transition: all .25s ease-in; }
+    .card-list__box:hover {
+      box-shadow: 0 0 15px rgba(55, 55, 55, 0.5); }
   .card-list:last-child:after {
     content: '';
     flex: auto; }

@@ -3,6 +3,7 @@
 .dashboard__sideBar {
   height: 100vh;
   width: 300px;
+  position: fixed;
   background-color: #444;
   float: left;
   color: #fff;
