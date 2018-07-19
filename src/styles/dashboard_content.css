@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins");
+@import url("https://fonts.googleapis.com/css?family=Lato:300,400,700");
 .dashboard__content {
-  float: left;
-  width: calc(100% - 300px); }
+  width: calc(100% - 300px);
+  margin-left: 300px; }
