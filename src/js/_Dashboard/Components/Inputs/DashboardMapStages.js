@@ -48,7 +48,7 @@ class DashboardMapStages extends Component {
   }
   
   componentDidMount() {
-    if (this.props.content !== 'empty') {
+    if (this.props.content !== 'empty' && typeof this.props.content !== 'undefined' && this.props.content.hasOwnProperty('0')) {
       this.setState({ places: this.props.content.map((item) => (
           { ...item, id: this.placeID++ }
         ))

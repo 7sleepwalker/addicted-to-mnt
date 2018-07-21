@@ -8,7 +8,7 @@ class Card extends Component {
 		if (this.props.addCard) {
 			cardRender = (
 				<a onClick={() => this.props.createPost()} >
-					<i className="card__icon fas fa-plus" aria-hidden="true"></i>
+					<i className="card__icon fas fa-plus" aria-hidden="true" />
 					<div> {this.props.title} </div>
 				</a>	);
 		} else if (this.props.editCard) {
@@ -16,10 +16,13 @@ class Card extends Component {
 			cardBackground = (
 				<div className="card__hover">
 						<Link to={`${this.props.match.path}/${this.props.content.id}`}>
-              <i className="card__icon fas fa-edit" aria-hidden="true"></i>
+              <i className="card__icon fas fa-edit" aria-hidden="true" />
               <div> Edit </div>
             </Link>
-						<a><i className="card__icon fas fa-trash-alt" aria-hidden="true"></i><div> Remove </div></a>
+						<a onClick={() => this.props.deletePost()} >
+							<i className="card__icon fas fa-trash-alt" aria-hidden="true" />
+							<div> Remove </div>
+						</a>
 				</div>
 			);
 		} else {

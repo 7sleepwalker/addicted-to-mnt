@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Route, Switch, withRouter  } from 'react-router-dom';
-import propTypes from "prop-types";
+import propTypes from 'prop-types';
 import { connect } from 'react-redux';
 
 import { getStructure } from '../Actions/dashboardActions';
@@ -16,11 +16,15 @@ class DashboardPanel extends Component {
     this.props.dispatch(getStructure());
   }
 
+  componentDidMount() {
+
+  }
+
   render() {
     if (!this.props.nav)
-      return (<div className="addictiv_isLoading"> Content is loading </div>);
+      return (<div className='addictiv_isLoading'> Content is loading </div>);
 
-    console.log("RENDER PANEL");
+    console.log('RENDER PANEL');
     function process(path) {
       navKeys.push(path);
     }
@@ -29,33 +33,34 @@ class DashboardPanel extends Component {
       for (var i in o) {
     		func.apply(this,[path + '/' + i]);
         let object = o[i];
-        if (object !== null && typeof(object) === "object" && !object.structure) {
+        if (object !== null && typeof(object) === 'object' && !object.structure) {
     			path +=  '/' + i;
         	traverse(path, o[i], func);
         }
       }
     }
 
-    let globalProps = this.props;
+    let props = this.props;
     let routes = [];
     let idRoutes = [];
     let navKeys = [];
     let sidebarNav = [];
-    traverse('', this.props.nav, process);
+    traverse('', props.nav, process);
     if (navKeys.length > 0) {
-      sidebarNav = Object.keys(globalProps.nav);
+      sidebarNav = Object.keys(props.nav);
       routes = navKeys.map((item, n) => {
         let nodeName = item.replace('/', '');
-        if (typeof(globalProps.nav[nodeName]) === "object")
-          nodeName = globalProps.nav[nodeName];
+        if (typeof(props.nav[nodeName]) === 'object')
+          nodeName = props.nav[nodeName];
         else {
           let array = nodeName.split('/');
-          nodeName = globalProps.nav;
+          nodeName = props.nav;
           for(let i in array) {
             nodeName = nodeName[array[i]];
           }
         }
-        if (nodeName.structure === "list") {
+
+        if (nodeName.structure === 'list') {
           idRoutes.push(<Route key={n} path={`/dashboard/panel${item}/:id`} exact render={(props) => <DashboardContent match={props.match} childNodes={nodeName} /> } />);
         }
         return <Route key={n} path={`/dashboard/panel${item}`} exact render={(props) => <DashboardContent match={props.match} childNodes={nodeName} /> } />;
@@ -67,9 +72,9 @@ class DashboardPanel extends Component {
     }
 
     return (
-      <section className="dashboard__panel">
+      <section className='dashboard__panel'>
       <Route render={(props) => <DashboardSidebar match={props.match} nav={sidebarNav} /> } />
-        <Route exact path="/dashboard/panel" component={DashboardHome} />
+        <Route exact path='/dashboard/panel' component={DashboardHome} />
         <Switch>
           {routes}
         </Switch>

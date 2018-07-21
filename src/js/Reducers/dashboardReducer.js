@@ -47,10 +47,30 @@ export default function reducer (state=initialState, action) {
     case 'CREATE_POST_SUCCESS': {
       return {
         ...state,
-        data: action.payload
+        data: {
+          ...state.data,
+          [action.postID + 1]: action.payload
+        },
+        currentID: {
+          postID: action.postID + 1
+        }
       }
     }
     case 'CREATE_POST_FAILED': {
+      return {
+        ...state,
+        error: action.payload
+      }
+    }
+    case 'REMOVE_POST_SUCCESS': {
+      console.log(state);
+      delete state.data[action.payload];
+      return {
+        ...state,
+        data: { ...state.data }
+      }
+    }
+    case 'REMOVE_POST_FAILED': {
       return {
         ...state,
         error: action.payload

@@ -51,10 +51,11 @@ function getCurrentIDError(err) {
     payload: err
   }
 }
-function addPostSuccess(data) {
+function addPostSuccess(id, data) {
   return {
     type: 'CREATE_POST_SUCCESS',
-    payload: data
+    payload: data,
+    postID: id
   }
 }
 function addPostError(err) {
@@ -63,12 +64,24 @@ function addPostError(err) {
     payload: err
   }
 }
+function deletePostSuccess(postID) {
+  return {
+    type: 'REMOVE_POST_SUCCESS',
+    payload: postID
+  }
+}
+function deletePostError(err) {
+  return {
+    type: 'REMOVE_POST_FAILED',
+    payload: err
+  }
+}
 function updateDataSuccess(url, node, data) {
   return {
     type: 'UPDATE_DATA_SUCCESS',
     payload: data, 
     path: url,
-    node: node,  
+    node: node
   }
 }
 function updateDataError(err) {
@@ -105,8 +118,8 @@ export function getStructure() {
       const response = snap.val();
       return dispatch(getStructureSuccess(response));
     }).catch((error) => {
-      return dispatch(getStructureError(error));
       console.log(error);
+      return dispatch(getStructureError(error));
     });
   }
 }
@@ -117,8 +130,8 @@ export function getDataByStructure(url) {
       const response = snap.val();
       return dispatch(getDataByStructureSuccess(response));
     }).catch((error) => {
-      return dispatch(getDataByStructureError(error));
       console.log(error);
+      return dispatch(getDataByStructureError(error));
     });
   }
 }
@@ -129,30 +142,34 @@ export function getCurrentID() {
       const response = snap.val();
       return dispatch(getCurrentIDSuccess(response));
     }).catch((error) => {
-      return dispatch(getCurrentIDError(error));
       console.log(error);
+      return dispatch(getCurrentIDError(error));
     });
   }
 }
 
 export function addPost(currentPostID, emptyPost) {
-  console.log(';;;',emptyPost);
-    console.log('add new post start');
-    firebase.database().ref().child('homepage/posts/').update({[currentPostID + 1]: emptyPost}).then(() => {
-      console.log('add new post successs');
-    })
-      .catch((error) => {
+  return dispatch => {
+    firebase.database().ref().child('/id').update({postID: parseInt(currentPostID) + 1}).then(() => {
+      firebase.database().ref().child('homepage/posts/').update({[parseInt(currentPostID) + 1]: emptyPost}).then(() => {
+        return dispatch(addPostSuccess(currentPostID, emptyPost));
+      }).catch((error) => {
+        console.log(error);
+        return dispatch(addPostError(error));
       })
+    });
+  }
+}
 
-
-
-  // return dispatch => {
-  //   firebase.database().ref().child('homepage/posts/').update(data).then(() => {
-  //
-  //   }).catch((error) => {
-  //
-  //   })
-  // }
+export function deletePost(postID) {
+  return dispatch => {
+    firebase.database().ref().child(`homepage/posts/${postID}`).remove().then(() => {
+      return dispatch(deletePostSuccess(postID));
+    }).catch((error) => {
+      console.log(error);
+      return dispatch(deletePostError(error));
+    });
+  }
 }
 
 export function updateData(url, node,  data) {

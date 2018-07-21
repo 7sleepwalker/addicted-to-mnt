@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
-// import propTypes from 'prop-types';
 import { connect } from 'react-redux';
 import Card from './Components/Card';
 import {default as Editor} from './Components/DashboardContentEditor'
-import { getDataByStructure, updateData, getCurrentID, addPost } from '../Actions/dashboardActions';
+import { getDataByStructure, updateData, getCurrentID, addPost, deletePost } from '../Actions/dashboardActions';
 
 
 class DashboardContent extends Component {
@@ -15,6 +14,7 @@ class DashboardContent extends Component {
     };
     this._handleSubmit = this._handleSubmit.bind(this);
     this._handleAddPost = this._handleAddPost.bind(this);
+    this._handleDeletePost = this._handleDeletePost.bind(this);
   }
 
   componentDidMount() {
@@ -30,7 +30,7 @@ class DashboardContent extends Component {
   }
 
   _handleAddPost(postStructure) {
-    let newPost = postStructure;
+    let newPost = {...postStructure};
     function goDeeper(obj) {
       for (let key in obj) {
         if (obj.hasOwnProperty(key) && typeof obj[key] === 'object' && typeof obj[key].default === 'undefined') {
@@ -45,38 +45,42 @@ class DashboardContent extends Component {
     }
     goDeeper(newPost);
     newPost = { ...newPost, id: this.props.currentID.postID + 1 };
-    addPost(this.props.currentID.postID, newPost);
-    
+    this.props.dispatch(addPost(this.props.currentID.postID, newPost));
+  }
+
+  _handleDeletePost(postID) {
+    this.props.dispatch(deletePost(postID));
   }
 
   render() {
-    if (!this.props.content.data)
+    let props = this.props;
+
+    if (!props.content.data)
       return (<div className='addictiv_isLoading'> Content is loading </div>);
 
-    console.log(this.props);
-    let props = this.props;
-    let navKeys = Object.keys(this.props.childNodes);
+    console.log(props);
+    let navKeys = Object.keys(props.childNodes);
     let cards = [];
-    let isEditing = this.props.match.path.split('/')[this.props.match.path.split('/').length - 1] === ':id';
+    let isEditing = props.match.path.split('/')[props.match.path.split('/').length - 1] === ':id';
 
-    if (this.props.childNodes.structure === undefined) {
+    if (props.childNodes.structure === undefined) {
       cards = navKeys.map((item, n) => {
         return <Card key={n} title={item} match={props.match}/>;
       });
 
-    } else if (this.props.childNodes.structure === 'list' && !isEditing){
-      let post = this.props.content.data;
+    } else if (props.childNodes.structure === 'list' && !isEditing){
+      let post = props.content.data;
       cards.push(<Card key={-1} title='Add new post' addCard createPost={() => this._handleAddPost(props.childNodes)} />);
       for (let i in post) {
-        cards.push(<Card key={i} title={post[i].title} match={props.match} content={post[i]} editCard />)
+        cards.push(<Card key={i} title={post[i].title} match={props.match} content={post[i]} deletePost={() => this._handleDeletePost(post[i].id)} editCard />)
       }
 
     } else if (this.props.childNodes.structure === 'list' && isEditing) {
-      cards = <Editor content={this.props.content} structure={this.props.childNodes} submit={this._handleSubmit} match={props.match} />;
+      cards = <Editor content={props.content} structure={props.childNodes} submit={this._handleSubmit} match={props.match} />;
 
 
     } else if (this.props.childNodes.structure === 'editor'){
-      cards = <Editor content={this.props.content} structure={this.props.childNodes} submit={this._handleSubmit} match={props.match} />;
+      cards = <Editor content={props.content} structure={props.childNodes} submit={this._handleSubmit} match={props.match} />;
     }
 
     return (
