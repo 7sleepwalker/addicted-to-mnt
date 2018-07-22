@@ -149,6 +149,12 @@ export function getCurrentID() {
 }
 
 export function addPost(currentPostID, emptyPost) {
+  let postCreationDate = new Date();
+  postCreationDate = postCreationDate.toLocaleString();
+  emptyPost = {
+    createdAT: postCreationDate,
+    ...emptyPost
+  };
   return dispatch => {
     firebase.database().ref().child('/id').update({postID: parseInt(currentPostID) + 1}).then(() => {
       firebase.database().ref().child('homepage/posts/').update({[parseInt(currentPostID) + 1]: emptyPost}).then(() => {

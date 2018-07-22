@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import PropTypes from "prop-types";
+import PropTypes from 'prop-types';
 
 import BlogPost from '../Components/BlogPost';
 import { getPosts } from '../Actions/postActions';
@@ -15,11 +15,10 @@ class Blog extends Component {
     let posts = this.props.posts.posts;
     let postRender;
 
-    console.log(this.props);
-    if (posts.length > 0) {
-      postRender = posts.map((item, n) => {
-        return <BlogPost key={n} content={item} postNumber={n} postsAmount={posts.length}/>
-      });
+    if (posts && posts.length > 0) {
+      postRender = posts.map((item, n) => (
+        <BlogPost key={n} content={item} postNumber={n} postsAmount={posts.length}/>
+      ));
     }
     return (
       <div className="blog">

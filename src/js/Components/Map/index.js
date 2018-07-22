@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { createMap, addMarker, iconBase } from "./helpers/googleHandlers";
+import { createMap, addMarker, iconBase } from './helpers/googleHandlers';
 
 const markers = [];
 
@@ -20,7 +20,7 @@ export default class GMap extends React.Component {
     const props = this.props;
     const state = this.state;
     const This = this;
-    const map = createMap(this.props.mapID, this.props.places, this.props.zoom);
+    const map = createMap(props.mapID, props.places, props.zoom);
 
     if (this.props.tripplaner) {
       const input = document.getElementById('pac-input');
@@ -41,11 +41,11 @@ export default class GMap extends React.Component {
         // For each place, get the icon, name and location.
         places.forEach(function(place) {
           if (!place.geometry) {
-            console.log("Returned place contains no geometry");
+            console.log('Returned place contains no geometry');
             return;
           }
           // Create a marker for each place.
-          let newMarker = addMarker(map, place, props.color, "click");
+          let newMarker = addMarker(map, place, props.color, 'click');
           newMarker.addListener('click', function(e) {
             infowindow.setContent('<div><div class="google-popup__delete fa fa-trash"> </div><strong>' + place.name + '</strong><br>' +
               place.formatted_address + '</div>');
@@ -66,19 +66,19 @@ export default class GMap extends React.Component {
     }
 
     if (this.props.places.length > 1) {
-      let origin = this.props.places[0].lat + ',' + this.props.places[0].lng;
-      let destination = this.props.places[this.props.places.length - 1].lat + ',' + this.props.places[this.props.places.length - 1].lng;
+      let origin = this.props.places[0].gcords.lat + ',' + this.props.places[0].gcords.lng;
+      let destination = this.props.places[this.props.places.length - 1].gcords.lat + ',' + this.props.places[this.props.places.length - 1].gcords.lng;
       let tmpWaypoint = this.props.places.map(function(e) {
         return e;
       });
       tmpWaypoint.splice((this.props.places.length - 1), 1);
       tmpWaypoint.splice(0, 1);
-      let waypoints;
+      let waypoints = [];
 
       if (tmpWaypoint.length > 0) {
         waypoints = tmpWaypoint.map((item) => {
           return {
-            location: item.lat + ',' + item.lng
+            location: item.gcords.lat + ',' + item.gcords.lng
           };
         });
       }
@@ -91,7 +91,7 @@ export default class GMap extends React.Component {
         origin,
         destination,
         waypoints,
-        travelMode: "WALKING"
+        travelMode: 'WALKING'
       };
       dirService.route(request, function(result, status) {
         if (status === window.google.maps.DirectionsStatus.OK) {
@@ -106,15 +106,15 @@ export default class GMap extends React.Component {
       });
     } else if (this.props.places.length === 1) {
       let position = {
-        lat: parseInt(this.props.places[0].lat, 10),
-        lng: parseInt(this.props.places[0].lng, 10),
-      }
+        lat: parseInt(this.props.places[0].gcords.lat, 10),
+        lng: parseInt(this.props.places[0].gcords.lng, 10),
+      };
       addMarker(map, position, props.color);
     }
   }
 
   handleDisable() {
-    markers[this.state.currentMarkerID].setIcon(iconBase + "ccc");
+    markers[this.state.currentMarkerID].setIcon(iconBase + 'ccc');
   }
 
   handleRemove() {
@@ -124,7 +124,7 @@ export default class GMap extends React.Component {
 
   render() {
     return (
-      <div className = "google-map" >
+      <div   className = "google-map" >
         <div style = {{ width: '100%', height: '100%' }} id = { this.props.mapID } ref = 'map' />
         { this.props.children ? this.props.children : null }
         { this.props.tripplaner && <div className="google-map__placeOptions">
@@ -142,7 +142,7 @@ GMap.propTypes = {
   zoom: PropTypes.number,
   initialCenter: PropTypes.object,
   color: PropTypes.string,
-}
+};
 GMap.defaultProps = {
   zoom: 8,
   initialCenter: {
@@ -154,6 +154,6 @@ GMap.defaultProps = {
   style: {},
   containerStyle: {},
   visible: true,
-  mapID: "map-0",
+  mapID: 'map-0',
   color: 'fff',
-}
+};

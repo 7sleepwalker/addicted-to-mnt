@@ -32,6 +32,7 @@ class DashboardMapStages extends Component {
         {
           date: '01.01',
           title: 'Title',
+          subtitle: 'Subtitle',
           gcords: { lat: 0, lng: 0 },
           id: this.placeID++
         }
@@ -73,6 +74,7 @@ class DashboardMapStages extends Component {
                     <div className='card-list__closer' onClick={() => { this._removeItem(i) }}> <i className='fa fa-times-circle' /> </div>
                     <DateInput id={data.id} type={'date'} description={structure.date.description} date={data.date} inputHandler={this._getInputData} />
                     <TextInput id={data.id} type={'title'} description={structure.title.description} value={data.title} inputHandler={this._getInputData} />
+                    <TextInput id={data.id} type={'subtitle'} description={structure.subtitle.description} value={data.subtitle} inputHandler={this._getInputData} />
                     <MapInput id={data.id} type={'gcords'} description={structure.gcords.description}  gcords={data.gcords} inputHandler={this._getInputData} />
                 </div>
             );

@@ -22,7 +22,7 @@ class TripPlanner extends Component {
     console.log(this.props.places);
     return (
       <div className="tripPlaner">
-        <GMap mapID={`map-0`} places={plan.places} tripplaner>
+        <GMap mapID={'map-0'} places={plan.places} tripplaner>
           <Input inputID="pac-input" placeholder='Search for places...' />
         </GMap>
       </div>

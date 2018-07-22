@@ -12,14 +12,14 @@ class DashboardContent extends Component {
     this.state = {
         isFetched: true
     };
+    this._refreshStoreByStructure = this._refreshStoreByStructure.bind(this);
     this._handleSubmit = this._handleSubmit.bind(this);
     this._handleAddPost = this._handleAddPost.bind(this);
     this._handleDeletePost = this._handleDeletePost.bind(this);
   }
 
   componentDidMount() {
-    const dispatchData = getDataByStructure(this.props.match.url.replace('/dashboard/panel', ''));
-    this.props.dispatch(dispatchData);
+    this._refreshStoreByStructure();
     const dispatchID = getCurrentID();
     this.props.dispatch(dispatchID);
   }
@@ -52,17 +52,23 @@ class DashboardContent extends Component {
     this.props.dispatch(deletePost(postID));
   }
 
+  _refreshStoreByStructure() {
+    console.log(this.props.match.url);
+    const dispatchData = getDataByStructure(this.props.match.url.replace('/dashboard/panel', ''));
+    this.props.dispatch(dispatchData);
+  }
+
   render() {
     let props = this.props;
 
     if (!props.content.data)
       return (<div className='addictiv_isLoading'> Content is loading </div>);
 
-    console.log(props);
     let navKeys = Object.keys(props.childNodes);
     let cards = [];
     let isEditing = props.match.path.split('/')[props.match.path.split('/').length - 1] === ':id';
 
+    console.log(props.childNodes.structure);
     if (props.childNodes.structure === undefined) {
       cards = navKeys.map((item, n) => {
         return <Card key={n} title={item} match={props.match}/>;
@@ -76,11 +82,11 @@ class DashboardContent extends Component {
       }
 
     } else if (this.props.childNodes.structure === 'list' && isEditing) {
-      cards = <Editor content={props.content} structure={props.childNodes} submit={this._handleSubmit} match={props.match} />;
+      cards = <Editor content={props.content} structure={props.childNodes} submit={this._handleSubmit} match={props.match} refreshStore={this._refreshStoreByStructure} />;
 
 
     } else if (this.props.childNodes.structure === 'editor'){
-      cards = <Editor content={props.content} structure={props.childNodes} submit={this._handleSubmit} match={props.match} />;
+      cards = <Editor content={props.content} structure={props.childNodes} submit={this._handleSubmit} match={props.match} refreshStore={this._refreshStoreByStructure} />;
     }
 
     return (

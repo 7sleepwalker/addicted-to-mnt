@@ -1,5 +1,5 @@
 import { get } from 'lodash';
-import mapStyle from "../../../../styles/map.json";
+import mapStyle from '../../../../styles/map.json';
 
 export const iconBase = 'http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=%E2%80%A2|';
 const icon = (color) => {
@@ -15,8 +15,8 @@ const icon = (color) => {
 export function createMap(mapID, places, zoom) {
   const map = new window.google.maps.Map(document.getElementById(mapID), { // eslint-disable-line no-unused-vars
     center: {
-      lat: parseInt(places[0].lat, 10),
-      lng: parseInt(places[0].lng, 10)
+      lat: parseInt(places[0].gcords.lat, 10),
+      lng: parseInt(places[0].gcords.lng, 10)
     },
     zoom: zoom,
     mapTypeId: 'roadmap',
@@ -32,6 +32,7 @@ export function createMap(mapID, places, zoom) {
 }
 
 export function addMarker(map, position = null, iconColor, eventType = null) {
+  console.log(position, iconColor);
   const newMarker = new window.google.maps.Marker({
     map: map,
     icon: icon(iconColor),

@@ -18,6 +18,11 @@ class DashboardContentEditor extends Component {
     this._toggleSubmit = this._toggleSubmit.bind(this);
   }
 
+  componentDidMount() {
+    console.log('refresh');
+    this.props.refreshStore();
+  }
+
   _handleSubmit(data) {
     this.setState({ submitted: true });
   }
@@ -34,13 +39,13 @@ class DashboardContentEditor extends Component {
   }
 
   render() {
-    const pageTitle = this.props.match.url.split('/')[this.props.match.url.split('/').length -1];
-    let data = this.props.content.data;
-    const structure = this.props.structure;
     const props = this.props;
+    const pageTitle = props.match.url.split('/')[props.match.url.split('/').length -1];
+    let data = typeof  props.content.data[0] === 'object' ? Object.values(props.content.data) :  props.content.data;
+    // let data = props.content.data;
+    const structure = props.structure;
     let inputs = [];
     let editBoxID = 0;
-
 
     if (data.length > 1) {
       data = data.filter(obj => (
@@ -50,6 +55,7 @@ class DashboardContentEditor extends Component {
     }
 
     for (let i in structure) {
+
       if (i !== 'structure') {
         let expanded = false;
         if (this.state.activeEditBoxID === editBoxID)

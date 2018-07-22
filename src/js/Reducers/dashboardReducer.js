@@ -45,12 +45,13 @@ export default function reducer (state=initialState, action) {
       }
     }
     case 'CREATE_POST_SUCCESS': {
-      return {
-        ...state,
-        data: {
+      const posts = {
           ...state.data,
           [action.postID + 1]: action.payload
-        },
+      };
+      return {
+        ...state,
+        data: Object.values(posts),
         currentID: {
           postID: action.postID + 1
         }
@@ -63,11 +64,12 @@ export default function reducer (state=initialState, action) {
       }
     }
     case 'REMOVE_POST_SUCCESS': {
-      console.log(state);
-      delete state.data[action.payload];
+      const newPayload = Object.values(state.data).filter(obj => (
+        obj.id !== parseInt(action.payload)
+      ));
       return {
         ...state,
-        data: { ...state.data }
+        data: newPayload
       }
     }
     case 'REMOVE_POST_FAILED': {
@@ -77,7 +79,9 @@ export default function reducer (state=initialState, action) {
       }
     }
     case 'UPDATE_DATA_SUCCESS': {
+      console.log('payload', action.payload);
       const node = action.node;
+      // const postID = parseInt(window.location.href.substr(window.location.href.lastIndexOf('/') + 1));
       const payload = typeof action.payload[0] === 'object' ? Object.values(action.payload) : action.payload;
         return {
         ...state,
