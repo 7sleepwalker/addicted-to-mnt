@@ -4,6 +4,7 @@ import { getPostGalleryByID } from '../Actions/galleryActions';
 import LogoBG from '../../img/logo.svg';
 import { Link } from 'react-router-dom';
 
+import ReturnHome from '../Components/returnHome.js';
 import GalleryImage from '../Components/GalleryImage';
 
 class Gallery extends Component {
@@ -31,7 +32,7 @@ class Gallery extends Component {
 
     return (
       <div className='gallery'>
-        <Link to='/'><div className='addictiv__close'> </div></Link>
+        <ReturnHome />
         {galleryRender}
         <div className='addictiv__page-number'> gallery </div>
         <img className="addictiv__background" src={LogoBG} alt='logo'/>

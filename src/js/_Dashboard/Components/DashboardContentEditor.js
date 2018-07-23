@@ -19,7 +19,6 @@ class DashboardContentEditor extends Component {
   }
 
   componentDidMount() {
-    console.log('refresh');
     this.props.refreshStore();
   }
 

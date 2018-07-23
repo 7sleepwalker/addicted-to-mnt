@@ -69,6 +69,18 @@ a {
     &:hover {
       cursor: pointer;
     }
+    
+    &:hover:after {
+      transform: rotate(45deg);
+    }
+    
+    &:hover:before {
+      transform: rotate(-45deg);
+    }
+    
+    &:hover &-text {
+      bottom: -1.2rem;
+    }
 
     &:before, &:after {
       content: '';
@@ -77,12 +89,23 @@ a {
       width: 5px;
       background-color: #000;
       display: block;
-      transform: rotate(45deg);
-      margin-left: 25px;
+      transform: rotate(90deg);
+      margin-left: 22px;
+      transition: transform 0.3s ease-in-out;
     }
     &:after {
-      transform: rotate(-45deg);
+      transform: rotate(-90deg);
     }
+  }
+
+  &__close-text {
+    position: absolute;
+    display: block;
+    color: #000;
+    text-transform: uppercase;
+    font-weight: 700;
+    bottom: -0.2rem;
+    transition: bottom 0.3s ease-in-out;
   }
 
   &__page-number {

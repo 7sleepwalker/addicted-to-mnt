@@ -64,6 +64,12 @@ a {
   z-index: 1000; }
   .addictiv__close:hover {
     cursor: pointer; }
+  .addictiv__close:hover:after {
+    transform: rotate(45deg); }
+  .addictiv__close:hover:before {
+    transform: rotate(-45deg); }
+  .addictiv__close:hover .addictiv__close-text {
+    bottom: -1.2rem; }
   .addictiv__close:before, .addictiv__close:after {
     content: '';
     position: absolute;
@@ -71,10 +77,20 @@ a {
     width: 5px;
     background-color: #000;
     display: block;
-    transform: rotate(45deg);
-    margin-left: 25px; }
+    transform: rotate(90deg);
+    margin-left: 22px;
+    transition: transform 0.3s ease-in-out; }
   .addictiv__close:after {
-    transform: rotate(-45deg); }
+    transform: rotate(-90deg); }
+
+.addictiv__close-text {
+  position: absolute;
+  display: block;
+  color: #000;
+  text-transform: uppercase;
+  font-weight: 700;
+  bottom: -0.2rem;
+  transition: bottom 0.3s ease-in-out; }
 
 .addictiv__page-number {
   position: absolute;
@@ -261,7 +277,7 @@ a {
 
 .nav {
   position: fixed;
-  z-index: 10000;
+  z-index: 100000;
   right: 0;
   top: 0; }
   .nav.active .nav__menuBox {
@@ -271,13 +287,17 @@ a {
     transition: all .3s ease-in-out;
     top: 15px; }
     .nav.active .nav__buttonPart:first-child {
-      transform: rotate(45deg);
+      transform: rotate(0deg);
       display: block; }
+    .nav.active .nav__buttonPart:hover .nav.active .nav__buttonPart:first-child {
+      transform: rotate(0deg); }
     .nav.active .nav__buttonPart:last-child {
-      transform: rotate(-45deg);
+      transform: rotate(0deg);
       display: block; }
+    .nav.active .nav__buttonPart:hover:last-child {
+      transform: rotate(45deg); }
   .nav.active .nav__background, .nav.active .nav__shadowBackground {
-    width: 50vw;
+    width: calc(50vw - 11px);
     height: 100vh;
     background-color: #bdbf92;
     right: 0;
@@ -456,6 +476,10 @@ a {
     text-align: center;
     font-size: 25px;
     top: calc(50% - 20px); }
+  .about__page-number {
+    position: absolute;
+    right: 15px;
+    bottom: 15px; }
 
 .gallery {
   position: relative;

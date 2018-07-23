@@ -2,7 +2,7 @@
 @import url("https://fonts.googleapis.com/css?family=Lato:300,400,700");
 .nav {
   position: fixed;
-  z-index: 10000;
+  z-index: 100000;
   right: 0;
   top: 0; }
   .nav.active .nav__menuBox {
@@ -12,13 +12,17 @@
     transition: all .3s ease-in-out;
     top: 15px; }
     .nav.active .nav__buttonPart:first-child {
-      transform: rotate(45deg);
+      transform: rotate(0deg);
       display: block; }
+    .nav.active .nav__buttonPart:hover .nav.active .nav__buttonPart:first-child {
+      transform: rotate(0deg); }
     .nav.active .nav__buttonPart:last-child {
-      transform: rotate(-45deg);
+      transform: rotate(0deg);
       display: block; }
+    .nav.active .nav__buttonPart:hover:last-child {
+      transform: rotate(45deg); }
   .nav.active .nav__background, .nav.active .nav__shadowBackground {
-    width: 50vw;
+    width: calc(50vw - 11px);
     height: 100vh;
     background-color: #bdbf92;
     right: 0;

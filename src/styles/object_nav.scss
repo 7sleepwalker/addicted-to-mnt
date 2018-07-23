@@ -1,7 +1,7 @@
 @import 'imports.scss';
 .nav {
   position: fixed;
-  z-index: 10000;
+  z-index: 100000;
   right: 0;
   top:0;
 
@@ -16,18 +16,26 @@
       top:15px;
 
       &:first-child {
-        transform: rotate(45deg);
+        transform: rotate(0deg);
         display: block;
+      }
+      
+      &:hover &:first-child {
+        transform: rotate(0deg);
       }
 
       &:last-child {
-        transform: rotate(-45deg);
+        transform: rotate(0deg);
         display: block;
+      }
+      
+      &:hover:last-child {
+        transform: rotate(45deg);
       }
     }
 
     .nav__background, .nav__shadowBackground {
-      width: 50vw;
+      width: $half-of-screen;
       height: 100vh;
       background-color: $theme-color-green;
       right: 0;

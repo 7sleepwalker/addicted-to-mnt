@@ -1,11 +1,15 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins');
 @import url('https://fonts.googleapis.com/css?family=Lato:300,400,700');
 
-// dashboard panel
+// ### dashboard panel
+// colors
 $dashboard-panel-background-color: #ddd;
-
 // sidebar
 $standard-sidebar-width: 300px;
 
 
+// ### website
+// colors
 $theme-color-green: #bdbf92;
+// const sizes
+$half-of-screen: calc(50vw - 11px);
