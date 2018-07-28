@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom'
+import { CSSTransition } from 'react-transition-group';
 
 class Nav extends Component {
   constructor(props)  {
@@ -11,8 +12,8 @@ class Nav extends Component {
   }
 
   handleClick() {
-    var obj  = {}
-    obj['menuActive'] = !this.state.menuActive
+    var obj  = {};
+    obj['menuActive'] = !this.state.menuActive;
     this.setState(obj);
   }
 
@@ -23,6 +24,7 @@ class Nav extends Component {
           <div className='nav__buttonPart' />
           <div className='nav__buttonPart' />
           <div className='nav__buttonPart' />
+          <div className="nav__buttonTitle"> {this.state.menuActive? <div>Close</div> : <div>Menu</div>} </div>
         </div>
         <div className='nav__menuBox'>
           <ul className='nav__menu'>
@@ -31,8 +33,20 @@ class Nav extends Component {
             <li className='nav__menuItem'> <Link to='/About'> about </Link> </li>
           </ul>
         </div>
-        <div className="nav__background" />
-        <div className="nav__shadowBackground" />
+        <CSSTransition
+          in={this.state.menuActive}
+          timeout={300}
+          classNames="nav__background"
+        >
+          <div className="nav__background"/>
+        </CSSTransition>
+        <CSSTransition
+          in={this.state.menuActive}
+          timeout={300}
+          classNames="nav__shadowBackground"
+        >
+          <div className="nav__shadowBackground"/>
+        </CSSTransition>
       </div>
     );
   }

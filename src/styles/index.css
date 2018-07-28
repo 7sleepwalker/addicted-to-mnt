@@ -12,6 +12,10 @@
 @import url("https://fonts.googleapis.com/css?family=Lato:300,400,700");
 @import url("https://fonts.googleapis.com/css?family=Poppins");
 @import url("https://fonts.googleapis.com/css?family=Lato:300,400,700");
+@font-face {
+  font-family: 'ARBONNIE';
+  src: url("../fonts/ARBONNIE.ttf") format("truetype"); }
+
 body {
   margin: 0;
   padding: 0;
@@ -57,8 +61,8 @@ a {
 
 .addictiv__close {
   position: fixed;
-  right: 35px;
-  top: 35px;
+  right: 50px;
+  top: 50px;
   height: 50px;
   width: 50px;
   z-index: 1000; }
@@ -107,6 +111,10 @@ a {
   display: block;
   top: 0;
   left: 0; }
+
+@font-face {
+  font-family: 'ARBONNIE';
+  src: url("../fonts/ARBONNIE.ttf") format("truetype"); }
 
 #logoClipPath {
   transform-origin: 50% 50%;
@@ -275,37 +283,44 @@ a {
     left: 50%;
     transform: translateX(-50%) translateY(-50%); }
 
+@font-face {
+  font-family: 'ARBONNIE';
+  src: url("../fonts/ARBONNIE.ttf") format("truetype"); }
+
 .nav {
   position: fixed;
   z-index: 100000;
   right: 0;
   top: 0; }
-  .nav.active .nav__menuBox {
-    display: block; }
-  .nav.active .nav__buttonPart {
-    display: none;
-    transition: all .3s ease-in-out;
-    top: 15px; }
-    .nav.active .nav__buttonPart:first-child {
-      transform: rotate(0deg);
+  .nav.active {
+    overflow: hidden; }
+    .nav.active .nav__menuBox {
+      z-index: 1000000;
       display: block; }
-    .nav.active .nav__buttonPart:hover .nav.active .nav__buttonPart:first-child {
-      transform: rotate(0deg); }
-    .nav.active .nav__buttonPart:last-child {
-      transform: rotate(0deg);
-      display: block; }
-    .nav.active .nav__buttonPart:hover:last-child {
+    .nav.active .nav__buttonPart {
+      display: none;
+      transition: all .3s ease-in-out;
+      top: 15px; }
+      .nav.active .nav__buttonPart:nth-child(1) {
+        transform: rotate(0deg);
+        display: block; }
+      .nav.active .nav__buttonPart:nth-child(3) {
+        transform: rotate(0deg);
+        display: block; }
+    .nav.active .nav__button:hover .nav__buttonPart:nth-child(1) {
       transform: rotate(45deg); }
-  .nav.active .nav__background, .nav.active .nav__shadowBackground {
-    width: calc(50vw - 11px);
-    height: 100vh;
-    background-color: #bdbf92;
-    right: 0;
-    top: 0;
-    display: block; }
-  .nav.active .nav__shadowBackground {
-    background-color: #bdbf92;
-    opacity: .3; }
+    .nav.active .nav__button:hover .nav__buttonPart:nth-child(3) {
+      top: 15px;
+      transform: rotate(-45deg); }
+    .nav.active .nav__background, .nav.active .nav__shadowBackground {
+      width: calc(50vw - 11px);
+      height: 100vh;
+      background-color: #bdbf92;
+      right: 0;
+      top: 0; }
+    .nav.active .nav__shadowBackground {
+      background-color: #bdbf92;
+      opacity: .3; }
   .nav__button {
     position: absolute;
     cursor: pointer;
@@ -313,20 +328,34 @@ a {
     height: 50px;
     right: 50px;
     top: 50px; }
+    .nav__button:hover .nav__buttonPart:nth-child(2) {
+      top: 0; }
+    .nav__button:hover .nav__buttonPart:nth-child(3) {
+      top: 30px; }
+    .nav__button:hover .nav__buttonTitle {
+      bottom: -15px; }
   .nav__buttonPart {
     position: absolute;
     height: 5px;
     width: 50px;
     background-color: #fff;
-    margin-bottom: 10px; }
-    .nav__buttonPart:nth-child(2n) {
-      top: 15px; }
-    .nav__buttonPart:nth-child(3n) {
-      top: 30px; }
+    margin-bottom: 10px;
+    top: 15px;
+    transition: all .3s ease-in-out; }
+  .nav__buttonTitle {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #fff;
+    transition: all .3s ease-in-out; }
   .nav__menuBox {
     display: none;
     position: absolute;
-    top: 150px;
+    top: calc(50px * 3);
     right: 50px;
     text-align: right;
     color: #fff;
@@ -335,15 +364,38 @@ a {
   .nav__menu {
     list-style: none; }
   .nav__menuItem {
-    padding: 0px 0; }
-  .nav__background {
-    display: none; }
+    padding: 0; }
+    .nav__menuItem:after {
+      content: '';
+      position: absolute;
+      display: block;
+      right: -50px;
+      margin-top: -2rem;
+      width: calc(100% + 50px);
+      height: 0;
+      background-color: rgba(255, 255, 255, 0.1);
+      transition: all 0.5s ease-in-out; }
+    .nav__menuItem:hover:after {
+      height: 10px; }
+  .nav__background-enter {
+    opacity: 0.01;
+    transform: scale(0.7) translate(20%, -50%); }
+  .nav__background-enter-active {
+    opacity: 1;
+    transform: scale(1.5) translate(0%, 0%);
+    transition: all 0.5s ease-out; }
   .nav__shadowBackground {
-    display: none;
     position: absolute;
     right: 0;
     top: 0;
     z-index: -111; }
+    .nav__shadowBackground-enter {
+      opacity: 0.01;
+      transform: scale(0.9) translate(20%, -50%); }
+    .nav__shadowBackground-enter-active {
+      opacity: 1;
+      transform: scale(1.5) translate(0%, 0%);
+      transition: all 0.3s ease-out; }
 
 .google-map {
   margin: 35px 0;
@@ -370,6 +422,10 @@ a {
     padding: 0 15px;
     top: 10px !important;
     left: 10px !important; }
+
+@font-face {
+  font-family: 'ARBONNIE';
+  src: url("../fonts/ARBONNIE.ttf") format("truetype"); }
 
 .gallery-image {
   position: relative;
@@ -407,6 +463,8 @@ a {
     position: absolute; }
   .gallery-image__place {
     position: absolute; }
+    .gallery-image__place a {
+      color: #000; }
   .gallery-image__img {
     max-width: 50vw;
     max-height: 50vh; }
@@ -414,10 +472,16 @@ a {
 .gallery-image--featured {
   display: block;
   margin: 120px 0; }
+  .gallery-image--featured img {
+    top: 100%;
+    margin-top: -50%; }
   .gallery-image--featured .gallery-image__title {
-    left: 50px;
+    left: 50%;
     top: -70px;
-    font-size: 70px; }
+    transform: translateX(-50%);
+    font-size: 120px;
+    z-index: 10;
+    font-family: 'ARBONNIE'; }
   .gallery-image--featured .gallery-image__place {
     right: 50px;
     bottom: -30px; }
@@ -443,7 +507,7 @@ a {
 .gallery-image--right .gallery-image__place {
   right: -11px;
   transform-origin: 100%;
-  transform: rotate(90deg) translateX(100%);
+  transform: rotate(90deg) translateX(0%);
   bottom: 0; }
 
 .gallery-image--left > div {
@@ -586,9 +650,17 @@ a {
   .dashboard__logIn .fadeInUp {
     animation-name: fadeInUp; }
 
+@font-face {
+  font-family: 'ARBONNIE';
+  src: url("../fonts/ARBONNIE.ttf") format("truetype"); }
+
 .dashboard__panel {
   min-height: 100vh;
   background-color: #ddd; }
+
+@font-face {
+  font-family: 'ARBONNIE';
+  src: url("../fonts/ARBONNIE.ttf") format("truetype"); }
 
 .dashboard__sideBar {
   height: 100vh;
@@ -654,6 +726,10 @@ a {
     text-align: center;
     font-size: 25px;
     marign: auto; }
+
+@font-face {
+  font-family: 'ARBONNIE';
+  src: url("../fonts/ARBONNIE.ttf") format("truetype"); }
 
 .dashboard__content {
   width: calc(100% - 300px);

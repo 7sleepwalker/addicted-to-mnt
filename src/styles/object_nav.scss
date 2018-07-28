@@ -1,49 +1,55 @@
 @import 'imports.scss';
 .nav {
+  $nav: &;
   position: fixed;
   z-index: 100000;
   right: 0;
-  top:0;
+  top: 0;
 
   &.active {
-    .nav__menuBox {
+    overflow: hidden;
+    #{$nav}__menuBox {
+        z-index: 1000000;
         display: block;
     }
 
-    .nav__buttonPart {
+    #{$nav}__buttonPart {
       display: none;
       transition: all .3s ease-in-out;
       top:15px;
 
-      &:first-child {
+      &:nth-child(1) {
         transform: rotate(0deg);
         display: block;
-      }
-      
-      &:hover &:first-child {
-        transform: rotate(0deg);
       }
 
-      &:last-child {
+      &:nth-child(3) {
         transform: rotate(0deg);
         display: block;
-      }
-      
-      &:hover:last-child {
-        transform: rotate(45deg);
       }
     }
 
-    .nav__background, .nav__shadowBackground {
+    #{$nav}__button {
+      &:hover #{$nav}__buttonPart {
+        &:nth-child(1) {
+          transform: rotate(45deg);
+        }
+        &:nth-child(3) {
+          top:15px;
+          transform: rotate(-45deg);
+        }
+      }
+    }
+
+    #{$nav}__background, #{$nav}__shadowBackground {
       width: $half-of-screen;
       height: 100vh;
       background-color: $theme-color-green;
       right: 0;
       top: 0;
-      display: block;
     }
 
-    .nav__shadowBackground {
+    #{$nav}__shadowBackground {
       background-color: $theme-color-green;
       opacity: .3;
     }
@@ -54,8 +60,22 @@
     cursor: pointer;
     width: 50px;
     height: 50px;
-    right: 50px;
-    top: 50px;
+    right: $nav-from-right;
+    top: $nav-from-right;
+
+    &:hover {
+      #{$nav}__buttonPart {
+        &:nth-child(2) {
+          top: 0;
+        }
+        &:nth-child(3) {
+          top: 30px
+        }
+      }
+      #{$nav}__buttonTitle {
+        bottom: -15px;
+      }
+    }
   }
 
   &__buttonPart {
@@ -64,21 +84,27 @@
     width: 50px;
     background-color: #fff;
     margin-bottom: 10px;
+    top: 15px;
+    transition: all .3s ease-in-out;
+  }
 
-    &:nth-child(2n) {
-      top: 15px;
-    }
-
-    &:nth-child(3n) {
-      top: 30px
-    }
+  &__buttonTitle {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #fff;
+    transition: all .3s ease-in-out;
   }
 
   &__menuBox {
     display: none;
     position: absolute;
-    top: 150px;
-    right: 50px;
+    top: calc(#{$nav-from-right} * 3);
+    right: $nav-from-right;
     text-align: right;
     color: #fff;
     font-size: 42px;
@@ -90,18 +116,56 @@
   }
 
   &__menuItem {
-    padding: 0px 0;
+    padding: 0;
+
+    &:after {
+      content: '';
+      position: absolute;
+      display: block;
+      right: -$nav-from-right;
+      margin-top: -2rem;
+      width: calc(100% + #{$nav-from-right});
+      height: 0;
+      background-color: rgba(255,255,255,0.1);
+      transition: all 0.5s ease-in-out;
+    }
+
+    &:hover {
+      &:after {
+        height: 10px;
+      }
+    }
   }
 
   &__background {
-    display: none;
+    &-enter {
+      opacity: 0.01;
+      transform: scale(0.7) translate(20%, -50%);
+
+    }
+
+    &-enter-active {
+      opacity: 1;
+      transform: scale(1.5) translate(0%, 0%);
+      transition: all 0.5s ease-out;
+    }
   }
 
   &__shadowBackground {
-    display: none;
     position: absolute;
     right: 0;
     top: 0;
     z-index: -111;
+
+    &-enter {
+      opacity: 0.01;
+      transform: scale(0.9) translate(20%, -50%);
+    }
+
+    &-enter-active {
+      opacity: 1;
+      transform: scale(1.5) translate(0%, 0%);
+      transition: all 0.3s ease-out;
+    }
   }
 }

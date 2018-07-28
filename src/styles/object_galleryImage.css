@@ -1,5 +1,9 @@
 @import url("https://fonts.googleapis.com/css?family=Poppins");
 @import url("https://fonts.googleapis.com/css?family=Lato:300,400,700");
+@font-face {
+  font-family: 'ARBONNIE';
+  src: url("../fonts/ARBONNIE.ttf") format("truetype"); }
+
 .gallery-image {
   position: relative;
   display: block;
@@ -36,6 +40,8 @@
     position: absolute; }
   .gallery-image__place {
     position: absolute; }
+    .gallery-image__place a {
+      color: #000; }
   .gallery-image__img {
     max-width: 50vw;
     max-height: 50vh; }
@@ -43,10 +49,16 @@
 .gallery-image--featured {
   display: block;
   margin: 120px 0; }
+  .gallery-image--featured img {
+    top: 100%;
+    margin-top: -50%; }
   .gallery-image--featured .gallery-image__title {
-    left: 50px;
+    left: 50%;
     top: -70px;
-    font-size: 70px; }
+    transform: translateX(-50%);
+    font-size: 120px;
+    z-index: 10;
+    font-family: 'ARBONNIE'; }
   .gallery-image--featured .gallery-image__place {
     right: 50px;
     bottom: -30px; }
@@ -72,7 +84,7 @@
 .gallery-image--right .gallery-image__place {
   right: -11px;
   transform-origin: 100%;
-  transform: rotate(90deg) translateX(100%);
+  transform: rotate(90deg) translateX(0%);
   bottom: 0; }
 
 .gallery-image--left > div {

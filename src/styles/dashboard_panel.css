@@ -1,5 +1,9 @@
 @import url("https://fonts.googleapis.com/css?family=Poppins");
 @import url("https://fonts.googleapis.com/css?family=Lato:300,400,700");
+@font-face {
+  font-family: 'ARBONNIE';
+  src: url("../fonts/ARBONNIE.ttf") format("truetype"); }
+
 .dashboard__panel {
   min-height: 100vh;
   background-color: #ddd; }

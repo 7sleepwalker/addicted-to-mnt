@@ -47,6 +47,10 @@
 
   &__place {
     position: absolute;
+
+    a {
+      color: #000;
+    }
   }
 
   &__img {
@@ -60,16 +64,25 @@
   display: block;
   margin: 120px 0;
 
+  img {
+    top: 100%;
+    margin-top: -50%;
+  }
+
   .gallery-image {
     &__title {
-      left: 50px;
+      left: 50%;
       top: -70px;
-      font-size: 70px;
+      transform: translateX(-50%);
+      font-size: 120px;
+      z-index: 10;
+      font-family: 'ARBONNIE';
     }
 
     &__place {
       right: 50px;
       bottom: -30px;
+
     }
 
     &__imgBox {
@@ -103,7 +116,7 @@
     &__place {
       right: -11px;
       transform-origin: 100% ;
-      transform: rotate(90deg) translateX(100%);
+      transform: rotate(90deg) translateX(0%);
       bottom: 0;
     }
   }
