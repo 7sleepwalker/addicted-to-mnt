@@ -16,12 +16,6 @@ class GalleryImage extends Component {
     else
       classNames+=' gallery-image--left';
 
-    const options = {
-      max: 10,
-      perspective: 1000,
-      scale: 1.05,
-    };
-
     return (
       <div className={classNames}>
       {this.props.day ? <div id={`gallery-image__${this.props.day}`} className='gallery-image__separator'> Day {this.props.day} </div> : null}
