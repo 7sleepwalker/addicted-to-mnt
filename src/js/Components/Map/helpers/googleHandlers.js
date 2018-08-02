@@ -15,8 +15,8 @@ const icon = (color) => {
 export function createMap(mapID, places, zoom) {
   const map = new window.google.maps.Map(document.getElementById(mapID), { // eslint-disable-line no-unused-vars
     center: {
-      lat: parseInt(places[0].gcords.lat, 10),
-      lng: parseInt(places[0].gcords.lng, 10)
+      lat: parseInt(get(places[0], 'gcords.lat', 0), 10),
+      lng: parseInt(get(places[0], 'gcords.lng', 0), 10)
     },
     zoom: zoom,
     mapTypeId: 'roadmap',

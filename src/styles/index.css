@@ -258,7 +258,8 @@ a {
 
 .stage__date {
   position: absolute;
-  left: -40px;
+  transform: translateX(-100%);
+  left: -10px;
   margin-top: 15px;
   font-size: 12px; }
 

@@ -22,7 +22,7 @@ class BlogPost extends Component {
     const content = this.props.content;
     const coverImage = content.cover ? content.cover : Image;
     const elevator = new window.google.maps.ElevationService;
-
+    
     const createdAt = {
       day: content.createdAT.split(' ')[0],
       time: content.createdAT.split(' ')[1]
@@ -33,7 +33,7 @@ class BlogPost extends Component {
       )
     });
     
-    const stages = content.places.map((item, n) => {
+    const stages = Array.isArray(content.places) ? content.places.map((item, n) => {
       return (
         <div key={n} className='blog-post__stage'>
           <div className='stage__bullet'>  </div>
@@ -44,7 +44,7 @@ class BlogPost extends Component {
           </div>
         </div>
       )
-    });
+    }): null;
 
     return (
       <div className='blog-post' id={`BlogPost-${content.id}`}>
