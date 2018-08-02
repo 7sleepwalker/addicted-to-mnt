@@ -32,7 +32,6 @@ export function createMap(mapID, places, zoom) {
 }
 
 export function addMarker(map, position = null, iconColor, eventType = null) {
-  console.log(position, iconColor);
   const newMarker = new window.google.maps.Marker({
     map: map,
     icon: icon(iconColor),
@@ -44,4 +43,33 @@ export function addMarker(map, position = null, iconColor, eventType = null) {
 
   }
   return newMarker;
+}
+
+export function displayLocationElevation(location) {
+  let attitude = 0;
+  const elevator = new window.google.maps.ElevationService;
+  elevator.getElevationForLocations({
+    'locations': [location]
+  }, function(results, status) {
+    if (status === 'OK') {
+      if (results[0]) {
+        attitude = results[0].elevation;
+        console.log('attitude1', parseInt(attitude));
+        return results[0].elevation;
+      } else {
+        attitude = 'No results found';
+      }
+    } else {
+      attitude = 'Elevation service failed due to: ' + status;
+    }
+  });
+  
+  console.log('attitude2', parseInt(attitude));
+  return parseInt(attitude);
+  
+  
+}
+
+export function createLatLngObject(lat, lng) {
+  return(new window.google.maps.LatLng(lat, lng));
 }

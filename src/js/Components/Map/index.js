@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { createMap, addMarker, iconBase } from './helpers/googleHandlers';
+import { createMap, addMarker, iconBase, displayLocationElevation } from './helpers/googleHandlers';
 
 const markers = [];
 
@@ -22,6 +22,10 @@ export default class GMap extends React.Component {
     const This = this;
     const map = createMap(props.mapID, props.places, props.zoom);
 
+    map.addListener('click', function(event) {
+      console.log(displayLocationElevation(event.latLng));
+    });
+
     if (this.props.tripplaner) {
       const input = document.getElementById('pac-input');
       const infowindow = new window.google.maps.InfoWindow();
@@ -30,6 +34,7 @@ export default class GMap extends React.Component {
       const bounds = new window.google.maps.LatLngBounds();
 
       map.controls[window.google.maps.ControlPosition.TOP_LEFT].push(input);
+      
       map.addListener('bounds_changed', function() {
         searchBox.setBounds(map.getBounds());
       });

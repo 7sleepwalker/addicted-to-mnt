@@ -1,0 +1,4 @@
+.flex-container {
+  display: flex; }
+  .flex-container > * {
+    flex: 1 1 auto; }
