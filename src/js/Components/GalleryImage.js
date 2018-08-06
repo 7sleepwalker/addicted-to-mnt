@@ -1,19 +1,16 @@
 import React, { Component } from 'react';
 import { Parallax } from 'react-parallax';
-import ScrollMagic from 'scrollmagic';
-import { TweenMax } from 'gsap/TweenMax';
-import 'debug.addIndicators';
 
 class GalleryImage extends Component {
   componentDidMount() {
     if (!this.props.featured) {
-      const controller = new ScrollMagic.Controller();
-      const imageSelector = document.getElementById(`gallery-image__imgBox--id${this.props.id}`);
-      const Tween = TweenMax.to(imageSelector, 2, { x:0, y:0 });
-      const scene = new ScrollMagic.Scene({ triggerElement: `gallery-image__trigger-${this.props.id}`, duration: 500 })
-        .setTween(Tween)
-        .addIndicators('ass')
-        .addTo(controller);
+      // const controller = new ScrollMagic.Controller();
+      // const imageSelector = document.getElementById(`gallery-image__imgBox--id${this.props.id}`);
+      // const Tween = TweenMax.to(imageSelector, 2, { x:0, y:0 });
+      // const scene = new ScrollMagic.Scene({ triggerElement: `#gallery-image__trigger-${this.props.id}`, duration: 500 })
+      //   .setTween(Tween)
+      //   .addIndicators('ass')
+      //   .addTo(controller);
     }
   }
 
@@ -35,7 +32,7 @@ class GalleryImage extends Component {
       <div className={classNames}>
       {this.props.day ? <div id={`gallery-image__${this.props.day}`} className='gallery-image__separator'> Day {this.props.day} </div> : null}
         <div>
-          { !this.props.featured && <div id={`gallery-image__trigger-${this.props.id}`} > trigger </div> }
+          {/*{ !this.props.featured && <div id={`gallery-image__trigger-${this.props.id}`} > trigger </div> }*/}
           <div className='gallery-image__imgBox' id={`gallery-image__imgBox--id${this.props.id}`}>
             <div className='gallery-image__title'> {content.title} </div>
             <div className='gallery-image__place'>

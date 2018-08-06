@@ -12,8 +12,7 @@
   .gallery-image__imgBox {
     position: relative;
     margin: auto;
-    display: inline-block;
-    transform: translateY(50%); }
+    display: inline-block; }
   .gallery-image__holder {
     position: absolute;
     top: 20px;
