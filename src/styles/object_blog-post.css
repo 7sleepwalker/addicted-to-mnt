@@ -96,7 +96,7 @@
   .blog-post__timeLine {
     position: relative;
     margin-left: 50px;
-    font-family: 'Lato';
+    font-family: 'Lato', sans-serif;
     font-weight: 400;
     margin-top: 25px; }
   .blog-post__stage {
@@ -125,9 +125,9 @@
     position: absolute;
     display: block;
     background: #000;
-    height: 25px;
+    height: 30px;
     width: 1px;
-    margin-top: -35px;
+    margin-top: -40px;
     margin-left: 4px; }
   .stage__bullet:after {
     margin-top: 18px; }
@@ -150,4 +150,7 @@
     padding-left: 25px; }
 
 .stage__subtitle {
-  margin-left: 25px; }
+  margin-left: 25px;
+  margin-top: -5px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300; }

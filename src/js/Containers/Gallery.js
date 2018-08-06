@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { getPostGalleryByID } from '../Actions/galleryActions';
-import LogoBG from '../../img/logo.svg';
-import { Link } from 'react-router-dom';
 
 import ReturnHome from '../Components/returnHome.js';
 import GalleryImage from '../Components/GalleryImage';
@@ -13,7 +11,6 @@ class Gallery extends Component {
   }
 
   render() {
-
     const gallery = this.props.gallery.gallery;
     let galleryRender;
     let day = null;
@@ -31,7 +28,7 @@ class Gallery extends Component {
         else
           day = null;
         prevDay = parseInt(item.day);
-        return <GalleryImage key={n} content={item} featured={featured} right={right} day={day}/>
+        return <GalleryImage key={n} id={n} content={item} featured={featured} right={right} day={day}/>
       });
     }
 
@@ -40,7 +37,6 @@ class Gallery extends Component {
         <ReturnHome />
         {galleryRender}
         <div className='addictiv__page-number'> gallery </div>
-        <img className="addictiv__background" src={LogoBG} alt='logo'/>
       </div>
     );
   }
@@ -50,6 +46,6 @@ const mapStateToProps = (state) => {
   return {
     gallery: state.gallery
   };
-}
+};
 
 export default connect(mapStateToProps)(Gallery);

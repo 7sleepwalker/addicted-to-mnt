@@ -16,6 +16,9 @@ class Blog extends Component {
     let postRender;
 
     if (posts && posts.length > 0) {
+      posts = posts.filter((value) => {
+        return value.publish === true;
+      });
       postRender = posts.map((item, n) => (
         <BlogPost key={n} content={item} postNumber={n} postsAmount={posts.length}/>
       ));
@@ -41,6 +44,6 @@ Blog.props = {
       fetching: PropTypes.bool,
       posts: PropTypes.object.isRequired
     })
-}
+};
 
 export default connect(mapStateToProps)(Blog);

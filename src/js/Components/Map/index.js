@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { get } from 'lodash';
 
 import { createMap, addMarker, iconBase, displayLocationElevation } from './helpers/googleHandlers';
 
@@ -21,10 +22,6 @@ export default class GMap extends React.Component {
     const state = this.state;
     const This = this;
     const map = createMap(props.mapID, props.places, props.zoom);
-
-    map.addListener('click', function(event) {
-      console.log(displayLocationElevation(event.latLng));
-    });
 
     if (this.props.tripplaner) {
       const input = document.getElementById('pac-input');
