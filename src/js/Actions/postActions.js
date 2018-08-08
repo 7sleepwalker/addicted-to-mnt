@@ -4,13 +4,13 @@ import firebase from '../firebase';
 
 function postSuccess(response) {
   return {
-    type: "FETCH_POSTS_FULFILLED",
+    type: 'FETCH_POSTS_FULFILLED',
     payload: response
   }
 }
 function postError(err) {
   return {
-    type: "FETCH_POSTS_REJECTED",
+    type: 'FETCH_POSTS_REJECTED',
     payload: err
   }
 }

@@ -25,7 +25,7 @@ class Blog extends Component {
     }
     return (
       <div className="blog">
-        {postRender}
+        {postRender ? postRender.reverse() : null}
       </div>
     );
   }
@@ -35,7 +35,7 @@ const mapStateToProps = (store) => {
   return {
     posts: store.posts
   };
-}
+};
 
 Blog.props = {
   posts: PropTypes.shape({
