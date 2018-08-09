@@ -23,49 +23,49 @@ export default class GMap extends React.Component {
     const This = this;
     const map = createMap(props.mapID, props.places, props.zoom);
 
-    // if (this.props.tripplaner) {
-    //   const input = document.getElementById('pac-input');
-    //   const infowindow = new window.google.maps.InfoWindow();
-    //   const service = new window.google.maps.places.PlacesService(map);
-    //   const searchBox = new window.google.maps.places.SearchBox(input);
-    //   const bounds = new window.google.maps.LatLngBounds();
-    //
-    //   map.controls[window.google.maps.ControlPosition.TOP_LEFT].push(input);
-    //  
-    //   map.addListener('bounds_changed', function() {
-    //     searchBox.setBounds(map.getBounds());
-    //   });
-    //   searchBox.addListener('places_changed', function() {
-    //     const places = searchBox.getPlaces();
-    //     if (places.length === 0) {
-    //       return;
-    //     }
-    //     // For each place, get the icon, name and location.
-    //     places.forEach(function(place) {
-    //       if (!place.geometry) {
-    //         console.log('Returned place contains no geometry');
-    //         return;
-    //       }
-    //       // Create a marker for each place.
-    //       let newMarker = addMarker(map, place, props.color, 'click');
-    //       newMarker.addListener('click', function(e) {
-    //         infowindow.setContent('<div><div class="google-popup__delete fa fa-trash"> </div><strong>' + place.name + '</strong><br>' +
-    //           place.formatted_address + '</div>');
-    //         infowindow.open(map, this);
-    //         This.setState({ currentMarkerID: place.place_id });
-    //       });
-    //       markers[place.place_id] = newMarker;
-    //
-    //       if (place.geometry.viewport) {
-    //         // Only geocodes have viewport.
-    //         bounds.union(place.geometry.viewport);
-    //       } else {
-    //         bounds.extend(place.geometry.location);
-    //       }
-    //     });
-    //     map.fitBounds(bounds);
-    //   });
-    // }
+    if (this.props.tripplaner) {
+      const input = document.getElementById('pac-input');
+      const infowindow = new window.google.maps.InfoWindow();
+      const service = new window.google.maps.places.PlacesService(map);
+      const searchBox = new window.google.maps.places.SearchBox(input);
+      const bounds = new window.google.maps.LatLngBounds();
+
+      map.controls[window.google.maps.ControlPosition.TOP_LEFT].push(input);
+
+      map.addListener('bounds_changed', function() {
+        searchBox.setBounds(map.getBounds());
+      });
+      searchBox.addListener('places_changed', function() {
+        const places = searchBox.getPlaces();
+        if (places.length === 0) {
+          return;
+        }
+        // For each place, get the icon, name and location.
+        places.forEach(function(place) {
+          if (!place.geometry) {
+            console.log('Returned place contains no geometry');
+            return;
+          }
+          // Create a marker for each place.
+          let newMarker = addMarker(map, place, props.color, 'click');
+          newMarker.addListener('click', function(e) {
+            infowindow.setContent('<div><div class="google-popup__delete fa fa-trash"> </div><strong>' + place.name + '</strong><br>' +
+              place.formatted_address + '</div>');
+            infowindow.open(map, this);
+            This.setState({ currentMarkerID: place.place_id });
+          });
+          markers[place.place_id] = newMarker;
+
+          if (place.geometry.viewport) {
+            // Only geocodes have viewport.
+            bounds.union(place.geometry.viewport);
+          } else {
+            bounds.extend(place.geometry.location);
+          }
+        });
+        map.fitBounds(bounds);
+      });
+    }
 
     if (this.props.places.length > 1) {
       let origin = this.props.places[0].gcords.lat + ',' + this.props.places[0].gcords.lng;
@@ -92,7 +92,7 @@ export default class GMap extends React.Component {
         origin,
         destination,
         waypoints,
-        travelMode: 'DRIVING'
+        travelMode: 'WALKING'
       };
       dirService.route(request, function(result, status) {
         if (status === window.google.maps.DirectionsStatus.OK) {

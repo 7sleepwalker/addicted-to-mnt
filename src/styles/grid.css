@@ -1,4 +1,7 @@
-.flex-container {
+.addictiv-flex-container {
   display: flex; }
-  .flex-container > * {
+  .addictiv-flex-container > * {
     flex: 1 1 auto; }
+
+.addictiv-row {
+  padding: 0 15px; }

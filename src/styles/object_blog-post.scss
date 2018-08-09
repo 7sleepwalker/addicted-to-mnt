@@ -1,4 +1,6 @@
 @import 'imports.scss';
+@import 'grid.scss';
+
 #logoClipPath {
   transform-origin: 50% 50%;
   transform: rotate(45deg);
@@ -17,8 +19,6 @@
   &__header {
     display: flex;
     justify-content: space-between;
-    margin: 25px 0;
-    padding: 0 25px;
   }
 
   &__separator {
@@ -77,6 +77,7 @@
     float: right;
     width: 50%;
     height: 100vh;
+    padding: 25px 0;
     background-color: #e3e3e3;
     box-shadow: -6px 0 20px rgba(0, 0, 0, 0.5);
   }
@@ -121,9 +122,16 @@
       }
     }
   }
+  
+  &__mapBox {
+    position: relative;
+  }
 
   &__distance {
-    text-align: right;
+    position: absolute;
+    bottom: -2rem;
+    right: 15px;
+    font-size: 0.8rem;
   }
   
   &__timeLine {
@@ -189,8 +197,8 @@
   }
 
   &__title {
-    margin-left: 25px;
-    font-size: 30px;
+    margin-left: 20px;
+    font-size: 25px;
     font-weight: 500;
     margin-top: -15px;
 

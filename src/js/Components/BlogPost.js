@@ -55,33 +55,30 @@ class BlogPost extends Component {
           <img className='coverBox__image' src={coverImage} alt='cover' />
         </Link>
         <div className='blog-post__contentBox'>
-          <div className='blog-post__header'>
+          <div className='addictiv-row blog-post__header'>
             <h2 className='blog-post__title'> {content.title} </h2>
             <div className='blog-post__date'> created at: <span> {createdAt.day} </span> <div> {createdAt.time} </div> </div>
           </div>
+          {tags.length > 1 ? (
+            <div className='addictiv-row'>
+              <div className='blog-post__tags'>
+                <ul>
+                  {tags}
+                </ul>
+              </div>
+            </div>
+          ) : null
+          }
           <div className='blog-post__mapBox'>
             <GMap mapID={`map-${content.id}`} places={content.places} getDistance={this.getDistance}/>
+            {this.state.distance > 0 ?
+              <div className='blog-post__distance'>Travel distance: <strong>{parseInt(this.state.distance)}km</strong></div>
+              : null
+            }
           </div>
           <div className='blog-post__content'>
-            <div className='flex-container'>
-              {tags.length > 1 ? (
-                <div>
-                  <div className='blog-post__tags'>
-                    <ul>
-                      {tags}
-                    </ul>
-                  </div>
-                </div>
-                ) : null
-              }
-              {this.state.distance > 0 ?
-                <div className='blog-post__distance'> Distance: {parseInt(this.state.distance)}km </div>
-                : null
-              }
-            </div>
             { content.postDescription ? (
               <div>
-                <div className='padding-box-medium' />
                 <div className='blog-post__description'>
                   {content.postDescription}
                 </div>
