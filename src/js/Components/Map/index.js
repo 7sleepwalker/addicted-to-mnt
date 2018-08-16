@@ -22,6 +22,12 @@ export default class GMap extends React.Component {
     const state = this.state;
     const This = this;
     const map = createMap(props.mapID, props.places, props.zoom);
+    
+    if (this.props.mapInput) {
+      const innerDiv = document.createElement('div');
+      innerDiv.className = 'centerMarker';
+      map.getDiv().appendChild(innerDiv);
+    }
 
     if (this.props.tripplaner) {
       const input = document.getElementById('pac-input');
@@ -145,10 +151,10 @@ GMap.propTypes = {
   color: PropTypes.string,
 };
 GMap.defaultProps = {
-  zoom: 8,
+  zoom: 3.69,
   initialCenter: {
-    lat: 37.774929,
-    lng: -122.419416
+    lat: 48.928703,
+    lng: 11.7486034
   },
   center: {},
   centerAroundCurrentLocation: false,
@@ -157,4 +163,10 @@ GMap.defaultProps = {
   visible: true,
   mapID: 'map-0',
   color: 'fff',
+  places: {
+    0: {
+      lat: 48.928703,
+      lng: 11.7486034
+    }
+  }
 };

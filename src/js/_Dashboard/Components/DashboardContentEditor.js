@@ -4,13 +4,15 @@ import { default as EditBox } from './DashboardEditBox';
 import SingleInputManager from './Inputs/DashboardDateManager';
 import MapStages from './Inputs/DashboardMapStages';
 import Gallery from './Inputs/DashboardGallery';
+import GMap from '../../Components/Map';
 
 class DashboardContentEditor extends Component {
   constructor(props) {
     super(props);
     this.state = {
       activeEditBoxID: null,
-      submitted: false
+      submitted: false,
+      mapInputShow: false
     };
     this.data = [];
     this._handleSubmit = this._handleSubmit.bind(this);
@@ -59,7 +61,6 @@ class DashboardContentEditor extends Component {
         let expanded = false;
         if (this.state.activeEditBoxID === editBoxID)
           expanded = true;
-
         // Render component for each child in structure. Check type of component and render specific definded for it
         switch(structure[i].type) {
           case 'date':
@@ -148,6 +149,15 @@ class DashboardContentEditor extends Component {
         <div className='contentEditor__form'>
           {inputs}
         </div>
+        {this.state.mapInputShow && <div className='contentEditor__mapBox'>
+          <GMap mapID='mappicker' mapInput>
+            <div className='gMap__buttonBox'>
+              <button className='btn btn-danger'>Cancel</button>
+              <button className='btn btn-success'>Save</button>
+            </div>
+          </GMap>
+        </div>
+        }
       </div>
     );
   }

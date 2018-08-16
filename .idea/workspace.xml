@@ -1,0 +1,783 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="75f20cdd-deeb-470d-9f70-2bad7787c748" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/src/js/_Dashboard/Components/Inputs/DashboardSelectInput.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/webpack.config.dev.js" beforeDir="false" afterPath="$PROJECT_DIR$/config/webpack.config.dev.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/webpack.config.prod.js" beforeDir="false" afterPath="$PROJECT_DIR$/config/webpack.config.prod.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/Components/Map/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/Components/Map/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/_Dashboard/Components/DashboardContentEditor.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/_Dashboard/Components/DashboardContentEditor.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/_Dashboard/Components/Inputs/DashboardMapInput.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/_Dashboard/Components/Inputs/DashboardMapInput.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/_Dashboard/Components/Inputs/DashboardMapStages.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/_Dashboard/Components/Inputs/DashboardMapStages.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/dashboard_contentEditor.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/dashboard_contentEditor.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/dashboard_contentEditor.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/dashboard_contentEditor.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/dashboard_inputs.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/dashboard_inputs.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/dashboard_inputs.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/dashboard_inputs.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/index.css" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/js/Components/Map/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="360">
+              <caret line="28" column="41" selection-start-line="28" selection-start-column="41" selection-end-line="28" selection-end-column="41" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DashboardContentEditor.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/js/_Dashboard/Components/DashboardContentEditor.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="210">
+              <caret line="14" column="25" lean-forward="true" selection-start-line="14" selection-start-column="25" selection-end-line="14" selection-end-column="25" />
+              <folding>
+                <element signature="e#0#41#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="dashboard_contentEditor.scss" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/styles/dashboard_contentEditor.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="553">
+              <caret line="63" column="5" selection-start-line="63" selection-start-column="5" selection-end-line="63" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BlogPost.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/js/Components/BlogPost.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="203">
+              <caret line="72" column="48" selection-start-line="72" selection-start-column="48" selection-end-line="72" selection-end-column="48" />
+              <folding>
+                <element signature="e#0#41#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>subti</find>
+      <find>font-fam</find>
+      <find>family</find>
+      <find>scroll</find>
+      <find>img</find>
+      <find>imgbo</find>
+      <find>separata</find>
+      <find>__title</find>
+      <find>title</find>
+      <find>place</find>
+      <find>all</find>
+      <find>imports</find>
+      <find>webpack</find>
+      <find>trans</find>
+      <find>&quot;</find>
+      <find>padding</find>
+      <find>row</find>
+      <find>content</find>
+      <find>header</find>
+      <find>map</find>
+      <find>mapBo</find>
+      <find>contentEditor__inputDescription</find>
+      <find>alia</find>
+      <find>start</find>
+      <find>alias</find>
+      <find>id</find>
+      <find>gmap</find>
+      <find>props.mapID</find>
+      <find>props.places</find>
+      <find>conten</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>submitted</replace>
+      <replace>_toggleSubmit</replace>
+      <replace>props</replace>
+      <replace>refreshStore</replace>
+      <replace>`</replace>
+      <replace>'</replace>
+      <replace>addictiv-row</replace>
+    </replaceStrings>
+    <dirStrings>
+      <dir>C:\Users\Kamil\PhpstormProjects\addicted-to-mnt\src\styles</dir>
+    </dirStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$USER_HOME$/Downloads/addicted-to-mnt-1508257931368-export (19).json" />
+        <option value="$USER_HOME$/Downloads/addicted-to-mnt-1508257931368-export (20).json" />
+        <option value="$USER_HOME$/Downloads/addicted-to-mnt-1508257931368-export (3).json" />
+        <option value="$USER_HOME$/Downloads/addicted-to-mnt-1508257931368-export (4).json" />
+        <option value="$USER_HOME$/Downloads/addicted-to-mnt-1508257931368-export (5).json" />
+        <option value="$PROJECT_DIR$/src/styles/dashboard_sideBar.scss" />
+        <option value="$PROJECT_DIR$/src/styles/dashboard_card.scss" />
+        <option value="$PROJECT_DIR$/src/styles/dashboard_content.scss" />
+        <option value="$PROJECT_DIR$/src/styles/dashboard_panel.scss" />
+        <option value="$PROJECT_DIR$/src/js/_Dashboard/Components/Inputs/DashboardGallery.js" />
+        <option value="$PROJECT_DIR$/src/js/_Dashboard/DashboardPanel.js" />
+        <option value="$PROJECT_DIR$/src/js/_Dashboard/Components/Card.js" />
+        <option value="$PROJECT_DIR$/src/js/Reducers/dashboardReducer.js" />
+        <option value="$PROJECT_DIR$/src/js/_Dashboard/DashboardContent.js" />
+        <option value="$PROJECT_DIR$/src/js/Actions/dashboardActions.js" />
+        <option value="$PROJECT_DIR$/src/js/validation.js" />
+        <option value="$PROJECT_DIR$/src/js/Reducers/postReducer.js" />
+        <option value="$PROJECT_DIR$/src/js/Containers/TripPlaner.js" />
+        <option value="$PROJECT_DIR$/src/js/Reducers/galleryReducer.js" />
+        <option value="$PROJECT_DIR$/src/js/Actions/galleryActions.js" />
+        <option value="$USER_HOME$/Downloads/addicted-to-mnt-1508257931368-export (23).json" />
+        <option value="$PROJECT_DIR$/src/styles/page_about.scss" />
+        <option value="$PROJECT_DIR$/src/js/Containers/About.js" />
+        <option value="$PROJECT_DIR$/src/js/Components/returnHome.js" />
+        <option value="$PROJECT_DIR$/src/js/Components/Nav.js" />
+        <option value="$PROJECT_DIR$/src/styles/object_nav.scss" />
+        <option value="$PROJECT_DIR$/src/styles/imports.scss" />
+        <option value="$PROJECT_DIR$/src/styles/page_gallery.scss" />
+        <option value="$PROJECT_DIR$/src/js/helpers/tilt3d.js" />
+        <option value="$PROJECT_DIR$/src/styles/index.scss" />
+        <option value="$PROJECT_DIR$/src/js/Components/Map/helpers/googleHandlers.js" />
+        <option value="$USER_HOME$/Downloads/addicted-to-mnt-1508257931368-export (24).json" />
+        <option value="$PROJECT_DIR$/src/js/Containers/Gallery.js" />
+        <option value="$PROJECT_DIR$/src/styles/object_galleryImage.scss" />
+        <option value="$PROJECT_DIR$/src/js/Components/GalleryImage.js" />
+        <option value="$PROJECT_DIR$/src/js/Actions/postActions.js" />
+        <option value="$PROJECT_DIR$/src/js/Containers/Blog.js" />
+        <option value="$PROJECT_DIR$/src/styles/grid.scss" />
+        <option value="$PROJECT_DIR$/src/styles/object_blog-post.scss" />
+        <option value="$USER_HOME$/Downloads/addicted-to-mnt-1508257931368-export (6).json" />
+        <option value="$PROJECT_DIR$/src/js/_Dashboard/Components/Inputs/DashboardMapStages.js" />
+        <option value="$PROJECT_DIR$/src/styles/dashboard_inputs.scss" />
+        <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/config/webpack.config.dev.js" />
+        <option value="$PROJECT_DIR$/config/webpack.config.prod.js" />
+        <option value="$PROJECT_DIR$/src/js/_Dashboard/Components/Inputs/DashboardSelectInput.js" />
+        <option value="$PROJECT_DIR$/src/js/_Dashboard/Components/Inputs/DashboardMapInput.js" />
+        <option value="$PROJECT_DIR$/src/js/Components/BlogPost.js" />
+        <option value="$PROJECT_DIR$/src/js/Components/Map/index.js" />
+        <option value="$PROJECT_DIR$/src/styles/dashboard_contentEditor.scss" />
+        <option value="$PROJECT_DIR$/src/js/_Dashboard/Components/DashboardContentEditor.js" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER">
+    <package-json value="$PROJECT_DIR$/package.json" />
+  </component>
+  <component name="JsFlowSettings">
+    <service-enabled>true</service-enabled>
+    <exe-path />
+    <other-services-enabled>true</other-services-enabled>
+    <auto-save>true</auto-save>
+  </component>
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="NodeModulesDirectoryManager">
+    <handled-path value="$PROJECT_DIR$/node_modules" />
+  </component>
+  <component name="NodePackageJsonFileManager">
+    <packageJsonPaths>
+      <path value="$PROJECT_DIR$/package.json" />
+    </packageJsonPaths>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1936" />
+    <option name="height" value="1066" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="addicted-to-mnt" type="b2602c69:ProjectViewProjectNode" />
+              <item name="addicted-to-mnt" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="addicted-to-mnt" type="b2602c69:ProjectViewProjectNode" />
+              <item name="addicted-to-mnt" type="462c0819:PsiDirectoryNode" />
+              <item name="scripts" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="addicted-to-mnt" type="b2602c69:ProjectViewProjectNode" />
+              <item name="addicted-to-mnt" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="addicted-to-mnt" type="b2602c69:ProjectViewProjectNode" />
+              <item name="addicted-to-mnt" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="addicted-to-mnt" type="b2602c69:ProjectViewProjectNode" />
+              <item name="addicted-to-mnt" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="_Dashboard" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="addicted-to-mnt" type="b2602c69:ProjectViewProjectNode" />
+              <item name="addicted-to-mnt" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="_Dashboard" type="462c0819:PsiDirectoryNode" />
+              <item name="Components" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="addicted-to-mnt" type="b2602c69:ProjectViewProjectNode" />
+              <item name="addicted-to-mnt" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="_Dashboard" type="462c0819:PsiDirectoryNode" />
+              <item name="Components" type="462c0819:PsiDirectoryNode" />
+              <item name="Inputs" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="addicted-to-mnt" type="b2602c69:ProjectViewProjectNode" />
+              <item name="addicted-to-mnt" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="styles" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="SearchEverywhereHistoryKey" value="map&#9;null&#9;null&#10;content&#9;FILE&#9;file://C:/Users/Kamil/PhpstormProjects/addicted-to-mnt/src/styles/dashboard_contentEditor.scss&#10;blog&#9;FILE&#9;file://C:/Users/Kamil/PhpstormProjects/addicted-to-mnt/src/js/Components/BlogPost.js&#10;webpack.prod.j&#9;FILE&#9;file://C:/Users/Kamil/PhpstormProjects/addicted-to-mnt/config/webpack.config.prod.js&#10;package.json&#9;FILE&#9;file://C:/Users/Kamil/PhpstormProjects/addicted-to-mnt/package.json&#10;webpack&#9;FILE&#9;file://C:/Users/Kamil/PhpstormProjects/addicted-to-mnt/config/webpack.config.dev.js&#10;input&#9;FILE&#9;file://C:/Users/Kamil/PhpstormProjects/addicted-to-mnt/src/styles/dashboard_inputs.scss&#10;grid&#9;FILE&#9;file://C:/Users/Kamil/PhpstormProjects/addicted-to-mnt/src/styles/grid.scss&#10;blogpost&#9;FILE&#9;file://C:/Users/Kamil/PhpstormProjects/addicted-to-mnt/src/styles/object_blog-post.scss&#10;blogpos&#9;FILE&#9;file://C:/Users/Kamil/PhpstormProjects/addicted-to-mnt/src/js/Components/BlogPost.js&#10;blogpo&#9;FILE&#9;file://C:/Users/Kamil/PhpstormProjects/addicted-to-mnt/src/js/Components/BlogPost.js&#10;galler&#9;FILE&#9;file://C:/Users/Kamil/PhpstormProjects/addicted-to-mnt/src/js/Containers/Gallery.js&#10;image&#9;FILE&#9;file://C:/Users/Kamil/PhpstormProjects/addicted-to-mnt/src/styles/object_galleryImage.scss&#10;webpa&#9;FILE&#9;file://C:/Users/Kamil/PhpstormProjects/addicted-to-mnt/config/webpack.config.dev.js&#10;package.&#9;FILE&#9;file://C:/Users/Kamil/PhpstormProjects/addicted-to-mnt/package.json&#10;web&#9;FILE&#9;file://C:/Users/Kamil/PhpstormProjects/addicted-to-mnt/config/webpack.config.dev.js&#10;package&#9;FILE&#9;file://F:/WorkingOn/addicted-to-mnt/package.json&#10;ga&#9;FILE&#9;file://F:/WorkingOn/addicted-to-mnt/src/styles/object_galleryImage.scss&#10;galle&#9;FILE&#9;file://F:/WorkingOn/addicted-to-mnt/src/js/Containers/Gallery.js&#10;gallery&#9;FILE&#9;file://F:/WorkingOn/addicted-to-mnt/src/js/Containers/Gallery.js&#10;post&#9;null&#9;null&#10;index.js&#9;FILE&#9;file://F:/WorkingOn/addicted-to-mnt/src/js/Components/Map/index.js&#10;index&#9;FILE&#9;file://C:/Users/Kamil/PhpstormProjects/addicted-to-mnt/src/styles/index.scss&#10;googl&#9;FILE&#9;file://C:/Users/Kamil/PhpstormProjects/addicted-to-mnt/src/js/Components/Map/helpers/googleHandlers.js&#10;googleHandler&#9;FILE&#9;file://C:/Users/Kamil/PhpstormProjects/addicted-to-mnt/src/js/Components/Map/helpers/googleHandlers.js&#10;gallery.&#9;FILE&#9;file://F:/WorkingOn/addicted-to-mnt/src/styles/page_gallery.scss&#10;nav&#9;FILE&#9;file://F:/WorkingOn/addicted-to-mnt/src/styles/object_nav.scss&#10;nav.js&#9;FILE&#9;file://C:/Users/Kamil/PhpstormProjects/addicted-to-mnt/src/js/Components/Nav.js&#10;mport&#9;FILE&#9;file://C:/Users/Kamil/PhpstormProjects/addicted-to-mnt/src/styles/imports.scss&#10;gall&#9;FILE&#9;file://C:/Users/Kamil/PhpstormProjects/addicted-to-mnt/src/js/Containers/Gallery.js&#10;about.j&#9;FILE&#9;file://C:/Users/Kamil/PhpstormProjects/addicted-to-mnt/src/js/Containers/About.js&#10;about&#9;FILE&#9;file://C:/Users/Kamil/PhpstormProjects/addicted-to-mnt/src/styles/page_about.scss&#10;maps&#9;FILE&#9;file://F:/WorkingOn/addicted-to-mnt/src/js/_Dashboard/Components/Inputs/DashboardMapStages.js&#10;galleryAc&#9;FILE&#9;file://F:/WorkingOn/addicted-to-mnt/src/js/Actions/galleryActions.js&#10;galleryRed&#9;FILE&#9;file://F:/WorkingOn/addicted-to-mnt/src/js/Reducers/galleryReducer.js&#10;route&#9;FILE&#9;file://F:/WorkingOn/addicted-to-mnt/src/js/routes.js&#10;tripplaner&#9;FILE&#9;file://F:/WorkingOn/addicted-to-mnt/src/js/Containers/TripPlaner.js&#10;reducer&#9;FILE&#9;file://F:/WorkingOn/addicted-to-mnt/src/js/Reducers/dashboardReducer.js&#10;reduc&#9;FILE&#9;file://F:/WorkingOn/addicted-to-mnt/src/js/Reducers/dashboardReducer.js&#10;editor&#9;FILE&#9;file://F:/WorkingOn/addicted-to-mnt/src/js/_Dashboard/Components/DashboardContentEditor.js&#10;action&#9;FILE&#9;file://F:/WorkingOn/addicted-to-mnt/src/js/Actions/dashboardActions.js&#10;dashboar&#9;FILE&#9;file://F:/WorkingOn/addicted-to-mnt/src/js/_Dashboard/DashboardPanel.js&#10;reduce&#9;FILE&#9;file://F:/WorkingOn/addicted-to-mnt/src/js/Reducers/dashboardReducer.js&#10;panel.&#9;FILE&#9;file://F:/WorkingOn/addicted-to-mnt/src/styles/dashboard_panel.scss&#10;import&#9;FILE&#9;file://F:/WorkingOn/addicted-to-mnt/src/styles/imports.scss&#10;conten&#9;FILE&#9;file://F:/WorkingOn/addicted-to-mnt/src/styles/dashboard_content.scss&#10;inputs&#9;FILE&#9;file://C:/Users/Kamil/PhpstormProjects/addicted-to-mnt/src/styles/dashboard_inputs.scss&#10;card&#9;FILE&#9;file://C:/Users/Kamil/PhpstormProjects/addicted-to-mnt/src/styles/dashboard_card.scss&#10;panel&#9;FILE&#9;file://C:/Users/Kamil/PhpstormProjects/addicted-to-mnt/src/styles/dashboard_panel.scss&#10;sidebar&#9;FILE&#9;file://C:/Users/Kamil/PhpstormProjects/addicted-to-mnt/src/styles/dashboard_sideBar.scss" />
+    <property name="WebServerToolWindowFactoryState" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.standard" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.standard" value="project" />
+    <property name="node.js.selected.package.eslint" value="C:\Users\Kamil\PhpstormProjects\addicted-to-mnt\node_modules\eslint" />
+    <property name="node.js.selected.package.standard" value="C:\Users\Kamil\PhpstormProjects\addicted-to-mnt\node_modules\eslint" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="yarn" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.JavaScript" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="75f20cdd-deeb-470d-9f70-2bad7787c748" name="Default" comment="" />
+      <created>1527593434227</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1527593434227</updated>
+      <workItem from="1527593435540" duration="6131000" />
+      <workItem from="1527768014053" duration="4249000" />
+      <workItem from="1529415764510" duration="4165000" />
+      <workItem from="1529747105701" duration="1264000" />
+      <workItem from="1530796102543" duration="1822000" />
+      <workItem from="1531222084985" duration="9728000" />
+      <workItem from="1531246245809" duration="5213000" />
+      <workItem from="1531895733903" duration="745000" />
+      <workItem from="1532016708596" duration="2933000" />
+      <workItem from="1532110877924" duration="4839000" />
+      <workItem from="1532120697569" duration="25870000" />
+      <workItem from="1532251312236" duration="17190000" />
+      <workItem from="1532506705034" duration="10464000" />
+      <workItem from="1532589321775" duration="15608000" />
+      <workItem from="1532622660372" duration="1498000" />
+      <workItem from="1532675203680" duration="12962000" />
+      <workItem from="1532851208911" duration="1382000" />
+      <workItem from="1532853636029" duration="12000" />
+      <workItem from="1532971973743" duration="882000" />
+      <workItem from="1533195070436" duration="839000" />
+      <workItem from="1533202750962" duration="9326000" />
+      <workItem from="1533217669475" duration="1434000" />
+      <workItem from="1533228262557" duration="1791000" />
+      <workItem from="1533236685984" duration="5974000" />
+      <workItem from="1533479111859" duration="5972000" />
+      <workItem from="1533714586176" duration="3300000" />
+      <workItem from="1533800638542" duration="2081000" />
+      <workItem from="1533818034138" duration="1818000" />
+      <workItem from="1534167433771" duration="718000" />
+      <workItem from="1534412324120" duration="9405000" />
+    </task>
+    <task id="LOCAL-00001" summary="gitignore update">
+      <created>1533224891909</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1533224891909</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="209684000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.50106496" side_tool="true" weight="0.32903227" />
+      <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="9" />
+      <window_info id="npm" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49893504" weight="0.32903227" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="12" sideWeight="0.49893504" visible="true" weight="0.24731183" />
+      <window_info anchor="right" id="Remote Host" order="3" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18051118" />
+      <window_info anchor="bottom" id="Docker" order="10" show_stripe_button="false" />
+      <window_info anchor="right" id="Database" order="3" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="TypeScript" order="11" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" x="0" y="0" width="434" height="866" id="Documentation" order="4" side_tool="true" weight="0.32960597" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" />
+    </layout>
+    <layout-to-restore>
+      <window_info anchor="bottom" id="Version Control" order="9" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Docker" order="10" show_stripe_button="false" />
+      <window_info id="npm" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="right" id="Remote Host" order="3" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17252396" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="TypeScript" order="11" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49893504" weight="0.32903227" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="right" x="0" y="0" width="434" height="866" id="Documentation" order="5" side_tool="true" weight="0.32960597" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="12" sideWeight="0.49893504" visible="true" weight="0.2546448" />
+      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.50106496" side_tool="true" weight="0.32903227" />
+      <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="right" id="Database" order="4" />
+      <window_info id="Favorites" order="3" side_tool="true" />
+    </layout-to-restore>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+    <option name="exactExcludedFiles">
+      <list>
+        <option value="$PROJECT_DIR$/node_modules/react-dedux/index.d.ts" />
+      </list>
+    </option>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="gitignore update" />
+    <option name="LAST_COMMIT_MESSAGE" value="gitignore update" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <option name="time" value="4" />
+    </breakpoint-manager>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/styles/dashboard_inputs.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="8" selection-start-line="5" selection-start-column="8" selection-end-line="5" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/styles/dashboard_card.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="41" column="26" lean-forward="true" selection-start-line="41" selection-start-column="26" selection-end-line="41" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/styles/dashboard_content.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" selection-start-line="6" selection-end-line="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/styles/dashboard_panel.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/js/_Dashboard/DashboardPanel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="444">
+          <caret line="72" selection-start-line="72" selection-end-line="72" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/js/_Dashboard/Components/Card.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="223">
+          <caret line="17" column="64" selection-start-line="17" selection-start-column="64" selection-end-line="17" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/js/validation.js" />
+    <entry file="file://$PROJECT_DIR$/src/js/Actions/dashboardActions.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="870">
+          <caret line="59" column="1" selection-start-line="59" selection-start-column="1" selection-end-line="59" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/js/_Dashboard/DashboardContent.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="462">
+          <caret line="81" column="7" lean-forward="true" selection-start-line="81" selection-start-column="7" selection-end-line="81" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/js/Reducers/postReducer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="2" selection-start-line="3" selection-start-column="2" selection-end-line="3" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/js/Containers/TripPlaner.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="24" column="11" lean-forward="true" selection-start-line="24" selection-start-column="11" selection-end-line="24" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/js/routes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="561">
+          <caret line="43" column="60" selection-start-line="43" selection-start-column="60" selection-end-line="43" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/js/Reducers/galleryReducer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="36" selection-start-line="13" selection-start-column="10" selection-end-line="13" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Downloads/addicted-to-mnt-1508257931368-export (23).json" />
+    <entry file="file://$PROJECT_DIR$/src/styles/page_about.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" column="17" selection-start-line="19" selection-start-column="17" selection-end-line="19" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/js/Components/returnHome.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="87" selection-start-line="5" selection-start-column="87" selection-end-line="5" selection-end-column="87" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/styles/page_gallery.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/js/helpers/tilt3d.js" />
+    <entry file="file://$PROJECT_DIR$/src/styles/imports.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" selection-start-line="18" selection-end-line="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/js/Containers/About.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="38" selection-start-line="3" selection-start-column="38" selection-end-line="3" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/styles/index.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="28" column="14" selection-start-line="28" selection-start-column="14" selection-end-line="28" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/styles/object_nav.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="32" column="34" selection-start-line="32" selection-start-column="34" selection-end-line="32" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="22" column="4" lean-forward="true" selection-start-line="22" selection-start-column="4" selection-end-line="22" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Downloads/addicted-to-mnt-1508257931368-export (24).json" />
+    <entry file="file://$PROJECT_DIR$/node_modules/scrollmagic/scrollmagic/uncompressed/ScrollMagic.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/js/Reducers/dashboardReducer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="34" column="38" selection-start-line="34" selection-start-column="38" selection-end-line="34" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/styles/object_galleryImage.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="3" lean-forward="true" selection-start-line="13" selection-start-column="3" selection-end-line="13" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/js/Components/GalleryImage.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="525">
+          <caret line="35" column="44" selection-start-line="35" selection-start-column="44" selection-end-line="35" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/js/Containers/Gallery.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="169">
+          <caret line="25" column="23" selection-start-line="25" selection-start-column="23" selection-end-line="25" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/js/Actions/galleryActions.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="24" selection-start-line="12" selection-start-column="24" selection-end-line="12" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/js/Actions/postActions.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="3" lean-forward="true" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/js/Containers/Blog.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="23" column="9" lean-forward="true" selection-start-line="23" selection-start-column="9" selection-end-line="23" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/styles/grid.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="20" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/phpstorm.jar!/resources/html5-schema/html5/block.rnc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="215">
+          <caret line="244" column="16" selection-start-line="244" selection-start-column="16" selection-end-line="244" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Downloads/addicted-to-mnt-1508257931368-export (6).json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="576">
+          <caret line="330" column="32" selection-start-line="330" selection-start-column="32" selection-end-line="330" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/styles/object_blog-post.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="202" column="22" selection-start-line="202" selection-start-column="22" selection-end-line="202" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/start.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-675" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="203">
+          <caret line="60" column="10" selection-start-line="60" selection-start-column="5" selection-end-line="60" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/webpack.config.prod.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="353">
+          <caret line="101" column="48" selection-start-line="101" selection-start-column="48" selection-end-line="101" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/webpack.config.dev.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="92" column="6" lean-forward="true" selection-start-line="92" selection-start-column="6" selection-end-line="92" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/js/_Dashboard/Components/Inputs/DashboardSelectInput.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="26" lean-forward="true" selection-start-line="13" selection-start-column="26" selection-end-line="13" selection-end-column="26" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/js/_Dashboard/Components/Inputs/DashboardMapStages.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="79" column="24" lean-forward="true" selection-start-line="79" selection-start-column="24" selection-end-line="79" selection-end-column="24" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/styles/dashboard_inputs.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="36" column="5" selection-start-line="36" selection-start-column="5" selection-end-line="36" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/js/_Dashboard/Components/Inputs/DashboardTextInput.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="23" selection-start-line="11" selection-start-column="23" selection-end-line="11" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/js/_Dashboard/Components/Inputs/DashboardMapInput.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="6" column="51" selection-start-line="6" selection-start-column="51" selection-end-line="6" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/js/_Dashboard/Components/Inputs/DashboardGallery.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="51" selection-start-line="14" selection-start-column="51" selection-end-line="14" selection-end-column="51" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/js/Components/BlogPost.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="203">
+          <caret line="72" column="48" selection-start-line="72" selection-start-column="48" selection-end-line="72" selection-end-column="48" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/js/Components/Map/helpers/googleHandlers.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="14" column="16" selection-start-line="14" selection-start-column="16" selection-end-line="14" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/styles/dashboard_contentEditor.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="553">
+          <caret line="63" column="5" selection-start-line="63" selection-start-column="5" selection-end-line="63" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/js/Components/Map/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="28" column="41" selection-start-line="28" selection-start-column="41" selection-end-line="28" selection-end-column="41" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/js/_Dashboard/Components/DashboardContentEditor.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="25" lean-forward="true" selection-start-line="14" selection-start-column="25" selection-end-line="14" selection-end-column="25" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

@@ -24,3 +24,6 @@
     font-size: 20px;
     cursor: pointer;
     color: #e30000; }
+
+.contentEditor__inputDescription {
+  margin-bottom: 0; }
