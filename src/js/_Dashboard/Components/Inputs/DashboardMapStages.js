@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import TextInput from './DashboardTextInput';
 import DateInput from './DashboardDateInput';
 import MapInput from './DashboardMapInput';
+import SelectInput from './DashboardSelectInput';
 
 class DashboardMapStages extends Component {
   constructor(props) {
@@ -34,7 +35,8 @@ class DashboardMapStages extends Component {
           title: 'Title',
           subtitle: 'Subtitle',
           gcords: { lat: 0, lng: 0 },
-          id: this.placeID++
+          id: this.placeID++,
+          travelmode: 'Select an option'
         }
       ]
     });
@@ -66,17 +68,18 @@ class DashboardMapStages extends Component {
   render() {
     const { structure } = this.props;
     let places = [];
-
+    
     if (this.state.places.length > 0) {
         this.state.places.forEach((data, i) => {
-            places.push(
-                <div className='card-list__box map-stages__box' key={data.id}>
-                    <div className='card-list__closer' onClick={() => { this._removeItem(i) }}> <i className='fa fa-times-circle' /> </div>
-                    <DateInput id={data.id} type={'date'} description={structure.date.description} date={data.date} inputHandler={this._getInputData} />
-                    <TextInput id={data.id} type={'title'} description={structure.title.description} value={data.title} inputHandler={this._getInputData} />
-                    <TextInput id={data.id} type={'subtitle'} description={structure.subtitle.description} value={data.subtitle} inputHandler={this._getInputData} />
-                    <MapInput id={data.id} type={'gcords'} description={structure.gcords.description}  gcords={data.gcords} inputHandler={this._getInputData} />
-                </div>
+          places.push(
+              <div className='card-list__box map-stages__box' key={data.id}>
+                  <div className='card-list__closer' onClick={() => { this._removeItem(i) }}> <i className='fa fa-times-circle' /> </div>
+                  <DateInput id={data.id} type={'date'} description={structure.date.description} date={data.date} inputHandler={this._getInputData} />
+                  <TextInput id={data.id} type={'title'} description={structure.title.description} value={data.title} inputHandler={this._getInputData} />
+                  <TextInput id={data.id} type={'subtitle'} description={structure.subtitle.description} value={data.subtitle} inputHandler={this._getInputData} />
+                  <MapInput id={data.id} type={'gcords'} description={structure.gcords.description}  gcords={data.gcords} inputHandler={this._getInputData} />
+                  <SelectInput id={data.id} type={'travelmode'} description={structure.travelmode.description} value={data.travelmode} options={structure.travelmode.options} inputHandler={this._getInputData} />
+              </div>
             );
         });
     }

@@ -12,6 +12,7 @@ class DashboardMapInput extends Component {
 			<div>
 				<span className="contentEditor__inputDescription"> {description} </span>
 				<input
+					disabled
 					name={`mapInput-${id}`}
 					className="contentEditor__input contentEditor__input--mapInput"
 					value={value}
@@ -27,6 +28,7 @@ class DashboardMapInput extends Component {
 							this.props.inputHandler({...getValue}, id, type);
 					}}
 				/>
+				<button className='btn btn-info'> Pick location </button>
 			</div>
 		);
 	}
