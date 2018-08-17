@@ -30,13 +30,13 @@ class GalleryImage extends Component {
 
     return (
       <div className={classNames}>
-      {this.props.day ? <div id={`gallery-image__${this.props.day}`} className='gallery-image__separator'> Day {this.props.day} </div> : null}
+      {this.props.day ? <div className='gallery-image__separator'> {this.props.day} </div> : null}
         <div>
           {/*{ !this.props.featured && <div id={`gallery-image__trigger-${this.props.id}`} > trigger </div> }*/}
           <div className='gallery-image__imgBox' id={`gallery-image__imgBox--id${this.props.id}`}>
             <div className='gallery-image__title'> {content.title} </div>
             <div className='gallery-image__place'>
-              <a target="_blank" href={`https://www.google.com/maps/search/?api=1&query=${content.gcords.lat},${content.gcords.lng}`}> Check out on google</a>
+              { content.gcords.lat !== 0 && <a target="_blank" href={`https://www.google.com/maps/search/?api=1&query=${content.gcords.lat},${content.gcords.lng}`}> Check out on google</a> }
             </div>
             {image}
           </div>

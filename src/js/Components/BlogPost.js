@@ -76,6 +76,7 @@ class BlogPost extends Component {
               : null
             }
           </div>
+          <div className='padding-box-small' />
           <div className='blog-post__content'>
             { content.postDescription ? (
               <div>
@@ -85,12 +86,9 @@ class BlogPost extends Component {
               </div>
               ) : null
             }
-            {stages ? (
-              <div>
-                <div className='padding-box-medium' />
-                <div className='blog-post__timeLine'>
-                  {stages}
-                </div>
+            { stages ? (
+              <div className='blog-post__timeLine'>
+                {stages}
               </div>
               ) : null
             }

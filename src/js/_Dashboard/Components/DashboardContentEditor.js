@@ -135,6 +135,9 @@ class DashboardContentEditor extends Component {
           case 'list':
             inputs.push(<EditBox key={i} id={editBoxID} expanded={expanded} structure={structure[i]} data={data[i]} match={this.props.match.url} changer={this._toggleSubmit} /> );
             break;
+          case 'publish':
+            inputs.push();
+            break;
           default:
         }
         editBoxID++;

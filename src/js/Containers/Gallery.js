@@ -11,23 +11,26 @@ class Gallery extends Component {
   }
 
   render() {
+    console.log(this.props);
+
     const gallery = this.props.gallery.gallery;
     let galleryRender;
     let day = null;
     let prevDay = -1;
     if ( gallery ) {
       galleryRender = gallery.map((item, n) => {
-        console.log(typeof parseInt(item.day), typeof prevDay);
         let featured=false, right=false;
-        if (n === 0)
+        if (n === 0) {
           featured = true;
+          item.day = 'featured';
+        }
         else if (n%2)
           right = true;
-        if (prevDay !== parseInt(item.day))
-          day = parseInt(item.day);
+        if (prevDay !== item.day.toString())
+          day = item.day.toString();
         else
           day = null;
-        prevDay = parseInt(item.day);
+        prevDay = item.day.toString();
         return <GalleryImage key={n} id={n} content={item} featured={featured} right={right} day={day}/>
       });
     }
