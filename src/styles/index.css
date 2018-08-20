@@ -38,6 +38,16 @@ a {
     text-decoration: none;
     color: #fff; }
 
+h2 {
+  font-weight: 500;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 30px; }
+
+h4 {
+  font-weight: 300;
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  font-size: 16px; }
+
 .padding-box-large {
   padding-top: 50px; }
 
@@ -682,7 +692,10 @@ a {
 
 .dashboard__panel {
   min-height: 100vh;
-  background-color: #ddd; }
+  background: linear-gradient(135deg, white 0%, #dfe5d7 40%, #b3bead 100%);
+  display: flex; }
+  .dashboard__panel section {
+    margin-left: 300px; }
 
 @font-face {
   font-family: 'ARBONNIE';
@@ -693,9 +706,9 @@ a {
   width: 300px;
   position: fixed;
   background-color: #444;
-  float: left;
   color: #fff;
-  box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.33); }
+  box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.33);
+  padding: 15px; }
   .dashboard__sideBar .sideBar__title {
     margin: 25px 0;
     text-align: center;
@@ -709,6 +722,15 @@ a {
     margin-right: 25px;
     margin-top: 0;
     border-bottom: solid 1px rgba(5, 153, 197, 0.35); }
+  .dashboard__sideBar ul {
+    padding: 0;
+    list-style: none; }
+
+.dashboard__home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%; }
 
 .dashboard__card {
   position: relative;
@@ -764,6 +786,8 @@ a {
 .dashboard__contentEditor {
   padding: 15px;
   position: relative; }
+  .dashboard__contentEditor h2 {
+    margin: 0; }
 
 .contentEditor__label {
   display: block;

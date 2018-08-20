@@ -1,6 +1,8 @@
 .dashboard__contentEditor {
   padding: 15px;
   position: relative; }
+  .dashboard__contentEditor h2 {
+    margin: 0; }
 
 .contentEditor__label {
   display: block;

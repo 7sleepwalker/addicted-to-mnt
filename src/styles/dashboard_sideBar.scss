@@ -5,9 +5,9 @@
   width: $standard-sidebar-width;
   position: fixed;
   background-color: #444;
-  float: left;
   color: #fff;
   box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.33);
+  padding: 15px;
 
   .sideBar {
     &__title {
@@ -27,5 +27,10 @@
       border-bottom: solid 1px rgba(5, 153, 197, 0.35);
 
     }
+  }
+  
+  ul {
+    padding: 0;
+    list-style: none;
   }
 }

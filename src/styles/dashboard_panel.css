@@ -6,4 +6,7 @@
 
 .dashboard__panel {
   min-height: 100vh;
-  background-color: #ddd; }
+  background: linear-gradient(135deg, white 0%, #dfe5d7 40%, #b3bead 100%);
+  display: flex; }
+  .dashboard__panel section {
+    margin-left: 300px; }
