@@ -16,10 +16,6 @@ class DashboardPanel extends Component {
     this.props.dispatch(getStructure());
   }
 
-  componentDidMount() {
-
-  }
-
   render() {
     if (!this.props.nav)
       return (<div className='addictiv_isLoading'> Content is loading </div>);
@@ -87,7 +83,7 @@ const mapStateToProps = (state) => {
   return {
     nav: state.sidebar.nav
   };
-}
+};
 
 DashboardPanel.contextTypes = {
   router: propTypes.object,

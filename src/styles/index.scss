@@ -17,6 +17,19 @@ a {
     color: #fff;
   }
 }
+
+h2 {
+  font-weight: 500;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 30px;
+}
+
+h4 {
+  font-weight: 300;
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  font-size: 16px;
+}
+
 .padding-box-large {
   padding-top: 50px;
 }
@@ -154,6 +167,7 @@ a {
 @import 'dashboard_logIn.scss';
 @import 'dashboard_panel.scss';
 @import 'dashboard_sideBar.scss';
+@import 'dashboard_home.scss';
 @import 'dashboard_card.scss';
 @import 'dashboard_content.scss';
 @import 'dashboard_contentEditor.scss';

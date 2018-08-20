@@ -1,9 +1,12 @@
 .dashboard__contentEditor {
   padding: 15px;
   position: relative;
+  
+  h2 {
+    margin: 0;
+  }
 }
 .contentEditor {
-
   &__label {
     display: block;
     text-transform: capitalize;
