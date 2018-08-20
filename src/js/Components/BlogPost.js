@@ -70,7 +70,7 @@ class BlogPost extends Component {
           ) : null
           }
           <div className='blog-post__mapBox'>
-            <GMap mapID={`map-${content.id}`} places={content.places} getDistance={this.getDistance}/>
+            <GMap mapID={`map-${content.id}`} places={content.places} getDistance={this.getDistance} />
             {this.state.distance > 0 ?
               <div className='blog-post__distance'>Travel distance: <strong>{parseInt(this.state.distance)}km</strong></div>
               : null

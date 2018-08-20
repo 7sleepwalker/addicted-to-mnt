@@ -6,7 +6,6 @@ import BlogPost from '../Components/BlogPost';
 import { getPosts } from '../Actions/postActions';
 
 class Blog extends Component {
-
   componentWillMount() {
     this.props.dispatch(getPosts());
   }
@@ -20,7 +19,7 @@ class Blog extends Component {
         return value.publish === true;
       });
       postRender = posts.map((item, n) => (
-        <BlogPost key={n} content={item} postNumber={n} postsAmount={posts.length}/>
+        <BlogPost key={n} content={item} postNumber={posts.length - (n + 1)} postsAmount={posts.length}/>
       ));
     }
     return (

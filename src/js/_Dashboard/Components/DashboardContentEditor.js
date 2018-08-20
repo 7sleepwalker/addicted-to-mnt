@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 import { default as EditBox } from './DashboardEditBox';
 import SingleInputManager from './Inputs/DashboardDateManager';
+import SelectInput from './Inputs/DashboardSelectInput';
 import MapStages from './Inputs/DashboardMapStages';
 import Gallery from './Inputs/DashboardGallery';
 import GMap from '../../Components/Map';
@@ -139,6 +140,19 @@ class DashboardContentEditor extends Component {
           case 'publish':
             inputs.push();
             break;
+          case 'select':
+            inputs.push(
+              <EditBox key={i} id={editBoxID} expanded={expanded} structure={structure[i]} data={data[i]} match={this.props.match.url} changer={this._toggleSubmit} >
+                <SelectInput
+                  description={structure[i].description}
+                  date={data[i]}
+                  options={structure[i].options}
+                  submitData={this._handleInputData}
+                  submit={this.state.submitted}
+                  structure={structure[i]}
+                />
+              </EditBox>
+            );
           default:
         }
         editBoxID++;

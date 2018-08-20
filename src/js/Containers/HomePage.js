@@ -9,12 +9,8 @@ class HomePage extends Component {
     return (
       <div className="addicted__homepage">
         <Nav menuList={ this.props.content ? Object.keys(this.props.content) : null}/>
-        <section>
-          <HeroBanner />
-        </section>
-        <section>
-          <Blog />
-        </section>
+        <HeroBanner />
+        <Blog />
       </div>
 
     );

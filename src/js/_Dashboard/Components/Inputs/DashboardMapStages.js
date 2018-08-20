@@ -3,7 +3,6 @@ import React, { Component } from 'react';
 import TextInput from './DashboardTextInput';
 import DateInput from './DashboardDateInput';
 import MapInput from './DashboardMapInput';
-import SelectInput from './DashboardSelectInput';
 
 class DashboardMapStages extends Component {
   constructor(props) {
@@ -35,8 +34,7 @@ class DashboardMapStages extends Component {
           title: 'Title',
           subtitle: 'Subtitle',
           gcords: { lat: 0, lng: 0 },
-          id: this.placeID++,
-          travelmode: 'Select an option'
+          id: this.placeID++
         }
       ]
     });
@@ -78,7 +76,6 @@ class DashboardMapStages extends Component {
                   <TextInput id={data.id} type={'title'} description={structure.title.description} value={data.title} inputHandler={this._getInputData} />
                   <TextInput id={data.id} type={'subtitle'} description={structure.subtitle.description} value={data.subtitle} inputHandler={this._getInputData} />
                   <MapInput id={data.id} type={'gcords'} description={structure.gcords.description}  gcords={data.gcords} inputHandler={this._getInputData} />
-                  <SelectInput id={data.id} type={'travelmode'} description={structure.travelmode.description} value={data.travelmode} options={structure.travelmode.options} inputHandler={this._getInputData} />
               </div>
             );
         });

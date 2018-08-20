@@ -77,6 +77,7 @@ export default class GMap extends React.Component {
       let origin = this.props.places[0].gcords.lat + ',' + this.props.places[0].gcords.lng;
       let destination = this.props.places[this.props.places.length - 1].gcords.lat + ',' + this.props.places[this.props.places.length - 1].gcords.lng;
       let tmpWaypoint = [...this.props.places];
+      let travelMode = this.props.places.travelMode || 'WALKING';
       tmpWaypoint.splice((this.props.places.length - 1), 1);
       tmpWaypoint.splice(0, 1);
       let waypoints = [];
@@ -98,7 +99,7 @@ export default class GMap extends React.Component {
         origin,
         destination,
         waypoints,
-        travelMode: 'WALKING'
+        travelMode: travelMode
       };
       dirService.route(request, function(result, status) {
         if (status === window.google.maps.DirectionsStatus.OK) {

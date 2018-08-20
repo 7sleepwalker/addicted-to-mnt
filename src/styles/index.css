@@ -144,12 +144,13 @@ a {
   transform: rotate(45deg); }
 
 .blog-post {
-  position: relative;
+  position: absolute;
   height: 100vh;
   width: 100%;
-  margin: 50px 0; }
-  .blog-post:last-of-type {
-    margin-bottom: 0; }
+  top: 0;
+  transform: translateY(100%) scale(0.9);
+  transition: all 1s ease-in-out;
+  display: flex; }
   .blog-post__header {
     display: flex;
     justify-content: space-between; }
@@ -160,7 +161,6 @@ a {
     left: 50%; }
   .blog-post__coverBox {
     position: relative;
-    float: left;
     height: 100vh;
     width: 50%; }
     .blog-post__coverBox:hover .coverBox__image {
@@ -195,7 +195,6 @@ a {
   .blog-post__contentBox {
     position: relative;
     z-index: 10;
-    float: right;
     width: 50%;
     height: 100vh;
     padding: 25px 0;
