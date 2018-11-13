@@ -3,31 +3,37 @@
   <component name="ChangeListManager">
     <list default="true" id="75f20cdd-deeb-470d-9f70-2bad7787c748" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/Components/BlogPost.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/Components/BlogPost.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/Components/Map/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/Components/Map/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/Containers/Blog.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/Containers/Blog.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/Containers/HomePage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/Containers/HomePage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/_Dashboard/Components/DashboardContentEditor.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/_Dashboard/Components/DashboardContentEditor.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/_Dashboard/Components/Inputs/DashboardMapStages.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/_Dashboard/Components/Inputs/DashboardMapStages.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/styles/dashboard_contentEditor.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/dashboard_contentEditor.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/dashboard_inputs.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/dashboard_inputs.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/dashboard_home.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/dashboard_home.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/dashboard_panel.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/dashboard_panel.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/dashboard_sideBar.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/dashboard_sideBar.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/styles/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/object_blog-post.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/object_blog-post.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/object_blog-post.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/object_blog-post.scss" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
-    <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FUSProjectUsageTrigger">
+    <session id="-1227780336">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="3" />
+          <entry key="project.open.time.10" value="1" />
+          <entry key="project.open.time.6" value="1" />
+          <entry key="project.open.time.8" value="1" />
+          <entry key="project.opened" value="3" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="BlogPost.js" pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/js/Components/BlogPost.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
+            <state relative-caret-position="230">
               <caret line="15" column="2" selection-start-line="15" selection-start-column="2" selection-end-line="15" selection-end-column="2" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
@@ -36,28 +42,28 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="object_blog-post.scss" pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/styles/object_blog-post.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="23" column="23" lean-forward="true" selection-start-line="23" selection-start-column="23" selection-end-line="23" selection-end-column="23" />
+            <state relative-caret-position="690">
+              <caret line="30" column="23" lean-forward="true" selection-start-line="30" selection-start-column="23" selection-end-line="30" selection-end-column="23" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Blog.js" pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/js/Containers/Blog.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
+            <state relative-caret-position="529">
               <caret line="28" column="6" selection-start-line="28" selection-start-column="6" selection-end-line="28" selection-end-column="6" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="HomePage.js" pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/js/Containers/HomePage.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
+            <state relative-caret-position="368">
               <caret line="20" selection-start-line="20" selection-end-line="20" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
@@ -66,10 +72,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="routes.js" pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/js/routes.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="561">
+            <state relative-caret-position="759">
               <caret line="43" column="60" selection-start-line="43" selection-start-column="60" selection-end-line="43" selection-end-column="60" />
             </state>
           </provider>
@@ -213,8 +219,8 @@
     </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-1928" />
-    <option name="y" value="-8" />
+    <option name="x" value="65" />
+    <option name="y" value="-13" />
     <option name="width" value="1936" />
     <option name="height" value="1066" />
   </component>
@@ -261,7 +267,7 @@
   <component name="PropertiesComponent">
     <property name="SearchEverywhereHistoryKey" value="blog&#9;FILE&#9;file://F:/WorkingOn/addicted-to-mnt/src/styles/object_blog-post.scss&#10;blog.js&#9;FILE&#9;file://F:/WorkingOn/addicted-to-mnt/src/js/Containers/Blog.js&#10;single&#9;null&#9;null&#10;selectinp&#9;FILE&#9;file://F:/WorkingOn/addicted-to-mnt/src/js/_Dashboard/Components/Inputs/DashboardSelectInput.js&#10;contented&#9;FILE&#9;file://F:/WorkingOn/addicted-to-mnt/src/js/_Dashboard/Components/DashboardContentEditor.js&#10;dashboard&#9;FILE&#9;file://F:/WorkingOn/addicted-to-mnt/src/js/_Dashboard/Components/Inputs/DashboardMapStages.js&#10;blogpos&#9;FILE&#9;file://F:/WorkingOn/addicted-to-mnt/src/js/Components/BlogPost.js&#10;blogpo&#9;FILE&#9;file://F:/WorkingOn/addicted-to-mnt/src/js/Components/BlogPost.js&#10;grid&#9;FILE&#9;file://C:/Users/Kamil/PhpstormProjects/addicted-to-mnt/src/styles/grid.scss&#10;blogpost&#9;FILE&#9;file://C:/Users/Kamil/PhpstormProjects/addicted-to-mnt/src/styles/object_blog-post.scss&#10;galler&#9;FILE&#9;file://C:/Users/Kamil/PhpstormProjects/addicted-to-mnt/src/js/Containers/Gallery.js&#10;image&#9;FILE&#9;file://C:/Users/Kamil/PhpstormProjects/addicted-to-mnt/src/styles/object_galleryImage.scss&#10;webpa&#9;FILE&#9;file://C:/Users/Kamil/PhpstormProjects/addicted-to-mnt/config/webpack.config.dev.js&#10;package.json&#9;FILE&#9;file://C:/Users/Kamil/PhpstormProjects/addicted-to-mnt/package.json&#10;package.&#9;FILE&#9;file://C:/Users/Kamil/PhpstormProjects/addicted-to-mnt/package.json&#10;web&#9;FILE&#9;file://C:/Users/Kamil/PhpstormProjects/addicted-to-mnt/config/webpack.config.dev.js&#10;webpack&#9;FILE&#9;file://F:/WorkingOn/addicted-to-mnt/config/webpack.config.dev.js&#10;package&#9;FILE&#9;file://F:/WorkingOn/addicted-to-mnt/package.json&#10;ga&#9;FILE&#9;file://F:/WorkingOn/addicted-to-mnt/src/styles/object_galleryImage.scss&#10;galle&#9;FILE&#9;file://F:/WorkingOn/addicted-to-mnt/src/js/Containers/Gallery.js&#10;gallery&#9;FILE&#9;file://F:/WorkingOn/addicted-to-mnt/src/js/Containers/Gallery.js&#10;post&#9;null&#9;null&#10;index.js&#9;FILE&#9;file://F:/WorkingOn/addicted-to-mnt/src/js/Components/Map/index.js&#10;index&#9;FILE&#9;file://C:/Users/Kamil/PhpstormProjects/addicted-to-mnt/src/styles/index.scss&#10;map&#9;null&#9;null&#10;googl&#9;FILE&#9;file://C:/Users/Kamil/PhpstormProjects/addicted-to-mnt/src/js/Components/Map/helpers/googleHandlers.js&#10;googleHandler&#9;FILE&#9;file://C:/Users/Kamil/PhpstormProjects/addicted-to-mnt/src/js/Components/Map/helpers/googleHandlers.js&#10;gallery.&#9;FILE&#9;file://F:/WorkingOn/addicted-to-mnt/src/styles/page_gallery.scss&#10;nav&#9;FILE&#9;file://F:/WorkingOn/addicted-to-mnt/src/styles/object_nav.scss&#10;nav.js&#9;FILE&#9;file://C:/Users/Kamil/PhpstormProjects/addicted-to-mnt/src/js/Components/Nav.js&#10;mport&#9;FILE&#9;file://C:/Users/Kamil/PhpstormProjects/addicted-to-mnt/src/styles/imports.scss&#10;gall&#9;FILE&#9;file://C:/Users/Kamil/PhpstormProjects/addicted-to-mnt/src/js/Containers/Gallery.js&#10;about.j&#9;FILE&#9;file://C:/Users/Kamil/PhpstormProjects/addicted-to-mnt/src/js/Containers/About.js&#10;about&#9;FILE&#9;file://C:/Users/Kamil/PhpstormProjects/addicted-to-mnt/src/styles/page_about.scss&#10;maps&#9;FILE&#9;file://F:/WorkingOn/addicted-to-mnt/src/js/_Dashboard/Components/Inputs/DashboardMapStages.js&#10;galleryAc&#9;FILE&#9;file://F:/WorkingOn/addicted-to-mnt/src/js/Actions/galleryActions.js&#10;galleryRed&#9;FILE&#9;file://F:/WorkingOn/addicted-to-mnt/src/js/Reducers/galleryReducer.js&#10;route&#9;FILE&#9;file://F:/WorkingOn/addicted-to-mnt/src/js/routes.js&#10;tripplaner&#9;FILE&#9;file://F:/WorkingOn/addicted-to-mnt/src/js/Containers/TripPlaner.js&#10;reducer&#9;FILE&#9;file://F:/WorkingOn/addicted-to-mnt/src/js/Reducers/dashboardReducer.js&#10;reduc&#9;FILE&#9;file://F:/WorkingOn/addicted-to-mnt/src/js/Reducers/dashboardReducer.js&#10;editor&#9;FILE&#9;file://F:/WorkingOn/addicted-to-mnt/src/js/_Dashboard/Components/DashboardContentEditor.js&#10;action&#9;FILE&#9;file://F:/WorkingOn/addicted-to-mnt/src/js/Actions/dashboardActions.js&#10;dashboar&#9;FILE&#9;file://F:/WorkingOn/addicted-to-mnt/src/js/_Dashboard/DashboardPanel.js&#10;reduce&#9;FILE&#9;file://F:/WorkingOn/addicted-to-mnt/src/js/Reducers/dashboardReducer.js&#10;panel.&#9;FILE&#9;file://F:/WorkingOn/addicted-to-mnt/src/styles/dashboard_panel.scss&#10;import&#9;FILE&#9;file://F:/WorkingOn/addicted-to-mnt/src/styles/imports.scss&#10;conten&#9;FILE&#9;file://F:/WorkingOn/addicted-to-mnt/src/styles/dashboard_content.scss&#10;inputs&#9;FILE&#9;file://C:/Users/Kamil/PhpstormProjects/addicted-to-mnt/src/styles/dashboard_inputs.scss&#10;card&#9;FILE&#9;file://C:/Users/Kamil/PhpstormProjects/addicted-to-mnt/src/styles/dashboard_card.scss" />
     <property name="WebServerToolWindowFactoryState" value="true" />
-    <property name="last_opened_file_path" value="$USER_HOME$/PhpstormProjects/b24" />
+    <property name="last_opened_file_path" value="$USER_HOME$/PhpstormProjects/brand24" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -328,6 +334,11 @@
       <workItem from="1533904968845" duration="2226000" />
       <workItem from="1534691618153" duration="1517000" />
       <workItem from="1534775072287" duration="1104000" />
+      <workItem from="1534779652736" duration="1600000" />
+      <workItem from="1534837478182" duration="11000" />
+      <workItem from="1540629324394" duration="167000" />
+      <workItem from="1541145243470" duration="82000" />
+      <workItem from="1541145344950" duration="121000" />
     </task>
     <task id="LOCAL-00001" summary="gitignore update">
       <created>1533224891909</created>
@@ -340,59 +351,59 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="212237000" />
+    <option name="totallyTimeSpent" value="214174000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1928" y="-8" width="1936" height="1066" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
     <layout>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.29104477" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="npm" order="2" side_tool="true" />
+      <window_info id="Favorites" order="3" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49893504" weight="0.32896176" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.50106496" side_tool="true" weight="0.32903227" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49893504" weight="0.32896176" />
-      <window_info id="npm" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="12" sideWeight="0.49893504" weight="0.24808744" />
-      <window_info anchor="right" id="Remote Host" order="3" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.37060702" />
       <window_info anchor="bottom" id="Docker" order="10" show_stripe_button="false" />
-      <window_info anchor="right" id="Database" order="3" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="TypeScript" order="11" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="Terminal" order="12" sideWeight="0.49893504" weight="0.5718954" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" x="0" y="0" width="434" height="866" id="Documentation" order="4" side_tool="true" weight="0.32960597" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Remote Host" order="3" />
+      <window_info anchor="right" id="Database" order="4" />
+      <window_info anchor="right" x="0" y="0" width="434" height="866" id="Documentation" order="5" side_tool="true" weight="0.32960597" />
     </layout>
     <layout-to-restore>
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="bottom" id="Docker" order="10" show_stripe_button="false" />
-      <window_info id="npm" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="right" id="Remote Host" order="3" />
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17252396" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="TypeScript" order="11" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49893504" weight="0.32903227" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info id="npm" order="2" side_tool="true" />
+      <window_info id="Favorites" order="3" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="right" x="0" y="0" width="434" height="866" id="Documentation" order="5" side_tool="true" weight="0.32960597" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49893504" weight="0.32903227" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="12" sideWeight="0.49893504" visible="true" weight="0.2546448" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.50106496" side_tool="true" weight="0.32903227" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Docker" order="10" show_stripe_button="false" />
+      <window_info anchor="bottom" id="TypeScript" order="11" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="12" sideWeight="0.49893504" visible="true" weight="0.2546448" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Remote Host" order="3" />
       <window_info anchor="right" id="Database" order="4" />
-      <window_info id="Favorites" order="3" side_tool="true" />
+      <window_info anchor="right" x="0" y="0" width="434" height="866" id="Documentation" order="5" side_tool="true" weight="0.32960597" />
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -409,11 +420,6 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="gitignore update" />
     <option name="LAST_COMMIT_MESSAGE" value="gitignore update" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <option name="time" value="4" />
-    </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/styles/dashboard_sideBar.scss">
@@ -658,13 +664,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Downloads/addicted-to-mnt-1508257931368-export (25).json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6103">
-          <caret line="359" column="10" selection-start-line="359" selection-start-column="10" selection-end-line="359" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$USER_HOME$/Downloads/addicted-to-mnt-1508257931368-export (25).json" />
     <entry file="file://$PROJECT_DIR$/src/js/_Dashboard/Components/Inputs/DashboardMapStages.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
@@ -679,13 +679,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Downloads/addicted-to-mnt-1508257931368-export (26).json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1139">
-          <caret line="67" column="17" selection-start-line="67" selection-start-column="17" selection-end-line="67" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$USER_HOME$/Downloads/addicted-to-mnt-1508257931368-export (26).json" />
     <entry file="file://$PROJECT_DIR$/src/js/_Dashboard/Components/Inputs/DashboardSelectInput.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
@@ -712,8 +706,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/js/Components/BlogPost.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
+        <state relative-caret-position="230">
           <caret line="15" column="2" selection-start-line="15" selection-start-column="2" selection-end-line="15" selection-end-column="2" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/js/Containers/Blog.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="529">
+          <caret line="28" column="6" selection-start-line="28" selection-start-column="6" selection-end-line="28" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/js/Containers/HomePage.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="368">
+          <caret line="20" selection-start-line="20" selection-end-line="20" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>
@@ -722,32 +733,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/js/routes.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
+        <state relative-caret-position="759">
           <caret line="43" column="60" selection-start-line="43" selection-start-column="60" selection-end-line="43" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/js/Containers/Blog.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="28" column="6" selection-start-line="28" selection-start-column="6" selection-end-line="28" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/js/Containers/HomePage.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="20" selection-start-line="20" selection-end-line="20" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/styles/object_blog-post.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" column="23" lean-forward="true" selection-start-line="23" selection-start-column="23" selection-end-line="23" selection-end-column="23" />
+        <state relative-caret-position="690">
+          <caret line="30" column="23" lean-forward="true" selection-start-line="30" selection-start-column="23" selection-end-line="30" selection-end-column="23" />
         </state>
       </provider>
     </entry>
