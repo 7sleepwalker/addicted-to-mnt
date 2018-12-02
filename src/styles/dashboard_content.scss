@@ -1,6 +1,9 @@
 @import 'imports.scss';
 
 .dashboard__content {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
   width: calc(100% - #{$standard-sidebar-width});
   margin-left: $standard-sidebar-width;
 }

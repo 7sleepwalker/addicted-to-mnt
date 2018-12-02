@@ -19,14 +19,19 @@ export default class GMap extends React.Component {
   }
   componentDidMount() {
     const props = this.props;
-    const state = this.state;
     const This = this;
-    const map = createMap(props.mapID, props.places, props.zoom);
+    const map = createMap(props.mapID, props.places, props.zoom, props.gestureHandling);
     
     if (this.props.mapInput) {
       const innerDiv = document.createElement('div');
       innerDiv.className = 'centerMarker';
       map.getDiv().appendChild(innerDiv);
+      map.setCenter(new window.google.maps.LatLng(this.props.center.lat, this.props.center.lng));
+
+      map.addListener('dragend', function() {
+        const position = { lat: map.getCenter().lat(), lng: map.getCenter().lng() };
+        This.props.onMapMove(position);
+      });
     }
 
     if (this.props.tripplaner) {
@@ -132,7 +137,7 @@ export default class GMap extends React.Component {
 
   render() {
     return (
-      <div   className = "google-map" >
+      <div className = "google-map" >
         <div style = {{ width: '100%', height: '100%' }} id = { this.props.mapID } ref = 'map' />
         { this.props.children ? this.props.children : null }
         { this.props.tripplaner && <div className="google-map__placeOptions">
@@ -148,15 +153,11 @@ export default class GMap extends React.Component {
 GMap.propTypes = {
   google: PropTypes.object,
   zoom: PropTypes.number,
-  initialCenter: PropTypes.object,
   color: PropTypes.string,
 };
 GMap.defaultProps = {
-  zoom: 3.69,
-  initialCenter: {
-    lat: 48.928703,
-    lng: 11.7486034
-  },
+  zoom: 8.69,
+  gestureHandling: 'greedy',
   center: {},
   centerAroundCurrentLocation: false,
   style: {},

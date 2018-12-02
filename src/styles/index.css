@@ -154,13 +154,12 @@ h4 {
   transform: rotate(45deg); }
 
 .blog-post {
-  position: absolute;
   height: 100vh;
   width: 100%;
   top: 0;
-  transform: translateY(100%) scale(0.9);
   transition: all 1s ease-in-out;
-  display: flex; }
+  display: flex;
+  margin: 60px 0; }
   .blog-post__header {
     display: flex;
     justify-content: space-between; }
@@ -738,7 +737,9 @@ h4 {
 
 .dashboard__card {
   position: relative;
-  float: left;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: #eee;
   width: 300px;
   height: 100px;
@@ -751,14 +752,21 @@ h4 {
     cursor: pointer; }
   .dashboard__card:hover .card__hover {
     display: block; }
+  .dashboard__card--warrning {
+    border: solid 1px red; }
   .dashboard__card a {
     color: #000;
     display: inline-block; }
   .dashboard__card .card__content {
-    position: relative;
-    top: 50%;
-    transform: translateY(-50%);
     text-align: center; }
+  .dashboard__card .card__warrning {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    font-size: 10px;
+    padding: 0 10px;
+    background-color: red;
+    color: #fff; }
   .dashboard__card .card__hover {
     position: absolute;
     height: 100%;
@@ -784,12 +792,16 @@ h4 {
   src: url("../fonts/ARBONNIE.ttf") format("truetype"); }
 
 .dashboard__content {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
   width: calc(100% - 300px);
   margin-left: 300px; }
 
 .dashboard__contentEditor {
   padding: 15px;
-  position: relative; }
+  position: relative;
+  flex: 1 1 auto; }
   .dashboard__contentEditor h2 {
     margin: 0; }
 
@@ -876,3 +888,87 @@ h4 {
 
 .contentEditor__inputDescription {
   margin-bottom: 0; }
+
+.locationPicker {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  left: 0;
+  right: 0;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 100000; }
+  .locationPicker > * {
+    height: 75vh;
+    top: 50%;
+    position: absolute;
+    transform: translateY(-50%);
+    width: calc(100% - 100px);
+    left: 0;
+    right: 0;
+    margin: auto; }
+  .locationPicker .centerMarker {
+    position: absolute;
+    /*url of the marker*/
+    background: url(http://maps.gstatic.com/mapfiles/markers2/marker.png) no-repeat;
+    /*center the marker*/
+    top: 50%;
+    left: 50%;
+    z-index: 1;
+    /*fix offset when needed*/
+    margin-left: -10px;
+    margin-top: -34px;
+    /*size of the image*/
+    height: 34px;
+    width: 20px;
+    cursor: pointer; }
+  .locationPicker__buttonBox {
+    position: absolute;
+    right: 0;
+    bottom: -2rem; }
+
+.switcher {
+  margin: 1.5em 0;
+  font-size: 12px; }
+  .switcher input[type="checkbox"] {
+    position: absolute;
+    opacity: 0; }
+  .switcher label {
+    cursor: pointer;
+    user-select: none;
+    position: relative;
+    padding-left: 3.5em;
+    font-weight: bold;
+    color: #98afc7; }
+  .switcher *, .switcher *::before, .switcher *::after {
+    transition: 0.35s cubic-bezier(0.785, 0.135, 0.15, 0.86); }
+  .switcher label::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 2.5em;
+    height: 1.5em;
+    background: #e3edfa;
+    border-radius: 3em;
+    box-shadow: inset 0 0 2px 1px rgba(0, 0, 0, 0.05); }
+  .switcher label::after {
+    content: '';
+    position: absolute;
+    top: 0.125em;
+    left: 0.1em;
+    width: 1.25em;
+    height: 1.25em;
+    border-radius: 3em;
+    background: #fff; }
+  .switcher input:checked + label {
+    color: #253467; }
+  .switcher input:checked + label::before {
+    box-shadow: inset 0 0 0 2em #0f94fa; }
+  .switcher input:checked + label::after {
+    left: 1.1em; }
+  .switcher input:focus + label::before {
+    box-shadow: inset 0 0 0 2em #d0d0d0; }
+  .switcher input:checked:focus + label::before {
+    box-shadow: inset 0 0 0 2em #0f94fa;
+    border: 1px solid #0f64da; }

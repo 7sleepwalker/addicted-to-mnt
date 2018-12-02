@@ -16,7 +16,7 @@ class Blog extends Component {
 
     if (posts && posts.length > 0) {
       posts = posts.filter((value) => {
-        return value.publish === true;
+        return value.publish !== false;
       });
       postRender = posts.map((item, n) => (
         <BlogPost key={n} content={item} postNumber={posts.length - (n + 1)} postsAmount={posts.length}/>

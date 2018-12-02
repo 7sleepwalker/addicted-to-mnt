@@ -1,6 +1,7 @@
 .dashboard__contentEditor {
   padding: 15px;
   position: relative;
+  flex: 1 1 auto;
   
   h2 {
     margin: 0;
@@ -21,7 +22,7 @@
   &__form {
     margin: 30px 0;
   }
-  
+
   &__mapBox {
     position: absolute;
     width: 100%;
@@ -30,7 +31,7 @@
     right: 0;
     top: 0;
     background-color: rgba(0, 0, 0, 0.4);
-    
+
     & > * {
         height: 50vh;
         top: 50%;

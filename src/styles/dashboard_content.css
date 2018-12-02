@@ -5,5 +5,8 @@
   src: url("../fonts/ARBONNIE.ttf") format("truetype"); }
 
 .dashboard__content {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
   width: calc(100% - 300px);
   margin-left: 300px; }

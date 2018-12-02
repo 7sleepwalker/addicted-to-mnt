@@ -1,6 +1,8 @@
 const initialState = {
   user: null,
   error: null,
+  showLocationPicker: true,
+  activeInput: null
 };
 
 export default function reducer (state=initialState, action) {
@@ -94,6 +96,25 @@ export default function reducer (state=initialState, action) {
     case 'UPDATE_DATA_FAILED': {
       return {...state, 
       error: action.payload
+      }
+    }
+    case 'DISPLAY_LOCATION_PICKER': {
+      return {
+        ...state,
+        showLocationPicker: true
+      }
+    }
+    case 'HIDE_LOCATION_PICKER': {
+      return {
+        ...state,
+        showLocationPicker: false
+      }
+    }
+
+    case 'HIDE_LOCATION_PICKER': {
+      return {
+        ...state,
+        showLocationPicker: false
       }
     }
 

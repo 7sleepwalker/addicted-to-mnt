@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import Card from './Components/Card';
 import {default as Editor} from './Components/DashboardContentEditor'
 import { getDataByStructure, updateData, getCurrentID, addPost, deletePost } from '../Actions/dashboardActions';
+import LocationPicker from './Components/LocationPicker';
 
 
 class DashboardContent extends Component {
@@ -76,6 +77,11 @@ class DashboardContent extends Component {
 
     } else if (props.childNodes.structure === 'list' && !isEditing){
       let post = props.content.data;
+      post = Object.values(post).sort((post1, post2) => {
+        if (!post1.publish) return -1;
+        return new Date(post2.publish) - new Date(post1.publish);
+      });
+      console.log(post);
       cards.push(<Card key={-1} title='Add new post' addCard createPost={() => this._handleAddPost(props.childNodes)} />);
       for (let i in post) {
         cards.push(<Card key={i} title={post[i].title} match={props.match} content={post[i]} deletePost={() => this._handleDeletePost(post[i].id)} editCard />)
@@ -100,7 +106,8 @@ class DashboardContent extends Component {
 const mapStateToProps = (state) => {
   return {
     content: state.dashboard,
-    currentID: state.dashboard.currentID
+    currentID: state.dashboard.currentID,
+    showLocationPicker: state.dashboard.showLocationPicker
   };
 }
 

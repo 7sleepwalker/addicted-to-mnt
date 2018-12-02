@@ -27,14 +27,7 @@ class DashboardSingleInputManager extends Component {
 
   render() {
     const { structure, node } = this.props;
-    if (structure.type === 'date') {
-      return (
-        <div className="single-input-manager__box">
-          <DateInput id={this.inputID} type={node} description={structure.description} date={this.state.inputs} inputHandler={this._getInputData} />
-        </div>
-      );
-    }
-    else if (structure.type === 'tag') {
+    if (structure.type === 'tag') {
       return (
         <div className="single-input-manager__box">
           <TextInput id={this.inputID} type={node} description={structure.description} value={this.state.inputs} inputHandler={this._getInputData} />

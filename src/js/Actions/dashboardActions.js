@@ -1,5 +1,4 @@
 import firebase from '../firebase';
-import { push } from 'react-router-redux';
 
 function logInSuccess(response) {
   return {
@@ -90,7 +89,6 @@ function updateDataError(err) {
     payload: err
   }
 }
-
 
 export function logIn(email, password) {
   return dispatch => {
@@ -187,4 +185,12 @@ export function updateData(url, node,  data) {
       return dispatch(updateDataError(error));
     })
   }
+}
+
+export function showLocationPicker() {
+
+}
+
+export function getCordsFromLocationPicker() {
+
 }

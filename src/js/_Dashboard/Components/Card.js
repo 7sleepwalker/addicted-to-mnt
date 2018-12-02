@@ -5,6 +5,7 @@ class Card extends Component {
   render() {
 		let cardRender;
 		let cardBackground;
+		let publishClass = '';
 		if (this.props.addCard) {
 			cardRender = (
 				<a onClick={() => this.props.createPost()} >
@@ -12,6 +13,7 @@ class Card extends Component {
 					<div> {this.props.title} </div>
 				</a>	);
 		} else if (this.props.editCard) {
+      publishClass = this.props.content.publish ? '' : 'dashboard__card--warrning';
 		 	cardRender = <div className="card__title"><a>	{this.props.title} </a></div>;
 			cardBackground = (
 				<div className="card__hover">
@@ -35,9 +37,12 @@ class Card extends Component {
 		}
 
     return (
-      <figure className="dashboard__card">
+      <figure
+				className={`dashboard__card ${publishClass}`}
+			>
 				<div className="card__content">
 					{cardRender}
+					{publishClass && <div className="card__warrning"> Not published </div>}
 				</div>
 				{cardBackground}
       </figure>
